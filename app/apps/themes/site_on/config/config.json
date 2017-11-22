@@ -1,0 +1,15 @@
+{
+  "name" : "Site On",
+  "description" : "",
+  "thumb" : "images/image.png",
+  "helpers": [
+    "Themes::SiteOn::MainHelper"
+  ],
+  "hooks": {
+    "extra_custom_fields": ["site_on_extra_custom_fields"],
+    "on_active": ["site_on_on_install_theme"],
+    "on_inactive": ["site_on_on_uninstall_theme"],
+    "on_theme_settings": ["site_on_settings"]
+    //here all your hooks
+  }
+}

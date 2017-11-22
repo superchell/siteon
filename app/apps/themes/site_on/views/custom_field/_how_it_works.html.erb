@@ -1,0 +1,25 @@
+<div class="group-input-fields-content" data-callback-render="render_how_it_works">
+  <div class="clearfix">
+    <div class="form-group">
+      <label>Icon: </label>
+      <input placeholder="Icon name" type="text" name="<%= field_name %>[<%= field.slug %>][values][][icon]" class="icon_field form-control"/>
+    </div>
+    <div class="form-group">
+      <label>Title: </label>
+      <input placeholder="Title" type="text" name="<%= field_name %>[<%= field.slug %>][values][][title]" class="title_field translatable form-control"/>
+    </div>
+    <div class="form-group">
+      <label>Description: </label>
+      <textarea placeholder="Description" name="<%= field_name %>[<%= field.slug %>][values][][descr]" class="descr_field form-control translatable"></textarea>
+    </div>
+  </div>
+</div>
+<script>
+  function render_how_it_works(panel, values){
+    values = values && typeof values == 'object' ? values : $.parseJSON(values || '{}');
+    panel.find('.descr_field').val(values['descr']);
+    panel.find('.title_field').val(values['title']);
+    panel.find('.icon_field').val(values['icon']);
+    panel.find('.translatable').Translatable(ADMIN_TRANSLATIONS);
+  }
+</script>
