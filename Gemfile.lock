@@ -1,6 +1,6 @@
 GIT
-  remote: https://github.com/owen2345/camaleon-cms.git
-  revision: 6c26001ffffd67a5de60ca7d129e037eac793bc7
+  remote: https://github.com/superchell/camaleon-cms.git
+  revision: 19729b9c07735e96191c7f8521b34eec6b6143a4
   specs:
     camaleon_cms (2.4.4.7)
       aws-sdk (~> 2)
@@ -67,13 +67,13 @@ GEM
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
-    aws-sdk (2.10.83)
-      aws-sdk-resources (= 2.10.83)
-    aws-sdk-core (2.10.83)
+    aws-sdk (2.10.89)
+      aws-sdk-resources (= 2.10.89)
+    aws-sdk-core (2.10.89)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.10.83)
-      aws-sdk-core (= 2.10.83)
+    aws-sdk-resources (2.10.89)
+      aws-sdk-core (= 2.10.89)
     aws-sigv4 (1.0.2)
     bcrypt (3.1.11)
     bindex (0.5.0)
@@ -84,7 +84,7 @@ GEM
       rails
     cama_meta_tag (1.4)
       rails (>= 4.1.0)
-    cancancan (2.1.1)
+    cancancan (2.1.2)
     capybara (2.16.0)
       addressable
       mini_mime (>= 0.1.3)
@@ -135,7 +135,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.7.0)
       mini_mime (>= 0.1.1)
-    meta-tags (2.6.0)
+    meta-tags (2.7.0)
       actionpack (>= 3.2.0, < 5.3)
     method_source (0.9.0)
     mini_magick (4.8.0)
