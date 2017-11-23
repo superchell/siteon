@@ -488,7 +488,7 @@ uk:
         options: 'Опції'
         settings: 'Налаштування'
         options_field: 'Опції поле'
-        parent: 'Батько'
+        parent: 'Родич'
         password: 'Пароль'
         password_confirmation: 'Підтвердження пароля'
         password_protection: 'Захист пароля'
