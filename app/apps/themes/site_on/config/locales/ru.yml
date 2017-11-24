@@ -1,0 +1,62 @@
+ru:
+  camaleon_cms:
+    admin:
+      custom_field:
+        fields:
+          counters:  'Счетчик'
+          how_works: 'Как это работает'
+          prices: 'Цены'
+          services: 'Услуги'
+          top_banner: 'Баннер'
+          icon: "Ярлык"
+          icon_placeholder: "Название ярлыка"
+          title: "Заголовок"
+          title_placeholder: "Заголовок"
+          limit: "Считать до"
+          description: "Описание"
+          description_placeholder: "Добавьте текст"
+          price: "Цена"
+          price_description: "Цена"
+          image: "Изображение"
+
+      field_group:
+        groups:
+          home_page: 'Главная страница'
+          top_banner: 'Баннер на главной'
+          how_works: 'Как это работает'
+          who_we: 'О нас'
+          portfolio: 'Портфолио'
+          reviews: 'Отзывы'
+          tech: 'Технологии'
+          services: 'Услуги'
+          counters: 'Счетчики'
+          prices: 'Цены'
+          our_working: 'Как мы работаем?'
+          brands: 'Бренды'
+        fields:
+          home_page: 'Выбор главной'
+          home_page_descr: 'Укажите страницу'
+          top_banner_img: 'Изображение'
+          top_banner_img_descr: 'Загрузите баннер для главной страницы'
+          top_banner_descr_list: 'Текст для баннера'
+          top_banner_descr_list_descr: 'Добавьте текст для баннера'
+          title: 'Заголовок'
+          title_descr: "Добавьте заголовок для секции %{name}"
+          subtitle: 'Подзаголовок'
+          subtitle_descr: "Добавьте подзаголовок для секции %{name}"
+          content_blocks: "Контент-блоки"
+          content_blocks_descr: "Добавьте контент-блоки для секции %{name}"
+          description: "Описание"
+          description_descr: "Добавьте описание для секции %{name}"
+          img: "Изображение"
+          img_descr: "Добавьте изображение для секции %{name}"
+          thumb: "Миниатюра"
+          thumb_descr: "Добавьте миниатюру для секции %{name}"
+          background: "Фоновое изображение"
+          background_descr: "Добавьте фоновое изображение для секции %{name}"
+          post_type_from: "Выберите %{name} из"
+          logo: "Логотип"
+          logo_descr: "Добавьте логотип для секции %{name}"
+          left_column: "Левая колонка"
+          center_column: "Центральная колонка"
+          right_column: "Правая колонка"

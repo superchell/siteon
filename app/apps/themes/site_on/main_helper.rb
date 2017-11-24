@@ -12,7 +12,7 @@ module Themes::SiteOn::MainHelper
     # Top banner custom field
     args[:fields][:top_banner] = {
       key: 'top_banner',
-      label: 'Top Banner',
+      label: t('camaleon_cms.admin.custom_field.fields.top_banner'),
       render: theme_view('custom_field/top_banner.html.erb'),
       options: {
         required: true,
@@ -22,15 +22,15 @@ module Themes::SiteOn::MainHelper
         {
           type: 'text_box',
           key: 'dimension',
-          label: 'Dimensions',
-          description: 'Crop images with dimension (widthxheight), sample:<br>400x300 | 400x | x300 | ?400x?500 | ?1400x (? => maximum, empty => auto)'
+          label: t('camaleon_cms.admin.custom_field.fields.image_dimension'),
+          description: t('camaleon_cms.admin.custom_field.fields.image_dimension_descr')
         }
       ]
     }
     # 'How it work' block custom field
     args[:fields][:how_work_item] = {
       key: 'how_work_item',
-      label: 'How it works',
+      label: t('camaleon_cms.admin.custom_field.fields.how_works'),
       render: theme_view('custom_field/how_it_works.html.erb'),
       options: {
         required: false,
@@ -40,7 +40,7 @@ module Themes::SiteOn::MainHelper
     # 'Services' block custom field
     args[:fields][:services] = {
       key: 'services',
-      label: 'Services',
+      label: t('camaleon_cms.admin.custom_field.fields.services'),
       render: theme_view('custom_field/services.html.erb'),
       options: {
         required: false,
@@ -50,7 +50,7 @@ module Themes::SiteOn::MainHelper
     # 'Counters' block custom field
     args[:fields][:counters] = {
       key: 'counters',
-      label: 'Counters',
+      label: t('camaleon_cms.admin.custom_field.fields.counters'),
       render: theme_view('custom_field/counters.html.erb'),
       options: {
         required: false,
@@ -60,7 +60,7 @@ module Themes::SiteOn::MainHelper
     # 'Prices' block custom field
     args[:fields][:prices] = {
       key: 'prices',
-      label: 'Prices',
+      label: t('camaleon_cms.admin.custom_field.fields.prices'),
       render: theme_view('custom_field/prices.html.erb'),
       options: {
         required: false,
@@ -76,81 +76,81 @@ module Themes::SiteOn::MainHelper
     return if theme.get_option('installed_at').present?
 
     # Homepage setting field group
-    group = theme.add_field_group({name: "Home Page", slug: "home_page"})
-    group.add_field({"name"=>"Home Page", "slug"=>"home_page", description: "Select your home page"},{field_key: "posts", post_types: "all"})
+    group = theme.add_field_group({name: t('camaleon_cms.admin.field_group.groups.home_page'), slug: "home_page"})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.home_page'), "slug"=>"home_page", description: t('camaleon_cms.admin.field_group.fields.home_page_descr')},{field_key: "posts", post_types: "all"})
 
     # Header banner field group
-    group = theme.add_field_group({name: "Home Top Banner", slug: "top_banner"})
-    group.add_field({"name"=>"Top banner picture", "slug"=>"top_banner_img", description: "Add banner on home page"},{field_key: "top_banner", translate: true, multiple: false})
-    group.add_field({"name"=>"Top banner list", "slug"=>"top_banner_descr_list", description: "Add banner description on home page"},{field_key: "text_box", translate: true, multiple: true})
+    group = theme.add_field_group({name: t('camaleon_cms.admin.field_group.groups.top_banner'), slug: "top_banner"})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.top_banner_img'), "slug"=>"top_banner_img", description: t('camaleon_cms.admin.field_group.fields.top_banner_img_descr')},{field_key: "top_banner", translate: true, multiple: false})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.top_banner_descr_list'), "slug"=>"top_banner_descr_list", description: t('camaleon_cms.admin.field_group.fields.top_banner_descr_list_descr')},{field_key: "text_box", translate: true, multiple: true})
 
     # "How it works" block field group
-    group = theme.add_field_group({name: "How it works?", slug: "how_works"})
-    group.add_field({"name"=>"Title", "slug"=>"how_works_title", description: "Add 'How it works' title"}, {field_key: "text_box", translate: true})
-    group.add_field({"name"=>"Second Title", "slug"=>"how_works_title2", description: "Add 'How it works' second title"}, {field_key: "text_box", translate: true})
-    group.add_field({"name"=>"Content block items", "slug"=>"how_works_items", description: "Add 'How it works' content items"}, {field_key: "how_work_item", translate: true, multiple: true})
+    group = theme.add_field_group({name: t('camaleon_cms.admin.field_group.groups.how_works'), slug: "how_works"})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.title'), "slug"=>"how_works_title", description: t('camaleon_cms.admin.field_group.fields.title_descr', name: t('camaleon_cms.admin.field_group.groups.how_works'))}, {field_key: "text_box", translate: true})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.subtitle'), "slug"=>"how_works_title2", description: t('camaleon_cms.admin.field_group.fields.subtitle_descr', name: t('camaleon_cms.admin.field_group.groups.how_works'))}, {field_key: "text_box", translate: true})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.content_blocks'), "slug"=>"how_works_items", description: t('camaleon_cms.admin.field_group.fields.content_blocks_descr', name: t('camaleon_cms.admin.field_group.groups.how_works'))}, {field_key: "how_work_item", translate: true, multiple: true})
 
     # "Who we are" block field group
-    group = theme.add_field_group({name: "Who we are?", slug: "who_we"})
-    group.add_field({"name"=>"Title", "slug"=>"who_we_title", description: "Add 'Who we are' title"}, {field_key: "text_box", translate: true})
-    group.add_field({"name"=>"Description", "slug"=>"who_we_descr", description: "Add 'Who we are' description"}, {field_key: "text_area", translate: true})
-    group.add_field({"name"=>"Big banner", "slug"=>"who_we_big_banner", description: "Add 'Who we are' block banner image"}, {field_key: "image", multiple: false, required: false })
+    group = theme.add_field_group({name: t('camaleon_cms.admin.field_group.groups.who_we'), slug: "who_we"})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.title'), "slug"=>"who_we_title", description: t('camaleon_cms.admin.field_group.fields.title_descr', name: t('camaleon_cms.admin.field_group.groups.who_we'))}, {field_key: "text_box", translate: true})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.description'), "slug"=>"who_we_descr", description: t('camaleon_cms.admin.field_group.fields.description_descr', name: t('camaleon_cms.admin.field_group.groups.who_we'))}, {field_key: "text_area", translate: true})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.img'), "slug"=>"who_we_big_banner", description: t('camaleon_cms.admin.field_group.fields.img', name: t('camaleon_cms.admin.field_group.groups.who_we'))}, {field_key: "image", multiple: false, required: false })
 
     # Portfolio block
-    group = theme.add_field_group({name: "Portfolio", slug: "portfolio"})
-    group.add_field({"name"=>"Background image", "slug"=>"portfolio_background", description: "Add 'Portfolio' block image"}, {field_key: "image", multiple: false, required: false })
-    group.add_field({"name"=>"Title", "slug"=>"portfolio_title", description: "Add 'Portfolio' block title"}, {field_key: "text_box", translate: true})
-    group.add_field({"name"=>"Second Title", "slug"=>"portfolio_title2", description: "Add 'Portfolio' block second title"}, {field_key: "text_box", translate: true})
-    group.add_field({"name"=>"Recent portfolio from", "slug"=>"portfolio_post_type"}, {field_key: "select_eval", command: "camaleon_post_types_list_select"})
+    group = theme.add_field_group({name: t('camaleon_cms.admin.field_group.groups.portfolio'), slug: "portfolio"})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.background'), "slug"=>"portfolio_background", description: t('camaleon_cms.admin.field_group.fields.background_descr', name: t('camaleon_cms.admin.field_group.groups.portfolio'))}, {field_key: "image", multiple: false, required: false })
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.title'), "slug"=>"portfolio_title", description: t('camaleon_cms.admin.field_group.fields.title_descr', name: t('camaleon_cms.admin.field_group.groups.portfolio'))}, {field_key: "text_box", translate: true})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.subtitle'), "slug"=>"portfolio_title2", description: t('camaleon_cms.admin.field_group.fields.subtitle_descr', name: t('camaleon_cms.admin.field_group.groups.portfolio'))}, {field_key: "text_box", translate: true})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.post_type_from', name: t('camaleon_cms.admin.field_group.groups.portfolio')), "slug"=>"portfolio_post_type"}, {field_key: "select_eval", command: "camaleon_post_types_list_select"})
 
     # Reviews block
-    group = theme.add_field_group({name: "Reviews", slug: "reviews"})
-    group.add_field({"name"=>"Title", "slug"=>"reviews_title", description: "Add Reviews block title"}, {field_key: "text_box", translate: true})
-    group.add_field({"name"=>"Description", "slug"=>"reviews_descr", description: "Add Reviews block description"}, {field_key: "text_area", translate: true})
-    group.add_field({"name"=>"Recent reviews from", "slug"=>"reviews_post_type"}, {field_key: "select_eval", command: "camaleon_post_types_list_select"})
+    group = theme.add_field_group({name: t('camaleon_cms.admin.field_group.groups.reviews'), slug: "reviews"})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.title'), "slug"=>"reviews_title", description: t('camaleon_cms.admin.field_group.fields.title_descr', name: t('camaleon_cms.admin.field_group.groups.reviews'))}, {field_key: "text_box", translate: true})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.description'), "slug"=>"reviews_descr", description: t('camaleon_cms.admin.field_group.fields.description_descr', name: t('camaleon_cms.admin.field_group.groups.reviews'))}, {field_key: "text_area", translate: true})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.post_type_from', name: t('camaleon_cms.admin.field_group.groups.reviews')), "slug"=>"reviews_post_type"}, {field_key: "select_eval", command: "camaleon_post_types_list_select"})
 
     # Technologies block
-    group = theme.add_field_group({name: "Technologies", slug: "tech"})
-    group.add_field({"name"=>"Title", "slug"=>"tech_title", description: "Add Technologies block title"}, {field_key: "text_box", translate: true})
-    group.add_field({"name"=>"Description", "slug"=>"tech_descr", description: "Add Technologies block description"}, {field_key: "text_area", translate: true})
-    group.add_field({"name"=>"Big banner", "slug"=>"tech_big_banner", description: "Add big banner image"}, {field_key: "image", multiple: false, required: false })
-    group.add_field({"name"=>"Small banner", "slug"=>"tech_small_banner", description: "Add small banner image"}, {field_key: "image", multiple: false, required: false })
-    group.add_field({"name"=>"Technology logo", "slug"=>"tech_logo", description: "Add technology logo"}, {field_key: "image", multiple: true, required: false })
+    group = theme.add_field_group({name: t('camaleon_cms.admin.field_group.groups.tech'), slug: "tech"})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.title'), "slug"=>"tech_title", description: t('camaleon_cms.admin.field_group.fields.title_descr', name: t('camaleon_cms.admin.field_group.groups.tech'))}, {field_key: "text_box", translate: true})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.description'), "slug"=>"tech_descr", description: t('camaleon_cms.admin.field_group.fields.description_descr', name: t('camaleon_cms.admin.field_group.groups.reviews'))}, {field_key: "text_area", translate: true})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.img'), "slug"=>"tech_big_banner", description: t('camaleon_cms.admin.field_group.fields.img_descr', name: t('camaleon_cms.admin.field_group.groups.tech'))}, {field_key: "image", multiple: false, required: false })
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.thumb'), "slug"=>"tech_small_banner", description: t('camaleon_cms.admin.field_group.fields.thumb_descr', name: t('camaleon_cms.admin.field_group.groups.tech'))}, {field_key: "image", multiple: false, required: false })
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.logo'), "slug"=>"tech_logo", description: t('camaleon_cms.admin.field_group.fields.logo_descr', name: t('camaleon_cms.admin.field_group.groups.tech'))}, {field_key: "image", multiple: true, required: false })
 
     # Services block
-    group = theme.add_field_group({name: "Services", slug: "services"})
-    group.add_field({"name"=>"Title", "slug"=>"services_title", description: "Add Services block title"}, {field_key: "text_box", translate: true})
-    group.add_field({"name"=>"Description", "slug"=>"services_descr", description: "Add Services block description"}, {field_key: "text_area", translate: true})
-    group.add_field({"name"=>"Services items", "slug"=>"services_items", description: "Add Services block item"},{field_key: "services", translate: true, multiple: true})
+    group = theme.add_field_group({name: t('camaleon_cms.admin.field_group.groups.services'), slug: "services"})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.title'), "slug"=>"services_title", description: t('camaleon_cms.admin.field_group.fields.title_descr', name: t('camaleon_cms.admin.field_group.groups.services'))}, {field_key: "text_box", translate: true})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.description'), "slug"=>"services_descr", description: t('camaleon_cms.admin.field_group.fields.description_descr', name: t('camaleon_cms.admin.field_group.groups.services'))}, {field_key: "text_area", translate: true})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.content_blocks'), "slug"=>"services_items", description: t('camaleon_cms.admin.field_group.fields.content_blocks_descr', name: t('camaleon_cms.admin.field_group.groups.services'))},{field_key: "services", translate: true, multiple: true})
 
     # Counters block
-    group = theme.add_field_group({name: "Counters", slug: "counters"})
-    group.add_field({"name"=>"Banner", "slug"=>"counters_banner", description: "Add Counters banner image"}, {field_key: "image", multiple: false, required: false })
-    group.add_field({"name"=>"Description", "slug"=>"counters_descr", description: "Add Counters block description"}, {field_key: "text_area", translate: true})
-    group.add_field({"name"=>"Counters items", "slug"=>"counters_items", description: "Add Counters block item"},{field_key: "counters", translate: true, multiple: true})
+    group = theme.add_field_group({name: t('camaleon_cms.admin.field_group.groups.counters'), slug: "counters"})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.img'), "slug"=>"counters_banner", description: t('camaleon_cms.admin.field_group.fields.img_descr', name: t('camaleon_cms.admin.field_group.groups.counters'))}, {field_key: "image", multiple: false, required: false })
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.description'), "slug"=>"counters_descr", description: t('camaleon_cms.admin.field_group.fields.description_descr', name: t('camaleon_cms.admin.field_group.groups.counters'))}, {field_key: "text_area", translate: true})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.content_blocks'), "slug"=>"counters_items", description: t('camaleon_cms.admin.field_group.fields.content_blocks_descr', name: t('camaleon_cms.admin.field_group.groups.counters'))},{field_key: "counters", translate: true, multiple: true})
 
     # Prices block
-    group = theme.add_field_group({name: "Prices", slug: "prices"})
-    group.add_field({"name"=>"Title", "slug"=>"prices_title", description: "Add Prices block title"}, {field_key: "text_box", translate: true})
-    group.add_field({"name"=>"Description", "slug"=>"prices_descr", description: "Add Prices block description"}, {field_key: "text_area", translate: true})
-    group.add_field({"name"=>"Prices items", "slug"=>"prices_items", description: "Add Prices block item"},{field_key: "prices", translate: true, multiple: true})
+    group = theme.add_field_group({name: t('camaleon_cms.admin.field_group.groups.prices'), slug: "prices"})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.title'), "slug"=>"prices_title", description: t('camaleon_cms.admin.field_group.groups.prices', name: t('camaleon_cms.admin.field_group.groups.prices'))}, {field_key: "text_box", translate: true})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.description'), "slug"=>"prices_descr", description: t('camaleon_cms.admin.field_group.fields.description_descr', name: t('camaleon_cms.admin.field_group.groups.prices'))}, {field_key: "text_area", translate: true})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.content_blocks'), "slug"=>"prices_items", description: t('camaleon_cms.admin.field_group.fields.content_blocks_descr', name: t('camaleon_cms.admin.field_group.groups.prices'))},{field_key: "prices", translate: true, multiple: true})
 
     # Our working block
-    group = theme.add_field_group({name: "Our working", slug: "our_working"})
-    group.add_field({"name"=>"Title", "slug"=>"our_working_title", description: "Add Our working block title"}, {field_key: "text_box", translate: true})
-    group.add_field({"name"=>"Description", "slug"=>"our_working_descr", description: "Add Our working block description"}, {field_key: "text_area", translate: true})
-    group.add_field({"name"=>"Banner", "slug"=>"our_working_banner", description: "Add Our working banner image"}, {field_key: "image", multiple: false, required: false })
-    group.add_field({"name"=>"Our working item", "slug"=>"our_working_item", description: "Add Our working block item"},{field_key: "top_banner", translate: true, multiple: true})
+    group = theme.add_field_group({name: t('camaleon_cms.admin.field_group.groups.our_working'), slug: "our_working"})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.title'), "slug"=>"our_working_title", description: t('camaleon_cms.admin.field_group.fields.title_descr', name: t('camaleon_cms.admin.field_group.groups.our_working'))}, {field_key: "text_box", translate: true})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.description'), "slug"=>"our_working_descr", description: t('camaleon_cms.admin.field_group.fields.description_descr', name: t('camaleon_cms.admin.field_group.groups.our_working'))}, {field_key: "text_area", translate: true})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.img'), "slug"=>"our_working_banner", description: t('camaleon_cms.admin.field_group.fields.img_descr', name: t('camaleon_cms.admin.field_group.groups.our_working'))}, {field_key: "image", multiple: false, required: false })
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.content_blocks'), "slug"=>"our_working_item", description: t('camaleon_cms.admin.field_group.fields.content_blocks_descr', name: t('camaleon_cms.admin.field_group.groups.our_working'))},{field_key: "top_banner", translate: true, multiple: true})
 
     # Brands block
-    group = theme.add_field_group({name: "Brands", slug: "brands"})
-    group.add_field({"name"=>"Brands item", "slug"=>"brands_item", description: "Add Brand logo"}, {field_key: "image", multiple: true, required: false })
+    group = theme.add_field_group({name: t('camaleon_cms.admin.field_group.groups.brands'), slug: "brands"})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.logo'), "slug"=>"brands_item", description: t('camaleon_cms.admin.field_group.fields.logo_descr', name: t('camaleon_cms.admin.field_group.groups.brands'))}, {field_key: "image", multiple: true, required: false })
 
     # Footer
     group = theme.add_field_group({name: "Footer", slug: "footer"})
-    group.add_field({"name"=>"Column Left", "slug"=>"footer_left"}, {field_key: "editor", translate: true, default_value: "<h4>My Bunker</h4><p>Some Address 987,<br> +34 9054 5455, <br> Madrid, Spain. </p>"})
-    group.add_field({"name"=>"Column Center", "slug"=>"footer_center"}, {field_key: "editor", translate: true, default_value: "<h4>My Links</h4> <p><a href='#'>Dribbble</a><br> <a href='#'>Twitter</a><br> <a href='#'>Facebook</a></p>"})
-    group.add_field({"name"=>"Column Right", "slug"=>"footer_right"}, {field_key: "editor", translate: true, default_value: "<h4>About Theme</h4><p>This cute theme was created to showcase your work in a simple way. Use it wisely.</p>"})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.left_column'), "slug"=>"footer_left"}, {field_key: "editor", translate: true, default_value: "<h4>My Bunker</h4><p>Some Address 987,<br> +34 9054 5455, <br> Madrid, Spain. </p>"})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.center_column'), "slug"=>"footer_center"}, {field_key: "editor", translate: true, default_value: "<h4>My Links</h4> <p><a href='#'>Dribbble</a><br> <a href='#'>Twitter</a><br> <a href='#'>Facebook</a></p>"})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.right_column'), "slug"=>"footer_right"}, {field_key: "editor", translate: true, default_value: "<h4>About Theme</h4><p>This cute theme was created to showcase your work in a simple way. Use it wisely.</p>"})
 
   end
 

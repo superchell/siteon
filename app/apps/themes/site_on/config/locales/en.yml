@@ -1,0 +1,66 @@
+en:
+  camaleon_cms:
+    admin:
+      custom_field:
+        fields:
+          counters:  'Counters'
+          how_works: 'How it works'
+          prices: 'Prices'
+          services: 'Services'
+          top_banner:  'Banner'
+          icon: "Icon"
+          icon_placeholder: "Icon name"
+          title: "Title"
+          title_placeholder: "Title"
+          limit: "Counter limit"
+          description: "Description"
+          description_placeholder: "Description text"
+          price: "Price"
+          price_description: "Price"
+          image: "Image"
+
+      field_group:
+        groups:
+          home_page: 'Home page'
+          top_banner: 'Home Top Banner'
+          how_works: 'How it works'
+          who_we: 'Who we are?'
+          portfolio: 'Portfolio'
+          reviews: 'Reviews'
+          tech: 'Technologies'
+          services: 'Services'
+          counters: 'Counters'
+          prices: 'Prices'
+          our_working: 'Our working'
+          brands: 'brands'
+        fields:
+          home_page: 'Home page'
+          home_page_descr: 'Choose page'
+          top_banner_img: 'Image'
+          top_banner_img_descr: 'Add banner on home page'
+          top_banner_descr_list: 'Banner description'
+          top_banner_descr_list_descr: 'Add banner description on home page'
+          title: 'Title'
+          title_descr: "Add %{name} section title"
+          subtitle: "Subtitle"
+          subtitle_descr: "Add %{name} section subtitle"
+          content_blocks: "Content-blocks"
+          content_blocks_descr: "Add %{name} content-blocks"
+          description: "Description"
+          description_descr: "Add %{name} section description"
+          img: "Image"
+          img_descr: "Add %{name} section image"
+          thumb: "Thumbnail"
+          thumb_descr: "Add %{name} section thumbnail"
+          background: "Background image"
+          background_descr: "Add %{name} section background image"
+          post_type_from: "Recent %{name} from"
+          logo: "Logo"
+          logo_descr: "Add %{name} section logo item"
+          left_column: "Left column"
+          center_column: "Center column"
+          right_column: "Right column"
+
+
+
+
