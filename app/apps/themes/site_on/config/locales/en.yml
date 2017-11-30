@@ -18,6 +18,7 @@ en:
           price: "Price"
           price_description: "Price"
           image: "Image"
+          shortly_view: "Short content"
 
       field_group:
         groups:
@@ -32,7 +33,16 @@ en:
           counters: 'Counters'
           prices: 'Prices'
           our_working: 'Our working'
-          brands: 'brands'
+          brands: 'Brands'
+          portfolio_settings: "Portfolio page settings"
+          portfolio_top: "Top section"
+          portfolio_purpose: "Project Purpose"
+          portfolio_mobile_view: "Mobile view"
+          portfolio_features: "Project features"
+          portfolio_results: "Results"
+          portfolio_bottom: "Bottom section"
+          reviews_fields: "Reviews additional fields"
+
         fields:
           home_page: 'Home page'
           home_page_descr: 'Choose page'
@@ -46,9 +56,12 @@ en:
           subtitle_descr: "Add %{name} section subtitle"
           content_blocks: "Content-blocks"
           content_blocks_descr: "Add %{name} content-blocks"
+          caption: "Caption"
           description: "Description"
+          description2: "Additional description"
           description_descr: "Add %{name} section description"
           img: "Image"
+          img_caption: "Image caption"
           img_descr: "Add %{name} section image"
           thumb: "Thumbnail"
           thumb_descr: "Add %{name} section thumbnail"
@@ -60,6 +73,34 @@ en:
           left_column: "Left column"
           center_column: "Center column"
           right_column: "Right column"
+          project_type: "Project type"
+          project_type_descr: "Project type choice"
+          potfolio_background1: "Background color 1"
+          potfolio_background2: "Background color 2"
+          potfolio_background3: "Background color 3"
+          potfolio_button: "Button color"
+          portfolio_logo: "Logo"
+          potfolio_url: "Website URL"
+          shortly_descr: "Shortly description"
+          dynamic_list: "Dynamic list"
+
+    post_type:
+      name:
+        homepage: "Home page"
+        portfolio: "Portfolio"
+        reviews: "Client reviews"
+      descr:
+        homepage: "Home page management"
+        portfolio: "Portfolio managemrnt"
+
+    project_type:
+      ecommerce: "Ecommerce"
+      card: "Business card site"
+      landing: "Landing"
+      catalog: "Catalogue site"
+      corp: "Corporate website"
+
+
 
 
 

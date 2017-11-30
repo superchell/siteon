@@ -18,6 +18,7 @@ ru:
           price: "Цена"
           price_description: "Цена"
           image: "Изображение"
+          shortly_view: "Краткое описание"
 
       field_group:
         groups:
@@ -33,6 +34,15 @@ ru:
           prices: 'Цены'
           our_working: 'Как мы работаем?'
           brands: 'Бренды'
+          portfolio_settings: "Настройки страницы"
+          portfolio_top: "Заглавный блок"
+          portfolio_purpose: "Цели проекта"
+          portfolio_mobile_view: "Мобильная версия"
+          portfolio_features: "Особенности проекта"
+          portfolio_results: "Результаты"
+          portfolio_bottom: "Нижний блок"
+          reviews_fields: "Дополнительные поля"
+
         fields:
           home_page: 'Выбор главной'
           home_page_descr: 'Укажите страницу'
@@ -46,9 +56,12 @@ ru:
           subtitle_descr: "Добавьте подзаголовок для секции %{name}"
           content_blocks: "Контент-блоки"
           content_blocks_descr: "Добавьте контент-блоки для секции %{name}"
+          caption: "Подпись"
           description: "Описание"
+          description2: "Дополнительное описание"
           description_descr: "Добавьте описание для секции %{name}"
           img: "Изображение"
+          img_caption: "Подпись к изображению"
           img_descr: "Добавьте изображение для секции %{name}"
           thumb: "Миниатюра"
           thumb_descr: "Добавьте миниатюру для секции %{name}"
@@ -60,3 +73,29 @@ ru:
           left_column: "Левая колонка"
           center_column: "Центральная колонка"
           right_column: "Правая колонка"
+          project_type: "Тип проекта"
+          project_type_descr: "Выберите тип проекта"
+          potfolio_background1: "Цвет фона 1"
+          potfolio_background2: "Цвет фона 2"
+          potfolio_background3: "Цвет фона 3"
+          potfolio_button: "Цвет кнопки"
+          portfolio_logo: "Логотип"
+          potfolio_url: "Адрес сайта"
+          shortly_descr: "Краткое описание"
+          dynamic_list: "Динамический список"
+
+    post_type:
+      name:
+        homepage: "Главная страница"
+        portfolio: "Портфолио"
+        reviews: "Отзывы клиентов"
+      descr:
+        homepage: "Управление главной страницей"
+        portfolio: "Страницы портфолио"
+
+    project_type:
+          ecommerce: "Интернет-магазин"
+          card: "Сайт-визитка"
+          landing: "Лендинг"
+          catalog: "Сайт-каталог"
+          corp: "Корпоративный сайт"

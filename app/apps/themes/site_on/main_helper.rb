@@ -27,6 +27,24 @@ module Themes::SiteOn::MainHelper
         }
       ]
     }
+    # Shortly view custom field
+    args[:fields][:shortly_view] = {
+      key: 'shortly_view',
+      label: t('camaleon_cms.admin.custom_field.fields.shortly_view'),
+      render: theme_view('custom_field/shortly_view.html.erb'),
+      options: {
+        required: true,
+        multiple: true,
+      },
+      extra_fields:[
+        {
+          type: 'text_box',
+          key: 'dimension',
+          label: t('camaleon_cms.admin.custom_field.fields.image_dimension'),
+          description: t('camaleon_cms.admin.custom_field.fields.image_dimension_descr')
+        }
+      ]
+    }
     # 'How it work' block custom field
     args[:fields][:how_work_item] = {
       key: 'how_work_item',
@@ -75,6 +93,34 @@ module Themes::SiteOn::MainHelper
   def site_on_on_install_theme(theme)
     return if theme.get_option('installed_at').present?
 
+    # Home page post type
+    install_homepage
+
+    # Portfolio post type
+    install_portfolio
+
+    # Reviews
+    install_reviews
+
+
+    # Template custom fields
+    install_theme_settings(theme)
+
+  end
+
+  # callback executed after theme uninstalled
+  def site_on_on_uninstall_theme(theme)
+    # theme.get_field_groups().destroy_all
+    # theme.destroy
+  end
+
+  def camaleon_post_types_list_select
+    res = []
+    current_site.the_post_types.decorate.each {|p| res << "<option value='#{p.the_slug}'>#{p.the_title}</option>" }
+    res.join("").html_safe
+  end
+
+  def install_theme_settings(theme)
     # Homepage setting field group
     group = theme.add_field_group({name: t('camaleon_cms.admin.field_group.groups.home_page'), slug: "home_page"})
     group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.home_page'), "slug"=>"home_page", description: t('camaleon_cms.admin.field_group.fields.home_page_descr')},{field_key: "posts", post_types: "all"})
@@ -93,7 +139,7 @@ module Themes::SiteOn::MainHelper
     # "Who we are" block field group
     group = theme.add_field_group({name: t('camaleon_cms.admin.field_group.groups.who_we'), slug: "who_we"})
     group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.title'), "slug"=>"who_we_title", description: t('camaleon_cms.admin.field_group.fields.title_descr', name: t('camaleon_cms.admin.field_group.groups.who_we'))}, {field_key: "text_box", translate: true})
-    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.description'), "slug"=>"who_we_descr", description: t('camaleon_cms.admin.field_group.fields.description_descr', name: t('camaleon_cms.admin.field_group.groups.who_we'))}, {field_key: "text_area", translate: true})
+    group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.description'), "slug"=>"who_we_descr", description: t('camaleon_cms.admin.field_group.fields.description_descr', name: t('camaleon_cms.admin.field_group.groups.who_we'))}, {field_key: "editor", translate: true})
     group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.img'), "slug"=>"who_we_big_banner", description: t('camaleon_cms.admin.field_group.fields.img', name: t('camaleon_cms.admin.field_group.groups.who_we'))}, {field_key: "image", multiple: false, required: false })
 
     # Portfolio block
@@ -154,15 +200,128 @@ module Themes::SiteOn::MainHelper
 
   end
 
-  # callback executed after theme uninstalled
-  def site_on_on_uninstall_theme(theme)
-    theme.get_field_groups().destroy_all
-    theme.destroy
+  def install_homepage
+    hp = CamaleonCms::TermTaxonomy.where(slug: 'home').first
+    if hp.nil?
+      hp = current_site.post_types.create(name: t('camaleon_cms.post_type.name.homepage'), slug: "home", description: t('camaleon_cms.post_type.descr.homepage'))
+      hp.set_settings({
+                        has_category: false,
+                        has_tags: false,
+                        has_summary:false,
+                        has_content: false,
+                        has_comments: false,
+                        has_picture: false,
+                        has_template: true,
+                        has_seo: true,
+                        not_deleted: false,
+                        has_layout: false,
+                        icon: 'home',
+                        has_single_category: false,
+                        has_featured: false,
+                        has_parent_structure: false
+                      })
+    end
   end
 
-  def camaleon_post_types_list_select
-    res = []
-    current_site.the_post_types.decorate.each {|p| res << "<option value='#{p.the_slug}'>#{p.the_title}</option>" }
-    res.join("").html_safe
+  def install_portfolio
+    pp = CamaleonCms::TermTaxonomy.where(slug: 'portfolio').first
+    if pp.nil?
+      pp = current_site.post_types.create(name: t('camaleon_cms.post_type.name.portfolio'), slug: "portfolio", description: t('camaleon_cms.post_type.descr.portfolio'))
+      pp.set_settings({
+                        has_category: false,
+                        has_tags: false,
+                        has_summary:false,
+                        has_content: false,
+                        has_comments: false,
+                        has_picture: true,
+                        has_template: true,
+                        has_seo: true,
+                        not_deleted: false,
+                        has_layout: false,
+                        icon: 'vcard',
+                        has_single_category: false,
+                        has_featured: false,
+                        has_parent_structure: false
+                      })
+
+      # Portfolio settings group
+      pp_group = pp.add_field_group({name: t('camaleon_cms.admin.field_group.groups.portfolio_settings'), slug: "portfolio_settings"})
+
+      # TODO remove this hard coding from typicaly package
+      project_types = [{title: t('camaleon_cms.project_type.ecommerce'), value: "ecommerce"}, {title: t('camaleon_cms.project_type.card'), value: "card"}, {title: t('camaleon_cms.project_type.landing'), value: "landing"}, {title: t('camaleon_cms.project_type.catalog'), value: "catalog"}, {title: t('camaleon_cms.project_type.corp'), value: "corp"}]
+
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.project_type'), "slug"=>"project_type", description: t('camaleon_cms.admin.field_group.fields.project_type_descr')},{field_key: "select", translate: true, multiple: false, multiple_options: project_types})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.potfolio_background1'), "slug"=>"potfolio_background1"},{field_key: "colorpicker", multiple: false, color_format: "hex"})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.potfolio_background2'), "slug"=>"potfolio_background2"},{field_key: "colorpicker", multiple: false, color_format: "hex"})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.potfolio_background3'), "slug"=>"potfolio_background3"},{field_key: "colorpicker", multiple: false, color_format: "hex"})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.potfolio_button'), "slug"=>"potfolio_button"},{field_key: "colorpicker", multiple: false, color_format: "hex"})
+
+      # Top block
+      pp_group = pp.add_field_group({name: t('camaleon_cms.admin.field_group.groups.portfolio_top'), slug: "portfolio_top"})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.portfolio_logo'), "slug"=>"portfolio_logo"},{field_key: "image", multiple: false})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.potfolio_url'), "slug"=>"potfolio_url"},{field_key: "url", multiple: false})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.shortly_descr'), "slug"=>"portfolio_top_descr"}, {field_key: "editor", translate: true})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.img'), "slug"=>"portfolio_top_img"},{field_key: "image", multiple: false})
+
+      # Portfolio purpose block
+      pp_group = pp.add_field_group({name: t('camaleon_cms.admin.field_group.groups.portfolio_purpose'), slug: "portfolio_purpose"})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.img'), "slug"=>"purpose_img"},{field_key: "image", multiple: false})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.img_caption'), "slug"=>"purpose_img_caption"}, {field_key: "text_box", translate: true, multiple: false})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.shortly_descr'), "slug"=>"purpose_descr"}, {field_key: "editor", translate: true})
+
+      # Mobile view block
+      pp_group = pp.add_field_group({name: t('camaleon_cms.admin.field_group.groups.portfolio_mobile_view'), slug: "portfolio_mobile_view"})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.shortly_descr'), "slug"=>"mobile_view_descr"}, {field_key: "editor", translate: true})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.thumb'), "slug"=>"mobile_view_thumb"},{field_key: "image", multiple: false})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.img'), "slug"=>"mobile_view_img"},{field_key: "image", multiple: false})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.img_caption'), "slug"=>"purpose_img_caption"}, {field_key: "text_box", translate: true, multiple: false})
+
+      # Features block
+      pp_group = pp.add_field_group({name: t('camaleon_cms.admin.field_group.groups.portfolio_features'), slug: "portfolio_features"})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.title'), "slug"=>"features_title"}, {field_key: "text_box", translate: true})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.shortly_descr'), "slug"=>"features_descr"}, {field_key: "editor", translate: true})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.img'), "slug"=>"features_img"},{field_key: "image", multiple: false})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.description2'), "slug"=>"features_descr2"}, {field_key: "editor", translate: true})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.description2'), "slug"=>"features_descr2"}, {field_key: "editor", translate: true})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.dynamic_list'), "slug"=>"features_dynamic_list"}, {field_key: "shortly_view", translate: true, multiple: true})
+
+      # Results block
+      pp_group = pp.add_field_group({name: t('camaleon_cms.admin.field_group.groups.portfolio_results'), slug: "portfolio_results"})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.title'), "slug"=>"results_title"}, {field_key: "text_box", translate: true})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.dynamic_list'), "slug"=>"results_dynamic_list"}, {field_key: "shortly_view", translate: true, multiple: true})
+
+      # Bottom block
+      pp_group = pp.add_field_group({name: t('camaleon_cms.admin.field_group.groups.portfolio_bottom'), slug: "portfolio_bottom"})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.title'), "slug"=>"bottom_title"}, {field_key: "text_box", translate: true})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.img'), "slug"=>"bottom_img"},{field_key: "image", multiple: false})
+
+    end
   end
+
+  def install_reviews
+    rp = CamaleonCms::TermTaxonomy.where(slug: 'reviews').first
+    if rp.nil?
+      rp = current_site.post_types.create(name: t('camaleon_cms.post_type.name.reviews'), slug: "reviews", description: t('camaleon_cms.post_type.name.reviews'))
+      rp.set_settings({
+                        has_category: false,
+                        has_tags: false,
+                        has_summary:false,
+                        has_content: true,
+                        has_comments: false,
+                        has_picture: true,
+                        has_template: true,
+                        has_seo: false,
+                        not_deleted: false,
+                        has_layout: false,
+                        icon: 'comment',
+                        has_single_category: false,
+                        has_featured: false,
+                        has_parent_structure: false
+                      })
+
+      rp_group = rp.add_field_group({name: t('camaleon_cms.admin.field_group.groups.reviews_fields'), slug: "reviews_fields"})
+      rp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.title'), "slug"=>"reviews_caption"}, {field_key: "text_box", translate: true})
+    end
+  end
+
 end
