@@ -1,0 +1,43 @@
+<% portfolio_items = current_site.the_posts(current_theme.get_field("portfolio_post_type")).latest.limit(12).decorate %>
+
+<!-- Great Screenshots -->
+
+<% if portfolio_items.size > 0 %>
+
+<section id="great-screenshots" class="overview-block-ptb iq-bg iq-bg-fixed iq-over-blue-80 iq-screenshots" style="<%= get_background_image(current_theme.the_field('portfolio_background')) %>">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="heading-title white">
+          <h3 class="title iq-tw-7"><%= current_theme.the_field('portfolio_title')%></h3>
+          <p class="iq-font-white"><%= current_theme.the_field('portfolio_title2')%></p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="portfolio-container">
+
+        <% portfolio_items.each do |portfolio| %>
+          <% if portfolio.has_thumb? %>
+            <div class="portfolio-item">
+              <div class="portfolio-item-wrapper">
+                <%= image_tag portfolio.the_image_url.cama_parse_image_version('360x263'), alt: portfolio.the_title %>
+                <span class="portfolio-item__title">
+                  <span class="portfolio-item__title-project">
+                    <%= raw portfolio.the_title %>
+                  </span>
+                  <span class="portfolio-item__title-type">
+                    <%= raw t("camaleon_cms.project_type.#{portfolio.get_field("project_type")}") %>
+                  </span>
+                </span>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Great Screenshots END -->
+<% end %>

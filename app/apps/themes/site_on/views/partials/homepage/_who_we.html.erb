@@ -1,0 +1,32 @@
+<!-- Who is who ? -->
+
+<section id="who-we" class="overview-block-ptb how-works">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1 class="iq-tw-6 iq-mb-25"><%= current_theme.the_field('who_we_title') %></h1>
+        <%= current_theme.the_field('who_we_descr').html_safe %>
+        <a href="#" class="button iq-mt-10">Заказать сайт прямо сейчас</a>
+      </div>
+      <div class="col-md-6">
+        <img class="iq-works-img" src="<%= current_theme.the_field('who_we_big_banner') %>" alt="drive01">
+      </div>
+    </div>
+  </div>
+  <div class="iq-objects">
+                <span class="iq-objects-01">
+                        <img src="<%= theme_img_url "drive/02.png" %>" alt="drive02">
+                    </span>
+    <span class="iq-objects-02" data-bottom="transform:translatey(50px)" data-top="transform:translatey(-100px);">
+                        <img src="<%= theme_img_url "drive/03.png" %>" alt="drive02">
+                    </span>
+    <span class="iq-objects-03" data-bottom="transform:translatex(50px)" data-top="transform:translatex(-100px);">
+                        <img src="<%= theme_img_url "drive/04.png" %>" alt="drive02">
+                    </span>
+    <span class="iq-objects-04 iq-fadebounce">
+                        <span class="iq-round"></span>
+                </span>
+  </div>
+</section>
+
+<!-- Who is who ? END -->

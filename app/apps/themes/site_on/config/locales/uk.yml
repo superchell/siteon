@@ -19,6 +19,7 @@ uk:
           price_description: "Вкажіть ціну"
           image: "Зображення"
           shortly_view: "Короткий зміст"
+          list: "Список"
 
       field_group:
         groups:
@@ -94,8 +95,14 @@ uk:
         portfolio: "Сторінки портфоліо"
 
     project_type:
-              ecommerce: "Інтернет-магазин"
-              card: "Сайт-визитка"
-              landing: "Лендінг"
-              catalog: "Сайт-каталог"
-              corp: "Корпоративний сайт"
+      ecommerce: "Інтернет-магазин"
+      card: "Сайт-визитка"
+      landing: "Лендінг"
+      catalog: "Сайт-каталог"
+      corp: "Корпоративний сайт"
+
+    buttons:
+      purchase: "Замовити %{name}"
+      callme_title: "Замовити дзвінок"
+      callme_placeholder: "Введіть ваш номер телефону"
+      callme: "Зателефонуйте мені"

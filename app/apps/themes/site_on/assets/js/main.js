@@ -10,5 +10,17 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require camaleon_cms/bootstrap.min.js
+//= require ./jquery.min
+//= require ./owl-carousel/owl.carousel.min
+//= require ./counter/jquery.countTo
+//= require ./jquery.appear
+//= require ./retina.min
+//= require ./wow.min
+//= require ./skrollr.min
+//= require ./particles/particles.min
+//= require ./particles/app
+//= require ./bootstrap.min
+//= require ./style-customizer
+//= require ./jquery.nicescroll.min
+//= require ./intlTelInput.min
+//= require ./custom.js.erb

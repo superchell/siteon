@@ -1,0 +1,45 @@
+<% reviews_items = current_site.the_posts(current_theme.get_field("reviews_post_type")).latest.limit(12).decorate %>
+
+<% if reviews_items.size > 0 %>
+
+<section class="overview-block-ptb iq-loved-customers">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="heading-title iq-mt-50">
+          <h3 class="title iq-tw-7"><%= raw current_theme.the_field('reviews_title') %></h3>
+          <p><%= raw current_theme.the_field('reviews_descr') %></p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="owl-carousel" data-nav-dots="false" data-nav-arrow="true" data-items="1" data-xs-items="1" data-sm-items="1" data-md-items="1" data-lg-items="1" data-autoplay="true">
+
+          <% reviews_items.each do |review| %>
+            <div class="item">
+              <div class="iq-client white-bg">
+                <% if review.has_thumb? %>
+                  <div class="client-img">
+                    <%= image_tag review.the_image_url.cama_parse_image_version('80x80'), class: "img-responsive img-circle", alt: review.the_title %>
+                  </div>
+                <% end %>
+
+                <div class="client-info">
+                  <div class="client-name iq-mb-10">
+                    <h5 class="iq-tw-6"><%= raw review.the_title %></h5>
+                    <span class="sub-title iq-tw-6"><%= raw review.get_field("reviews_caption") %></span>
+                  </div>
+                  <%= raw review.the_content %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<% end %>

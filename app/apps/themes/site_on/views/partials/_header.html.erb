@@ -1,0 +1,38 @@
+<!-- loading -->
+
+<div id="loading">
+  <div id="loading-center">
+    <div class="loader">
+      <div id="largeBox"></div>
+      <div id="smallBox"></div>
+    </div>
+  </div>
+</div>
+
+<!-- loading End -->
+
+<!-- Header -->
+<header id="header-wrap">
+  <div class="navbar navbar-default navbar-fixed-top menu-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="index.html" class="navbar-brand">
+          <img class="img-responsive" src="<%=theme_img_url "logo.svg"%>" width="150" alt="logo">
+        </a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <a href="#call-popup" class="button bt-black pull-right visible-lg open-popup-link">Бесплатная консультация</a>
+        <nav>
+          <%= raw draw_menu({container_class: "nav navbar-nav navbar-right", item_current: "active", link_class: "page-scroll"}) %>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Header End -->

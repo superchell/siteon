@@ -1,0 +1,99 @@
+<!-- Footer -->
+
+<footer>
+  <!-- Subscribe Our Newsletter -->
+
+  <section class="iq-ptb-80 iq-newsletter iq-bg iq-bg-fixed iq-over-blue-80"
+           style="background: url(<%= theme_img_url "paralax.jpg" %>);">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="heading-title white iq-mb-40">
+            <h3 class="title iq-tw-7"><%= t("camaleon_cms.buttons.callme_title") %></h3>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <form class="form-inline">
+            <div class="form-group">
+              <input type="text" class="form-control" id="exampleInputName2"
+                     placeholder="<%= t("camaleon_cms.buttons.callme_placeholder") %>">
+            </div>
+            <a class="button bt-white iq-ml-25" href="#"><%= t("camaleon_cms.buttons.callme") %></a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscribe Our Newsletter END -->
+
+
+  <!-- Footer Info -->
+
+  <section class="footer-info iq-pt-60">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-md-3">
+          <div class="iq-footer-box text-left">
+            <div class="iq-icon">
+              <i aria-hidden="true" class="ion-ios-location-outline"></i>
+            </div>
+            <div class="footer-content">
+              <%= raw current_theme.the_field('footer_left') %>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 re4-mt-30">
+          <div class="iq-footer-box text-left">
+            <div class="iq-icon">
+              <i aria-hidden="true" class="ion-ios-telephone-outline"></i>
+            </div>
+            <div class="footer-content">
+              <%= raw current_theme.the_field('footer_center') %>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3 re-mt-30">
+          <div class="iq-footer-box text-left">
+            <div class="iq-icon">
+              <i aria-hidden="true" class="ion-ios-email-outline"></i>
+            </div>
+            <div class="footer-content">
+              <%= raw current_theme.the_field('footer_right') %>
+            </div>
+          </div>
+        </div>
+        <!--<div class="col-sm-6 col-md-3 re-mt-30">-->
+          <!--<ul class="info-share">-->
+            <!--<li><a href="#"><i class="fa fa-twitter"></i></a></li>-->
+            <!--<li><a href="#"><i class="fa fa-facebook"></i></a></li>-->
+            <!--<li><a href="#"><i class="fa fa-google"></i></a></li>-->
+            <!--<li><a href="#"><i class="fa fa-github"></i></a></li>-->
+          <!--</ul>-->
+        <!--</div>-->
+      </div>
+      <div class="row iq-mt-40">
+        <div class="col-sm-12 text-center">
+          <div class="footer-copyright iq-ptb-20">Copyright @<span id="copyright"> <script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></span>
+            <a href="#" class="text-green">Sofbox.</a> All Rights Reserved
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Info END -->
+
+</footer>
+
+<!-- Footer END -->
+
+<!-- back-to-top -->
+
+<div id="back-to-top">
+  <a class="top" id="top" href="#top"> <i class="ion-ios-upload-outline"></i> </a>
+</div>
+
+<!-- back-to-top End -->

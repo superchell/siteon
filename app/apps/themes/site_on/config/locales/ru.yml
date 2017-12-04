@@ -19,6 +19,7 @@ ru:
           price_description: "Цена"
           image: "Изображение"
           shortly_view: "Краткое описание"
+          list: "Список"
 
       field_group:
         groups:
@@ -99,3 +100,9 @@ ru:
           landing: "Лендинг"
           catalog: "Сайт-каталог"
           corp: "Корпоративный сайт"
+
+    buttons:
+          purchase: "Заказать %{name}"
+          callme_title: "Заказать звонок"
+          callme_placeholder: "Введите Ваш номер телефона"
+          callme: "Позвоните мне"

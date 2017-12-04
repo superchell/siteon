@@ -1,3 +1,4 @@
+/*@import url("//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&Raleway:300,400,500,600,700,800,900");*/
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -8,6 +9,17 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require camaleon_cms/bootstrap.min.css
- *= require font-awesome
+ *= require ./googlefonts
+ *= require ./bootstrap.min
+ *= require ./owl-carousel/owl.carousel
+ *= require ./font-awesome
+ *= require ../fonts/fonts
+ *= require ./animate
+ *= require ./ionicons.min
+ *= require ./style
+ *= require ./responsive
+ *= require ./color/color
+ *= require ./style-customizer
+ *= require ./intlTelInput
+ *= require ./custom
  */

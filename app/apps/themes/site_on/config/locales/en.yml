@@ -19,6 +19,7 @@ en:
           price_description: "Price"
           image: "Image"
           shortly_view: "Short content"
+          list: "List"
 
       field_group:
         groups:
@@ -99,6 +100,12 @@ en:
       landing: "Landing"
       catalog: "Catalogue site"
       corp: "Corporate website"
+
+    buttons:
+      purchase: "Purchase %{name}"
+      callme_title: "Request a call"
+      callme_placeholder: "Phone number"
+      callme: "Call me"
 
 
 
