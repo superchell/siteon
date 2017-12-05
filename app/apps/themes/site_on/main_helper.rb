@@ -110,8 +110,8 @@ module Themes::SiteOn::MainHelper
 
   # callback executed after theme uninstalled
   def site_on_on_uninstall_theme(theme)
-    # theme.get_field_groups().destroy_all
-    # theme.destroy
+    theme.get_field_groups().destroy_all
+    theme.destroy
   end
 
   def camaleon_post_types_list_select
