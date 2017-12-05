@@ -119,3 +119,5 @@ ru:
           failed: "Неверный номер"
           name_placeholder: "Ваше имя"
           phone_placeholder: "Ваш телефон"
+
+    copyright: "SiteOn 2017 г. Все права защищены"
