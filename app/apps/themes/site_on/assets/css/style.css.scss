@@ -2956,7 +2956,7 @@ header .menu-sticky .button {
     content: "";
     left: 0;
     bottom: 0;
-    background: url('../images/drive/09.png') no-repeat center bottom;
+    background: asset-theme-url('images/drive/09.png') no-repeat center bottom;
     -webkit-background-size: 100% 100%;
     background-size: 100%;
     height: 100%;
@@ -4309,7 +4309,7 @@ header .menu-sticky .button {
     transform: rotate(-12deg);
 }
 .ipad__mockup{
-    background: url(../images/portfolio/ipad_hands.png) no-repeat left top;
+    background: asset-theme-url('images/portfolio/ipad_hands.png') no-repeat left top;
     width: 700px;
     height: 690px;
     background-size: cover;
