@@ -12,7 +12,6 @@
  *= require ./bootstrap.min
  *= require ./owl-carousel/owl.carousel
  *= require ./font-awesome
- *= require ../fonts/fonts
  *= require ./animate
  *= require ./ionicons.min.css.scss
  *= require ./style
