@@ -109,6 +109,16 @@ en:
       order_site: "Order a site"
       order_now: "Order a site now"
       free_consultation: "Free consultation"
+      send: "Send"
+
+    callback_form:
+      title: "Need a website?"
+      subtitle: "We will do it for you"
+      policy: "Your data is secure and not disclosed to third parties."
+      success: "Success"
+      failed: "Wrong number"
+      name_placeholder: "Your name"
+      phone_placeholder: "Your phone number"
 
 
 

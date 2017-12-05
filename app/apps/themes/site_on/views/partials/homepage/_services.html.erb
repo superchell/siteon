@@ -27,7 +27,7 @@
               <% services.each_with_index do |service, i| %>
                 <% id = "service_#{i}" %>
                 <div role="tabpanel" class="tab-pane <%= 'active' if i == 0 %>" id="<%= id %>">
-                  <h1 class="iq-tw-6 iq-mb-25"><%= raw service[:subtitle]%></h1>
+                  <h2 class="iq-tw-6 iq-mb-25"><%= raw service[:subtitle]%></h2>
                   <p class="iq-font-15"><%= raw service[:descr]%></p>
                   <div class="row-flex">
                     <div class="col-md-8 col-md-push-4">

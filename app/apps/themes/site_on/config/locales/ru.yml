@@ -109,3 +109,13 @@ ru:
           order_site: "Заказать сайт"
           order_now: "Заказать сайт прямо сейчас"
           free_consultation: "Бесплатная консультация"
+          send: "Отправить"
+
+    callback_form:
+          title: "Нужен сайт?"
+          subtitle: "Мы сделаем его для Вас"
+          policy: "Ваши данные надежно защищены и не разглашаются третьим лицам."
+          success: "Все верно"
+          failed: "Неверный номер"
+          name_placeholder: "Ваше имя"
+          phone_placeholder: "Ваш телефон"

@@ -6,24 +6,24 @@
         <span class="r1"></span>
         <span class="r2"></span>
       </a>
+
+        <h2><%= t("camaleon_cms.callback_form.title") %></h2>
+        <p><%= t("camaleon_cms.callback_form.subtitle") %></p>
       <form action="" class="validate-form">
-        <h2>Форма обратной связи</h2>
-        <p>Пожалуйста заполните форму и отправьте нам.</p>
         <div class="form-group">
-          <input class="form-control" name="name" type="text" placeholder="Введите ваше имя">
+          <input class="form-control" name="name" type="text" placeholder="<%= t("camaleon_cms.callback_form.name_placeholder") %>">
         </div>
         <div class="form-group">
-          <input class="form-control" name="phone" type="tel" required placeholder="Введите ваш телефон">
-          <span class="valid-msg hide">✓ Все верно</span>
-          <span class="error-msg hide">Неверный номер</span>
+          <input class="form-control" name="phone" type="tel" required placeholder="<%= t("camaleon_cms.callback_form.phone_placeholder") %>">
+          <span class="valid-msg hide">✓ <%= t("camaleon_cms.callback_form.success") %></span>
+          <span class="error-msg hide"><%= t("camaleon_cms.callback_form.failed") %></span>
         </div>
         <input class="bot-check" type="text" name="protect" value="">
         <div class="form-group button-group">
-          <input type="submit" class="button full" value="Отправить">
+          <input type="submit" class="button full" value="><%= t("camaleon_cms.buttons.send") %>">
         </div>
-        <p class="form-note"><i class="fa fa-shield" aria-hidden="true"></i> Ваши данные надежно защищены и не
-          разглашаются третьим лицам.</p>
       </form>
+      <p class="form-note"><i class="fa fa-shield" aria-hidden="true"></i><%= t("camaleon_cms.callback_form.policy") %></p>
     </div>
   </div>
 </div>

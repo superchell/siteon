@@ -9,7 +9,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-6">
-        <h1 class="iq-tw-6 iq-mb-25"><%= raw current_theme.the_field('tech_title') %></h1>
+        <h2 class="iq-tw-6 iq-mb-25"><%= raw current_theme.the_field('tech_title') %></h2>
         <p class="iq-font-15"><%= raw current_theme.the_field('tech_descr') %></p>
         <% if current_theme.the_fields('tech_logo').size > 0 %>
           <% current_theme.the_fields('tech_logo').each_slice(2) do |l1, l2|%>
