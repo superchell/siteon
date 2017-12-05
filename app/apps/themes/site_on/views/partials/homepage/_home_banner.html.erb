@@ -18,10 +18,10 @@
               </span>
             </h2>
 
-            <p class="iq-font-white text-2 iq-pt-15 iq-mb-40"><%= top_banner[:title]%></p>
+            <p class="iq-font-white text-2 iq-pt-15 iq-mb-40"><%= raw top_banner[:descr]%></p>
 
             <div class="iq-mt-10">
-              <a href="#" class="button bt-black animate-button">Заказать сайт</a>
+              <a href="#" class="button bt-black animate-button"><%= t("camaleon_cms.buttons.purchase", name: item[:title])%>></a>
 
             </div>
           </div>
