@@ -21,7 +21,7 @@
           <% if portfolio.has_thumb? %>
             <div class="portfolio-item">
               <div class="portfolio-item-wrapper">
-                <%= image_tag portfolio.the_image_url.cama_parse_image_version('360x263'), alt: portfolio.the_title %>
+                <%= image_tag portfolio.the_image_url.cama_parse_image_version('360x263', true), alt: portfolio.the_title %>
                 <span class="portfolio-item__title">
                   <span class="portfolio-item__title-project">
                     <%= raw portfolio.the_title %>

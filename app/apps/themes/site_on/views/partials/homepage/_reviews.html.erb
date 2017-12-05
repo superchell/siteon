@@ -21,7 +21,7 @@
               <div class="iq-client white-bg">
                 <% if review.has_thumb? %>
                   <div class="client-img">
-                    <%= image_tag review.the_image_url.cama_parse_image_version('80x80'), class: "img-responsive img-circle", alt: review.the_title %>
+                    <%= image_tag review.the_image_url.cama_parse_image_version('80x80', true), class: "img-responsive img-circle", alt: review.the_title %>
                   </div>
                 <% end %>
 
