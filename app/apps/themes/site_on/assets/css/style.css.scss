@@ -2292,6 +2292,10 @@ header .menu-sticky .button {
     position: relative;
 }
 
+.software img {
+    width: 100%
+}
+
 .iq-software-demo {
     position: absolute;
     top: 50px;
@@ -2920,8 +2924,7 @@ header .menu-sticky .button {
     line-height: 42px;
     padding-left: 0px;
     display: inline-block;
-    color: #fff;
-    background: #e7e7e7;
+    color:  rgb(51, 51, 51);
     font-weight: normal;
     text-align: center;
     -webkit-transition: all 0.5s ease-out 0s;

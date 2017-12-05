@@ -14,7 +14,6 @@
 //= require ./owl-carousel/owl.carousel.min
 //= require ./counter/jquery.countTo
 //= require ./jquery.appear
-//= require ./retina.min
 //= require ./wow.min
 //= require ./skrollr.min
 //= require ./particles/particles.min
