@@ -6,7 +6,7 @@
       <div class="col-md-6">
         <h1 class="iq-tw-6 iq-mb-25"><%= current_theme.the_field('who_we_title') %></h1>
         <%= current_theme.the_field('who_we_descr').html_safe %>
-        <a href="#" class="button iq-mt-10">Заказать сайт прямо сейчас</a>
+        <a href="#call-popup" class="button iq-mt-10 open-popup-link"><%= t("camaleon_cms.buttons.order_now") %></a>
       </div>
       <div class="col-md-6">
         <img class="iq-works-img" src="<%= current_theme.the_field('who_we_big_banner') %>" alt="drive01">
