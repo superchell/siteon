@@ -1,3 +1,6 @@
+<% form = current_site.contact_forms.where({slug: "callback-form"}).first %>
+
+<% if form.present? %>
 <!-- Popup form  -->
 <div id="call-popup" class="popup">
   <div class="popup__wraper">
@@ -8,23 +11,28 @@
       </a>
 
         <h2><%= t("camaleon_cms.callback_form.title") %></h2>
-        <p><%= t("camaleon_cms.callback_form.subtitle") %></p>
-      <form action="" class="validate-form">
+        <p class="form-msg"><%= t("camaleon_cms.callback_form.subtitle") %></p>
+      <%= form_for form, url: plugins_cama_contact_form_save_form_path, html: {method: "post", class: "validate-form", multipart: true} do |f| %>
+        <%= hidden_field_tag "id", form.id %>
+        <%= hidden_field_tag "format", "json" %>
         <div class="form-group">
-          <input class="form-control" name="name" type="text" placeholder="<%= t("camaleon_cms.callback_form.name_placeholder") %>">
+          <% name_field = get_form_field(form, "c2") %>
+          <input class="form-control" name="<%= name_field[:name] %>" type="text" <%= 'required' if name_field[:required].to_bool %> placeholder="<%= name_field[:field_options][:description].translate %>">
         </div>
         <div class="form-group">
-          <input class="form-control" name="phone" type="tel" required placeholder="<%= t("camaleon_cms.callback_form.phone_placeholder") %>">
+          <% phone_field = get_form_field(form, "c3") %>
+          <input class="form-control" name="<%= phone_field[:name] %>" type="tel" <%= 'required' if phone_field[:required].to_bool %>  placeholder="<%= phone_field[:field_options][:description].translate %>">
           <span class="valid-msg hide">✓ <%= t("camaleon_cms.callback_form.success") %></span>
           <span class="error-msg hide"><%= t("camaleon_cms.callback_form.failed") %></span>
         </div>
-        <input class="bot-check" type="text" name="protect" value="">
+        <input class="who-are-you" type="text" name="who_are_you" value="">
         <div class="form-group button-group">
           <input type="submit" class="button full" value="<%= t("camaleon_cms.buttons.send") %>">
         </div>
-      </form>
+      <% end %>
       <p class="form-note"><i class="fa fa-shield" aria-hidden="true"></i> <%= t("camaleon_cms.callback_form.policy") %></p>
     </div>
   </div>
 </div>
 <!-- Popup form End -->
+<% end %>

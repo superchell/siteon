@@ -1,0 +1,34 @@
+<% form = current_site.contact_forms.where({slug: "bottom-callback"}).first %>
+
+<!-- Bottom Callback Form -->
+<section class="iq-ptb-80 iq-newsletter iq-bg iq-bg-fixed iq-over-blue-80"
+         style="background: url(<%= theme_img_url "paralax.jpg" %>);">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="heading-title white iq-mb-40">
+          <h3 class="title iq-tw-7"><%= t("camaleon_cms.buttons.callme_title") %></h3>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <p class="form-msg"></p>
+        <%= form_for form, url: plugins_cama_contact_form_save_form_path, html: {method: "post", class: "validate-form form-inline", multipart: true} do |f| %>
+          <%= hidden_field_tag "id", form.id %>
+          <%= hidden_field_tag "format", "json" %>
+          <div class="form-group">
+            <% phone_field = get_form_field(form, "c2") %>
+            <input name="<%= phone_field[:name] %>" type="tel" class="form-control" <%= 'required' if phone_field[:required].to_bool %> placeholder="<%= phone_field[:field_options][:description].translate %>">
+            <span class="valid-msg hide">✓ <%= t("camaleon_cms.callback_form.success") %></span>
+            <span class="error-msg hide"><%= t("camaleon_cms.callback_form.failed") %></span>
+          </div>
+          <input class="who-are-you" type="text" name="who_are_you" value="">
+          <input type="submit" class="button bt-white iq-ml-25" value="<%= t("camaleon_cms.buttons.callme") %>">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bottom Callback Form END -->

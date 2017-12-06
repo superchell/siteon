@@ -94,7 +94,7 @@ $(function () {
         validMsg = $(".valid-msg");
 
     telInput.intlTelInput({
-        preferredCountries: ["ua", "ru", "us"],
+        preferredCountries: ["ua", "pl", "us"],
         utilsScript: theme_utils_path
     });
 
@@ -106,11 +106,11 @@ $(function () {
 
     telInput.blur(function() {
         reset();
-        if ($.trim(telInput.val())) {
-            if (telInput.intlTelInput("isValidNumber")) {
+        if ($.trim($(this).val())) {
+            if ($(this).intlTelInput("isValidNumber")) {
                 validMsg.removeClass("hide");
             } else {
-                telInput.addClass("error");
+              $(this).addClass("error");
                 errorMsg.removeClass("hide");
             }
         }
@@ -120,17 +120,34 @@ $(function () {
     telInput.on("keyup change", reset);
 
     $('.validate-form').submit(function (e) {
+        var form = $(this);
+        telInput = form.find("input[type='tel']");
+
         if ($.trim(telInput.val())) {
             if (telInput.intlTelInput("isValidNumber")) {
                 validMsg.removeClass("hide");
                 telInput.val(telInput.intlTelInput("getNumber", intlTelInputUtils.numberFormat.E164));
-                return true;
             } else {
                 telInput.addClass("error");
                 errorMsg.removeClass("hide");
                 return false;
             }
         }
+
+      $.post(form.attr('action'), form.serialize(), function(response){
+        if (response.error != undefined) {
+          displayError(form, response.error);
+          return false
+        }
+
+        if (response.notice != undefined){
+          displaySuccess(form, response.notice)
+        }
+
+      });
+
+      return false;
+
     });
 
 
@@ -139,7 +156,21 @@ $(function () {
 
 });
 
+/*************************
+ Forms custom processing
+ *************************/
 
+function displayError(form, msg) {
+  form.parent().find('.form-msg').addClass('error').text(msg);
+}
+
+function displaySuccess(form, msg) {
+  form.parent().find('.form-msg').text(msg);
+  setTimeout(function(){
+    form.reset;
+    $('.popup__close').click();
+  }, 2000);
+}
 
 /*************************
 Cursor animation

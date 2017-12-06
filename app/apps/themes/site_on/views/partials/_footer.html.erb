@@ -1,37 +1,9 @@
 <!-- Footer -->
 
 <footer>
-  <!-- Subscribe Our Newsletter -->
 
-  <section class="iq-ptb-80 iq-newsletter iq-bg iq-bg-fixed iq-over-blue-80"
-           style="background: url(<%= theme_img_url "paralax.jpg" %>);">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="heading-title white iq-mb-40">
-            <h3 class="title iq-tw-7"><%= t("camaleon_cms.buttons.callme_title") %></h3>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-12">
-          <form class="form-inline">
-            <div class="form-group">
-              <input type="text" class="form-control" id="exampleInputName2"
-                     placeholder="<%= t("camaleon_cms.buttons.callme_placeholder") %>">
-            </div>
-            <a class="button bt-white iq-ml-25" href="#"><%= t("camaleon_cms.buttons.callme") %></a>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Subscribe Our Newsletter END -->
-
-
+  <%= render partial: "partials/bottom_form" %>
   <!-- Footer Info -->
-
   <section class="footer-info iq-pt-60">
     <div class="container">
       <div class="row">

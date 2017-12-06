@@ -22,4 +22,4 @@
 //= require ./style-customizer
 //= require ./jquery.nicescroll.min
 //= require ./intlTelInput.min
-//= require ./custom.js.erb
+//= require ./custom

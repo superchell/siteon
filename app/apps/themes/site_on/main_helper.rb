@@ -326,4 +326,8 @@ module Themes::SiteOn::MainHelper
     end
   end
 
+  def form_bot_check(form)
+    abort("Заблукав, падлюко?") if params[:who_are_you].present?
+  end
+
 end
