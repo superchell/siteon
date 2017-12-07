@@ -252,9 +252,9 @@ module Themes::SiteOn::MainHelper
       project_types = [{title: t('camaleon_cms.project_type.ecommerce'), value: "ecommerce"}, {title: t('camaleon_cms.project_type.card'), value: "card"}, {title: t('camaleon_cms.project_type.landing'), value: "landing"}, {title: t('camaleon_cms.project_type.catalog'), value: "catalog"}, {title: t('camaleon_cms.project_type.corp'), value: "corp"}]
 
       pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.project_type'), "slug"=>"project_type", description: t('camaleon_cms.admin.field_group.fields.project_type_descr')},{field_key: "select", translate: true, multiple: false, multiple_options: project_types})
-      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.potfolio_background1'), "slug"=>"potfolio_background1"},{field_key: "colorpicker", multiple: false, color_format: "hex"})
-      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.potfolio_background2'), "slug"=>"potfolio_background2"},{field_key: "colorpicker", multiple: false, color_format: "hex"})
-      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.potfolio_background3'), "slug"=>"potfolio_background3"},{field_key: "colorpicker", multiple: false, color_format: "hex"})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.potfolio_background1'), "slug"=>"potfolio_background1"},{field_key: "colorpicker", multiple: false, color_format: "rgb"})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.potfolio_background2'), "slug"=>"potfolio_background2"},{field_key: "colorpicker", multiple: false, color_format: "rgb"})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.potfolio_background3'), "slug"=>"potfolio_background3"},{field_key: "colorpicker", multiple: false, color_format: "rgb"})
       pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.potfolio_button'), "slug"=>"potfolio_button"},{field_key: "colorpicker", multiple: false, color_format: "hex"})
 
       # Top block
@@ -266,8 +266,8 @@ module Themes::SiteOn::MainHelper
 
       # Portfolio purpose block
       pp_group = pp.add_field_group({name: t('camaleon_cms.admin.field_group.groups.portfolio_purpose'), slug: "portfolio_purpose"})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.title'), "slug"=>"purpose_title"}, {field_key: "text_box", translate: true})
       pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.img'), "slug"=>"purpose_img"},{field_key: "image", multiple: false})
-      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.img_caption'), "slug"=>"purpose_img_caption"}, {field_key: "text_box", translate: true, multiple: false})
       pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.shortly_descr'), "slug"=>"purpose_descr"}, {field_key: "editor", translate: true})
 
       # Mobile view block
@@ -275,14 +275,12 @@ module Themes::SiteOn::MainHelper
       pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.shortly_descr'), "slug"=>"mobile_view_descr"}, {field_key: "editor", translate: true})
       pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.thumb'), "slug"=>"mobile_view_thumb"},{field_key: "image", multiple: false})
       pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.img'), "slug"=>"mobile_view_img"},{field_key: "image", multiple: false})
-      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.img_caption'), "slug"=>"purpose_img_caption"}, {field_key: "text_box", translate: true, multiple: false})
 
       # Features block
       pp_group = pp.add_field_group({name: t('camaleon_cms.admin.field_group.groups.portfolio_features'), slug: "portfolio_features"})
       pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.title'), "slug"=>"features_title"}, {field_key: "text_box", translate: true})
       pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.shortly_descr'), "slug"=>"features_descr"}, {field_key: "editor", translate: true})
       pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.img'), "slug"=>"features_img"},{field_key: "image", multiple: false})
-      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.description2'), "slug"=>"features_descr2"}, {field_key: "editor", translate: true})
       pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.description2'), "slug"=>"features_descr2"}, {field_key: "editor", translate: true})
       pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.dynamic_list'), "slug"=>"features_dynamic_list"}, {field_key: "shortly_view", translate: true, multiple: true})
 

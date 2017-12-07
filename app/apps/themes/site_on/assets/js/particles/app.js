@@ -10,8 +10,9 @@ particlesJS.load('particles-js', 'particles.json', function() {
 */
 
 /* Otherwise just put the config content (json): */
+var part_el = document.getElementById('particles-js');
 
-particlesJS('particles-js',
+if (part_el != null) particlesJS('particles-js',
   
   {
     "particles": {

@@ -9,12 +9,13 @@
     <%= stylesheet_link_tag theme_asset_path("css/main") %>
     <%= raw the_head %>
 </head>
-<body data-spy="scroll" data-offset="80">
+<body data-spy="scroll" data-offset="80" <%= 'class="portfolio-page"' if @post_type.present? && @post_type.the_slug == "portfolio"%>>
  <%= render partial: "partials/header" %>
 
  <!-- ./header -->
  <% # Home banner section %>
- <%= render partial: "partials/homepage/home_banner" %>
+
+ <%= render partial: "partials/homepage/home_banner" if is_home? %>
 
  <!-- Main Content -->
  <div class="main-content">
@@ -30,5 +31,6 @@
  </script>
 
  <%= javascript_include_tag theme_asset_path("js/main.js") %>
+ <%= yield :javascript_last %>
 </body>
 </html>

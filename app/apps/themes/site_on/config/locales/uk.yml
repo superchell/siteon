@@ -121,3 +121,7 @@ uk:
       phone_placeholder: "Ваш телефон"
 
     copyright: "SiteOn 2017 р. Всі права захищені"
+
+    portfolio:
+      result_button: "Результат"
+      mobile_version: "Мобільна версія сайту"

@@ -121,3 +121,7 @@ ru:
           phone_placeholder: "Ваш телефон"
 
     copyright: "SiteOn 2017 г. Все права защищены"
+
+    portfolio:
+          result_button: "Результат"
+          mobile_version: "Мобильная версия сайта"

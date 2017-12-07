@@ -122,6 +122,10 @@ en:
 
     copyright: "Copyright 2017 SiteOn. All Rights Reserved"
 
+    portfolio:
+      result_button: "Result"
+      mobile_version: "Mobile version"
+
 
 
 

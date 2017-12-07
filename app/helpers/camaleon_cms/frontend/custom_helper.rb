@@ -8,6 +8,14 @@ module CamaleonCms::Frontend::CustomHelper
     r
   end
 
+  def get_background_color(color)
+    r = ''
+    if color.present?
+      r = "background-color: #{color};"
+    end
+    r
+  end
+
   def theme_img_url (path)
     asset_url theme_asset_path "images/#{path}"
   end
@@ -22,6 +30,13 @@ module CamaleonCms::Frontend::CustomHelper
       end
     end
     r
+  end
+
+  def empty_field_group?(group)
+    group.first.values.each do |v|
+      return false if v.present?
+    end
+    true
   end
 
 end
