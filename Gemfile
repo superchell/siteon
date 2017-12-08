@@ -54,7 +54,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem "camaleon_cms", github: 'owen2345/camaleon-cms'
+gem "camaleon_cms", github: 'superchell/camaleon-cms'
 gem 'draper', '~> 3'
 
 

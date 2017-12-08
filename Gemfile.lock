@@ -1,6 +1,6 @@
 GIT
-  remote: https://github.com/owen2345/camaleon-cms.git
-  revision: d4f100a39850beca4ed0807678d3cf1c59550d48
+  remote: https://github.com/superchell/camaleon-cms.git
+  revision: 5742b700516f58a69a90faf008c2a6bcf3a92eae
   specs:
     camaleon_cms (2.4.4.7)
       aws-sdk (~> 2)
@@ -67,13 +67,13 @@ GEM
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
     arel (8.0.0)
-    aws-sdk (2.10.89)
-      aws-sdk-resources (= 2.10.89)
-    aws-sdk-core (2.10.89)
+    aws-sdk (2.10.99)
+      aws-sdk-resources (= 2.10.99)
+    aws-sdk-core (2.10.99)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)
-    aws-sdk-resources (2.10.89)
-      aws-sdk-core (= 2.10.89)
+    aws-sdk-resources (2.10.99)
+      aws-sdk-core (= 2.10.99)
     aws-sigv4 (1.0.2)
     bcrypt (3.1.11)
     bindex (0.5.0)
@@ -215,7 +215,7 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
-    tinymce-rails (4.7.2)
+    tinymce-rails (4.7.4)
       railties (>= 3.1.1)
     turbolinks (5.0.1)
       turbolinks-source (~> 5)
