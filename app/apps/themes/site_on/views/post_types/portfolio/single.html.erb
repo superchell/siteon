@@ -40,18 +40,20 @@
     </div>
   </section>
 
-  <section class="porfolio-main__wrap valign-top">
-    <div class="porfolio-main__wrap-left col-flex-md-6 view-check" data-vp-add-class="animated fadeInLeft">
-      <h2><%= raw @post.the_field('mobile_view_title') %></h2>
-      <%= raw @post.the_field('mobile_view_descr') %>
-      <div class="ipad__mockup">
-        <%= image_tag @post.the_field('mobile_view_thumb'), alt: "" %>
+  <% if @post.the_field('mobile_view_thumb').blank? && @post.the_field('mobile_view_img').blank? %>
+    <section class="porfolio-main__wrap valign-top">
+      <div class="porfolio-main__wrap-left col-flex-md-6 view-check" data-vp-add-class="animated fadeInLeft">
+        <h2><%= raw @post.the_field('mobile_view_title') %></h2>
+        <%= raw @post.the_field('mobile_view_descr') %>
+        <div class="ipad__mockup">
+          <%= image_tag @post.the_field('mobile_view_thumb'), alt: "" %>
+        </div>
       </div>
-    </div>
-    <div class="porfolio-main__wrap-right col-flex-md-6 view-check" data-vp-add-class="animated fadeInRight">
-      <%= image_tag @post.the_field('mobile_view_img'), alt: "" %>
-    </div>
-  </section>
+      <div class="porfolio-main__wrap-right col-flex-md-6 view-check" data-vp-add-class="animated fadeInRight">
+        <%= image_tag @post.the_field('mobile_view_img'), alt: "" %>
+      </div>
+    </section>
+  <% end %>
 
   <section class="porfolio-main__content text-center view-check" data-vp-add-class="animated fadeInUp">
     <h2><%= raw @post.the_field('features_title') %></h2>
