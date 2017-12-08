@@ -1,8 +1,8 @@
 GIT
-  remote: https://github.com/superchell/camaleon-cms.git
-  revision: 5742b700516f58a69a90faf008c2a6bcf3a92eae
+  remote: https://github.com/owen2345/camaleon-cms.git
+  revision: a4d01f378a2ce1d400c65072fb22eb7165e8f4c0
   specs:
-    camaleon_cms (2.4.4.7)
+    camaleon_cms (2.4.5)
       aws-sdk (~> 2)
       bcrypt
       breadcrumbs_on_rails
