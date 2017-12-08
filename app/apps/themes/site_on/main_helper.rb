@@ -328,4 +328,11 @@ module Themes::SiteOn::MainHelper
     abort("Заблукав, падлюко?") if params[:who_are_you].present?
   end
 
+  def sitemap_modifier(args)
+      post_type_ids = CamaleonCms::TermTaxonomy.where(taxonomy: "post_type", slug: ["page", "post", "home", "reviews"]).map {|post_type| post_type[:id]}
+      args[:skip_posttype_ids] = post_type_ids
+
+      post_ids = CamaleonCms::Post.where(taxonomy_id: post_type_ids).map {|post| post[:id]}
+      args[:skip_post_ids] = post_ids
+  end
 end
