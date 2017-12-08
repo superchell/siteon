@@ -10,11 +10,13 @@
       </div>
     </div>
 
-    <% works_items = current_theme.the_field_grouped('how_works_items', true, true).first %>
+    <% works_items = current_theme.the_field_grouped('how_works_items', true, true).first
+       delay = 0
+    %>
     <div class="row">
       <% works_items.each_with_index  do |item, i|%>
         <div class="col-sm-12 col-md-4 <%= "re-mt-50" if i > 0 %>">
-        <div class="iq-works-box text-left">
+        <div class="iq-works-box text-left wow zoomInDown" data-wow-delay="<%= delay %>s">
           <div class="step"><%= i + 1 %></div>
           <div class="icon-bg text-center">
             <i aria-hidden="true" class="<%= item[:icon] %>"></i>
@@ -23,6 +25,7 @@
           <p><%= item[:descr] %></p>
         </div>
       </div>
+      <% delay += 0.5 %>
       <% end %>
     </div>
   </div>
