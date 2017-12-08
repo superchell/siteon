@@ -29,10 +29,20 @@
       <div class="navbar-collapse collapse">
         <a href="#call-popup" class="button bt-black pull-right visible-lg open-popup-link"><%= t("camaleon_cms.buttons.free_consultation") %></a>
         <nav>
-          <%= raw draw_menu({container_class: "nav navbar-nav navbar-right", item_current: "active", link_class: "page-scroll"}) %>
+            <%= raw draw_menu({container_class: "nav navbar-nav navbar-right", item_current: "active", link_class: "page-scroll", container_id: "main_menu"}) %>
         </nav>
       </div>
     </div>
   </div>
 </header>
+
 <!-- Header End -->
+<% content_for :javascript_last do %>
+<script>
+  <% if is_home? %>
+      initScroll();
+  <% else %>
+      mainMenuModifier();
+  <% end %>
+</script>
+<% end %>

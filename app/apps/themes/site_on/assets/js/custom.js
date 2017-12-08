@@ -38,7 +38,6 @@ page loader
 function preloader() {
     $("#load").fadeOut();
     $('#loading').delay().fadeOut();
-
 }
 
 /*************************
@@ -147,8 +146,9 @@ $(function () {
       });
 
       return false;
-
     });
+
+
 });
 
 /*************************
@@ -271,13 +271,6 @@ function accordion() {
 Header
 *************************/
 function header() {
-    $('a.page-scroll').on('click', function (e) {
-        var anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: $(anchor.attr('href')).offset().top - 50
-        }, 1500);
-        e.preventDefault();
-    });
     $(window).on('scroll', function () {
         if ($(this).scrollTop() > 100) {
             $('.menu-top').addClass('menu-sticky');
@@ -559,3 +552,23 @@ $(window).on('load', function () {
 
 
 });
+
+function mainMenuModifier() {
+  var items = $('#main_menu').find('.menu-item > a');
+  items.each(function(){
+      if ($(this).attr('href').match('#') !== null)
+        $(this).attr('href', "/" + $(this).attr('href'))
+  });
+}
+
+function initScroll() {
+  $('a.page-scroll').on('click', function (e) {
+    var anchor = $(this);
+    if (anchor.attr('href').match('#') === null)
+        return;
+    $('html, body').stop().animate({
+      scrollTop: $(anchor.attr('href')).offset().top - 50
+    }, 1500);
+    e.preventDefault();
+  });
+}
