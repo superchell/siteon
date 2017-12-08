@@ -42,7 +42,7 @@
 
   <section class="porfolio-main__wrap valign-top">
     <div class="porfolio-main__wrap-left col-flex-md-6 view-check" data-vp-add-class="animated fadeInLeft">
-      <h2><%= t("camaleon_cms.portfolio.result_button") %></h2>
+      <h2><%= raw @post.the_field('mobile_view_title') %></h2>
       <%= raw @post.the_field('mobile_view_descr') %>
       <div class="ipad__mockup">
         <%= image_tag @post.the_field('mobile_view_thumb'), alt: "" %>

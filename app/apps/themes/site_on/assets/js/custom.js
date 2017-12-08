@@ -149,11 +149,6 @@ $(function () {
       return false;
 
     });
-
-
-
-
-
 });
 
 /*************************
@@ -161,11 +156,11 @@ $(function () {
  *************************/
 
 function displayError(form, msg) {
-  form.parent().find('.form-msg').addClass('error').text(msg);
+  form.parent().find('.msg-block__error').text(msg).fadeIn().delay(3000).fadeOut();
 }
 
 function displaySuccess(form, msg) {
-  form.parent().find('.form-msg').text(msg);
+  form.parent().find('.msg-block__sucess').text(msg).fadeIn().delay(3000).fadeOut();
   setTimeout(function(){
     form.reset;
     $('.popup__close').click();

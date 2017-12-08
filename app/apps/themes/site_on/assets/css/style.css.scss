@@ -4535,3 +4535,34 @@ p.form-note{
     text-align: center;
     color: #fff;
 }
+
+/*---------------------------------------------------------------------
+                          MSG block
+-----------------------------------------------------------------------*/
+.msg-block{
+    text-align: left;
+    padding-top: 5px;
+    clear: both;
+    max-width: 450px;
+    margin: auto;
+}
+.msg-block__sucess{
+    background: asset-theme-url('images/msg-success.svg') no-repeat;
+    color: #34d2a6;
+}
+.msg-block__error{
+    background: asset-theme-url('images/msg-error.svg') no-repeat;
+    color: #ffa093;
+}
+.msg-block__sucess, .msg-block__error{
+    -webkit-background-size: 44px;
+    background-size: 44px;
+    padding-left: 55px;
+    margin-bottom: 5px;
+    min-height: 45px;
+    clear: both;
+    display: none;
+}
+.form-inline .msg-block {
+    padding-top: 15px;
+}

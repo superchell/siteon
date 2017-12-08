@@ -272,6 +272,7 @@ module Themes::SiteOn::MainHelper
 
       # Mobile view block
       pp_group = pp.add_field_group({name: t('camaleon_cms.admin.field_group.groups.portfolio_mobile_view'), slug: "portfolio_mobile_view"})
+      pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.title'), "slug"=>"mobile_view_title"}, {field_key: "text_box", translate: true})
       pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.shortly_descr'), "slug"=>"mobile_view_descr"}, {field_key: "editor", translate: true})
       pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.thumb'), "slug"=>"mobile_view_thumb"},{field_key: "image", multiple: false})
       pp_group.add_field({"name"=>t('camaleon_cms.admin.field_group.fields.img'), "slug"=>"mobile_view_img"},{field_key: "image", multiple: false})
