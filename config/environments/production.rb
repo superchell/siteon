@@ -13,6 +13,10 @@ Rails.application.configure do
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
+  config.public_file_server.headers = {
+      'Cache-Control' => 'public, s-maxage=31536000, maxage=15552000',
+      'Expires' => "#{1.year.from_now.to_formatted_s(:rfc822)}"
+  }
 
   # Attempt to read encrypted secrets from `config/secrets.yml.enc`.
   # Requires an encryption key in `ENV["RAILS_MASTER_KEY"]` or
