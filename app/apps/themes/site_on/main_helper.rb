@@ -336,4 +336,11 @@ module Themes::SiteOn::MainHelper
       post_ids = CamaleonCms::Post.where(taxonomy_id: post_type_ids).map {|post| post[:id]}
       args[:skip_post_ids] = post_ids
   end
+
+  def aws_uploader_hook(args)
+    args[:aws_settings][:aws_file_upload_settings] = lambda{|settings|
+      settings[:cache_control] = 'max-age=15552000, public'
+      settings
+    }
+  end
 end

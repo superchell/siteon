@@ -11,7 +11,8 @@
     "on_inactive": ["site_on_on_uninstall_theme"],
     "on_theme_settings": ["site_on_settings"],
     "contact_form_before_submit": ["form_bot_check"],
-    "on_render_sitemap": ["sitemap_modifier"]
+    "on_render_sitemap": ["sitemap_modifier"],
+    "on_uploader": ["aws_uploader_hook"]
     //here all your hooks
   }
 }
