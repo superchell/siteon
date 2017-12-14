@@ -54,7 +54,11 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'heroku-deflater', :group => :production
+group :production do
+  gem 'rails_12factor'
+  gem 'heroku-deflater'
+end
+
 gem "camaleon_cms", github: 'owen2345/camaleon-cms'
 gem 'draper', '~> 3'
 
