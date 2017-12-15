@@ -340,7 +340,7 @@ module Themes::SiteOn::MainHelper
   def aws_uploader_hook(args)
     args[:aws_settings][:aws_file_upload_settings] = lambda{|settings|
       settings[:cache_control] = 'max-age=15552000, public'
-      settings[:expires] = 31536000
+      settings[:expires] = "#{1.year.from_now.to_formatted_s(:rfc822)}"
       settings
     }
   end
