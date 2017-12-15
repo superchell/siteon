@@ -14,7 +14,7 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
-  HerokuDeflater::CacheControlManager.setup_max_age(15552000)
+  @_cache_control = 'public, s-maxage=31536000, max-age=15552000' # heroku deflater var
   cache_control = {
     'Cache-Control' => 'public, s-maxage=31536000, max-age=15552000',
     'Expires' => "#{1.year.from_now.to_formatted_s(:rfc822)}"
