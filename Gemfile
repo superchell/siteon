@@ -55,7 +55,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :production do
-  gem 'heroku-deflater'
+  gem 'heroku-deflater', github: 'superchell/heroku-deflater'
 end
 
 gem "camaleon_cms", github: 'owen2345/camaleon-cms'
