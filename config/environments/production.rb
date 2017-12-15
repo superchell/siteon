@@ -20,7 +20,7 @@ Rails.application.configure do
   }
   config.public_file_server.headers = cache_control
 
-  config.static_cache_control = cache_control
+  config.static_cache_control.headers = cache_control
   config.serve_static_assets = true
   # Attempt to read encrypted secrets from `config/secrets.yml.enc`.
   # Requires an encryption key in `ENV["RAILS_MASTER_KEY"]` or
