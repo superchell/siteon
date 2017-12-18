@@ -329,6 +329,16 @@ module Themes::SiteOn::MainHelper
     abort("Заблукав, падлюко?") if params[:who_are_you].present?
   end
 
+  def send_data_to_crm(args)
+    values = {
+      name: args[:values].permit(:c3).present? ? args[:values].permit(:c2).values.first : "Лид без имени",
+      phone: args[:values].permit(:c3).present? ? args[:values].permit(:c3).values.first : args[:values].permit(:c2).values.first
+    }
+
+    b24 = B24.new
+    b24.add_crm_lead(values)
+  end
+
   def sitemap_modifier(args)
       post_type_ids = CamaleonCms::TermTaxonomy.where(taxonomy: "post_type", slug: ["page", "post", "home", "reviews"]).map {|post_type| post_type[:id]}
       args[:skip_posttype_ids] = post_type_ids
