@@ -11,7 +11,7 @@ class B24
   def add_crm_lead(values)
     self.api_method = 'crm.lead.add'
     fields = {
-      # :TITLE => values[:name],
+      :TITLE => values[:name],
       :NAME => values[:name],
       :STATUS_ID => "NEW",
       :OPENED => "Y",
