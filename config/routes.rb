@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  constraints(host: /^www\./i) do
+    match '(*any)' => redirect { |params, request|
+      URI.parse(request.url).tap { |uri| uri.host.sub!(/^www\./i, '') }.to_s
+    }
+  end
+
   scope PluginRoutes.system_info["relative_url_root"], as: "cama" do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
     get "home/:id", to: redirect("/")
