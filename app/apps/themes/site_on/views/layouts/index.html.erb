@@ -28,11 +28,13 @@
  <%= render partial: "partials/footer"%>
  <%= render partial: "partials/callback_form"%>
 
+ <%= render partial: "partials/analytics" %>
  <script>
    var theme_utils_path = '<%= javascript_path theme_asset_path ("js/utils.js") %>';
  </script>
 
  <%= javascript_include_tag theme_asset_path("js/main.js") %>
  <%= yield :javascript_last %>
+
 </body>
 </html>
