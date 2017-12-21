@@ -206,14 +206,18 @@ $(function () {
         widthArray.push($(this).width());
     });
 
+    $(window).resize(function () {
+        widthArray = [];
+        $('.text-animate b').each(function (index, value) {
+            widthArray.push($(this).width());
+        });
+    });
+
     animateText();
 
     setInterval(function () {
         animateText();
     }, 3000);
-
-
-
 
 });
 
