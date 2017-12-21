@@ -42,3 +42,7 @@ NOTE: This is main stylesheet of template, This file contains the styling for th
 @media(max-width:1023px) {
 	.iq-customizer { display: none !important; }
 }
+
+.nicescroll-rails{
+	z-index: 10000 !important;
+}
