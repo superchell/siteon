@@ -12,7 +12,6 @@
     <%= raw the_head %>
 </head>
 <body data-spy="scroll" data-offset="80" <%= "class=portfolio-page" unless is_home? %>>
-<%= render partial: "partials/analytics" %>
  <%= render partial: "partials/header" %>
 
  <!-- ./header -->
@@ -35,6 +34,7 @@
 
  <%= javascript_include_tag theme_asset_path("js/main.js") %>
  <%= yield :javascript_last %>
+ <%= render partial: "partials/analytics" %>
 
 </body>
 </html>
