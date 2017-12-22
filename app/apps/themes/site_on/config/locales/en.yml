@@ -126,6 +126,9 @@ en:
       result_button: "Result"
       mobile_version: "Mobile version"
 
+    page_not_found: "Page not found"
+    page_not_found_descr: "Please go back to home and try to find out once again."
+
 
 
 

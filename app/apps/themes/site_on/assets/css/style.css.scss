@@ -3979,6 +3979,10 @@ header .menu-sticky .button {
                              404 Error
 -----------------------------------------------------------------------*/
 
+.iq-error {
+    padding: 175px 0 100px 0;
+}
+
 .iq-error .big-text {
     font-size: 180px;
     font-family: 'Raleway', sans-serif;
@@ -3990,6 +3994,7 @@ header .menu-sticky .button {
     background-color: #4ac4f3;
     color: #ffffff;
     display: inline-block;
+    margin: 15px 0;
 }
 
 .iq-error .form-inline.iq-subscribe {
@@ -4011,6 +4016,12 @@ header .menu-sticky .button {
     box-shadow: none;
     border: none;
     background: #f4f4f4;
+}
+
+@media (max-width:768px){
+    .iq-error .big-text {
+        font-size: 100px;
+    }
 }
 
 /*---------------------------------------------------------------------

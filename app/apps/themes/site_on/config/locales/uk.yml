@@ -125,3 +125,6 @@ uk:
     portfolio:
       result_button: "Результат"
       mobile_version: "Мобільна версія сайту"
+
+    page_not_found: "Сторінка не знайдена"
+    page_not_found_descr: "Будь ласка, поверніться на головну і спробуйте ще раз."

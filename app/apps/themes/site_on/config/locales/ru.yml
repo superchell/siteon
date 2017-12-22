@@ -125,3 +125,6 @@ ru:
     portfolio:
           result_button: "Результат"
           mobile_version: "Мобильная версия сайта"
+
+    page_not_found: "Страница не найдена"
+    page_not_found_descr: "Пожалуйста, вернитесь на главную и попробуйте еще раз."

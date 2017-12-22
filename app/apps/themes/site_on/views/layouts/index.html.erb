@@ -11,7 +11,7 @@
     <%= stylesheet_link_tag theme_asset_path("css/main") %>
     <%= raw the_head %>
 </head>
-<body data-spy="scroll" data-offset="80" <%= "class=portfolio-page" if @post_type.present? && @post_type.the_slug == "portfolio"%>>
+<body data-spy="scroll" data-offset="80" <%= "class=portfolio-page" unless is_home? %>>
  <%= render partial: "partials/header" %>
 
  <!-- ./header -->
