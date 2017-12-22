@@ -12,6 +12,7 @@
     <%= raw the_head %>
 </head>
 <body data-spy="scroll" data-offset="80" <%= "class=portfolio-page" unless is_home? %>>
+<%= render partial: "partials/analytics" %>
  <%= render partial: "partials/header" %>
 
  <!-- ./header -->
@@ -28,7 +29,6 @@
  <%= render partial: "partials/footer"%>
  <%= render partial: "partials/callback_form"%>
 
- <%= render partial: "partials/analytics" %>
  <script>
    var theme_utils_path = '<%= javascript_path theme_asset_path ("js/utils.js") %>';
  </script>
