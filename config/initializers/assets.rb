@@ -12,7 +12,7 @@ Rails.application.config.assets.precompile += %w( tinymce-jquery.js )
 Rails.application.config.assets.precompile += %w( lib/jquery.min.js )
 
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "fonts")
-Rails.application.config.assets.precompile += %w(.svg .eot .woff .ttf .js .css)
+Rails.application.config.assets.precompile += %w(.svg .eot .woff .ttf .js .css .scss)
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
