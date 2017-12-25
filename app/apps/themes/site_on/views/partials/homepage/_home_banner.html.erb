@@ -2,7 +2,7 @@
 <% top_banner = current_theme.the_attribute_fields("top_banner_img").first %>
 
 <% if top_banner.present? %>
-  <section id="iq-home" class="iq-banner overview-block-pt iq-bg iq-bg-fixed iq-over-blue-90" style="<%= get_background_image(top_banner[:image]) %>">
+  <section id="iq-home" class="iq-banner overview-block-pt iq-bg iq-bg-fixed iq-over-blue-90" style="<%= get_background_image(top_banner[:image]) %>" data-turbolinks-permanent>
     <!-- BACKGROUND PARTICLES -->
     <div id="particles-js"></div>
     <div class="container-fluid">

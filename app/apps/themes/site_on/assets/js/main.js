@@ -8,7 +8,9 @@
 // compiled file.
 //
 //
-//= require ./jquery.min
+//= require jquery
+//= require jquery_ujs
+//= require turbolinks
 //= require ./owl-carousel/owl.carousel.min
 //= require ./counter/jquery.countTo
 //= require ./jquery.appear
@@ -20,4 +22,6 @@
 //= require ./style-customizer
 //= require ./jquery.nicescroll.min
 //= require ./intlTelInput.min
+//= require ./jquery.transform2d
+//= require ./jquery.viewportchecker.min
 //= require ./custom

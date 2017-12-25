@@ -35,7 +35,11 @@ Design and Developed by: iqonicthemes.in
 /*************************
 page loader
 *************************/
-function preloader() {
+function showPreloader() {
+  $("#load").show();
+  $('#loading').show();
+}
+function hidePreloader() {
     $("#load").fadeOut();
     $('#loading').delay().fadeOut();
 }
@@ -65,7 +69,8 @@ function backtotop() {
 /*************************
  Popup Initialize
  *************************/
-$(function () {
+function initForms() {
+
     var animateClass = 'animated slideInDown';
 
     $('.open-popup-link').click(function (e) {
@@ -149,7 +154,7 @@ $(function () {
     });
 
 
-});
+};
 
 /*************************
  Forms custom processing
@@ -176,7 +181,7 @@ if (window.innerWidth >= 1048) {
     $(document).ready(function() {
 
         var nice = $("html").niceScroll({
-            scrollspeed :  80
+            scrollspeed :  90
         });
 
     });
@@ -277,7 +282,7 @@ function accordion() {
 Header
 *************************/
 function header() {
-    $(window).on('scroll', function () {
+    $(window).on('scroll load', function () {
         if ($(this).scrollTop() > 100) {
             $('.menu-top').addClass('menu-sticky');
         } else {
@@ -528,8 +533,9 @@ function wowanimation() {
         boxClass: 'wow',
         animateClass: 'animated',
         offset: 0,
-        mobile: false,
-        live: true
+        mobile: true,
+        live: false
+
     });
     wow.init();
 }
@@ -537,27 +543,35 @@ function wowanimation() {
 /*************************
 All function are called here 
 *************************/
-$(document).ready(function () {
-    backtotop(),
-        owlcarousel(),
-        accordion(),
-        imgskrollr(),
-        preloader(),
-        Tabbar(),
-        header(),
-        progress(),
-        widget(),
-        screensilder(),
-        counter();
-});
+$(document).on('ready turbolinks:load', function (e) {
+  e.preventDefault();
 
+  console.log(e);
 
-$(window).on('load', function () {
+  backtotop(),
+  owlcarousel(),
+  accordion(),
+  imgskrollr(),
+  Tabbar(),
+  header(),
+  progress(),
+  widget(),
+  screensilder(),
+  counter();
+  initForms();
+  if (e.type != 'turbolinks:load')
     wowanimation();
 
-
+  hidePreloader();
 
 });
+
+document.addEventListener("turbolinks:before-cache", function() {
+   if ($('#loading').is(':hidden')){
+       showPreloader();
+       hidePreloader();
+   }
+})
 
 function mainMenuModifier() {
   var items = $('#main_menu').find('.menu-item > a');

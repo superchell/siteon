@@ -1,6 +1,6 @@
 <!-- loading -->
 
-<div id="loading">
+<div id="loading" data-turbolinks-permanent>
   <div id="loading-center">
     <div class="loader">
       <div id="largeBox"></div>
@@ -39,10 +39,10 @@
 <!-- Header End -->
 <% content_for :javascript_last do %>
 <script>
-  <% if is_home? %>
-      initScroll();
-  <% else %>
+  <% unless is_home? %>
       mainMenuModifier();
+  <% else %>
+      initScroll();
   <% end %>
 </script>
 <% end %>

@@ -8,8 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <%= stylesheet_link_tag theme_asset_path("css/main") %>
-    <%= raw the_head %>
+  <%= stylesheet_link_tag theme_asset_path("css/main"), media: 'all', 'data-turbolinks-track' => "reload" %>
+  <%= javascript_include_tag theme_asset_path("js/main.js"), 'data-turbolinks-track' => "reload" %>
+
+  <%= raw the_head %>
 </head>
 <body data-spy="scroll" data-offset="80" <%= "class=portfolio-page" unless is_home? %>>
  <%= render partial: "partials/header" %>
@@ -32,7 +34,6 @@
    var theme_utils_path = '<%= javascript_path theme_asset_path ("js/utils.js") %>';
  </script>
 
- <%= javascript_include_tag theme_asset_path("js/main.js") %>
  <%= yield :javascript_last %>
  <%= render partial: "partials/analytics" %>
 
