@@ -103,6 +103,7 @@ ru:
 
     buttons:
           purchase: "Заказать %{name}"
+          from: "от"
           callme_title: "Заказать звонок"
           callme_placeholder: "Введите Ваш номер телефона"
           callme: "Позвоните мне"

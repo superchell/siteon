@@ -92,7 +92,7 @@ en:
         reviews: "Client reviews"
       descr:
         homepage: "Home page management"
-        portfolio: "Portfolio managemrnt"
+        portfolio: "Portfolio management"
 
     project_type:
       ecommerce: "Ecommerce"
@@ -103,6 +103,7 @@ en:
 
     buttons:
       purchase: "Purchase %{name}"
+      from: "from"
       callme_title: "Request a call"
       callme_placeholder: "Phone number"
       callme: "Call me"
