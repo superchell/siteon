@@ -5,7 +5,7 @@ class B24
   attr_accessor :api_url, :api_method, :query_params, :query_result
 
   def initialize
-    @api_url = 'https://siteon.bitrix24.ua/rest/1/90kkwgz4ezkycxx9/'
+    @api_url = 'https://siteon.bitrix24.ua/rest/8/agsrquzeehpjm6t6/'
   end
 
   def add_crm_lead(values)
@@ -15,7 +15,8 @@ class B24
       :NAME => values[:name],
       :STATUS_ID => "NEW",
       :OPENED => "Y",
-      :ASSIGNED_BY_ID => 1,
+      :SOURCE_ID => "WEB",
+      :ASSIGNED_BY_ID => 8,
       :CURRENCY_ID => "USD",
       :PHONE =>{ 0 => {:VALUE => values[:phone], :VALUE_TYPE => "WORK"} }
     }.to_query('fields')
