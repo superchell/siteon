@@ -15,5 +15,6 @@ Rails.application.routes.draw do
     get "reviews", to: redirect("/")
 
     get "portfolio", to: redirect("/")
+    get "page", to: redirect("/")
   end
 end

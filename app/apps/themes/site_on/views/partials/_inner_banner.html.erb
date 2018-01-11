@@ -1,0 +1,16 @@
+<section class="iq-breadcrumb overview-block-pt text-center iq-bg iq-bg-fixed iq-over-blue-90" style="background: url(<%= theme_img_url "paralax.jpg" %>);">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="heading-title white iq-breadcrumb-title iq-mtb-100">
+          <h1 class="title iq-tw-7"><%= @post.nil? ? @post_type.name : @post.the_title %></h1>
+        </div>
+        <ul class="breadcrumb">
+          <li><a href="/"><i class="ion-home"></i> <%= t('camaleon_cms.homepage_title') %></a></li>
+          <%= filtered_breadcrumbs %>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</section>

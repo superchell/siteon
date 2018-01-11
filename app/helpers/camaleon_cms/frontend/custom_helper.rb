@@ -39,4 +39,31 @@ module CamaleonCms::Frontend::CustomHelper
     true
   end
 
+  def inner_post_type?(slug)
+    ['blog', 'page'].include? slug
+  end
+
+  def filtered_breadcrumbs
+    if @post_type.slug == 'page' && !@post.nil?
+      raw "<li class='active'>#{@post.the_title}</li>"
+    elsif !@post.nil?
+      raw @post.the_breadcrumb(false)
+    else
+      raw @post_type.the_breadcrumb
+    end
+  end
+
+  def siteon_pagination(items, *will_paginate_options)
+    will_paginate_options = will_paginate_options.extract_options!
+    will_paginate_options[:previous_label] = '<i class="ion-ios-arrow-left"></i>'
+    will_paginate_options[:next_label] = '<i class="ion-ios-arrow-right"></i>'
+    "<div class='row iq-mt-80'>
+      <div class='col-lg-12 col-md-12 text-center'>
+        <ul class='pagination pagination-lg'>
+          #{will_paginate(items, will_paginate_options) rescue '' }
+        </ul>
+      </div>
+    </div>"
+  end
+
 end

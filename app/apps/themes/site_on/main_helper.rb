@@ -340,7 +340,7 @@ module Themes::SiteOn::MainHelper
   end
 
   def sitemap_modifier(args)
-      post_type_ids = CamaleonCms::TermTaxonomy.where(taxonomy: "post_type", slug: ["page", "post", "home", "reviews"]).map {|post_type| post_type[:id]}
+      post_type_ids = CamaleonCms::TermTaxonomy.where(taxonomy: "post_type", slug: ["post", "home", "reviews"]).map {|post_type| post_type[:id]}
       args[:skip_posttype_ids] = post_type_ids
 
       post_ids = CamaleonCms::Post.where(taxonomy_id: post_type_ids).map {|post| post[:id]}

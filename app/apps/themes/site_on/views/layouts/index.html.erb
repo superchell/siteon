@@ -19,6 +19,8 @@
 
  <%= render partial: "partials/homepage/home_banner" if is_home? %>
 
+ <%= render partial: "partials/inner_banner" if !@post_type.nil? && inner_post_type?(@post_type.slug) %>
+
  <!-- Main Content -->
  <div class="main-content">
    <%= yield %>

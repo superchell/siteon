@@ -1,0 +1,30 @@
+<section id="blog" class="iq-page-blog overview-block-ptb">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+
+        <% @posts.each do |post| %>
+            <div class="iq-blog-box <%= cycle("", "iq-mt-60", "iq-mt-60") %>">
+              <div class="iq-blog-image clearfix">
+                <a href="<%= post.decorate.the_url %>"><%= image_tag post.decorate.the_thumb_url, alt: post.decorate.the_title if post.decorate.has_thumb? %></a>
+              </div>
+              <div class="iq-blog-detail">
+                <div class="blog-title"> <a href="<%= post.decorate.the_url %>"><h5 class="iq-tw-6 iq-mb-10"><%= post.decorate.the_title %></h5> </a> </div>
+                <div class="blog-content">
+                  <%= raw post.get_field('preview_descr') %>
+                </div>
+                <div class="iq-blog-meta">
+                  <ul class="list-inline">
+                    <li><i class="fa fa-calendar" aria-hidden="true"></i> <%= post.decorate.the_created_at %></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+        <% end %>
+
+        <%= content_tag("div", raw(ct('no_contents_found', default: 'No contents found')), class: "alert alert-warning") if @posts.empty? %>
+      </div>
+    </div>
+    <%= raw siteon_pagination(@posts) %>
+  </div>
+</section>
