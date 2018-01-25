@@ -548,9 +548,6 @@ $(document).ready(function () {
 
 $(window).on('load', function () {
     wowanimation();
-
-
-
 });
 
 function mainMenuModifier() {

@@ -6,16 +6,16 @@
  * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
  *
  *
- *= require ./googlefonts
- *= require ./bootstrap.min
- *= require ./owl-carousel/owl.carousel
- *= require ./font-awesome
- *= require ./animate
- *= require ./ionicons.min.css.scss
- *= require ./style
- *= require ./responsive
- *= require ./color/color
- *= require ./style-customizer
- *= require ./intlTelInput
- *= require ./custom
+ * require ./googlefonts.css
+ * require ./bootstrap.min
+ * require ./owl-carousel/owl.carousel
+ * require ./font-awesome
+ * require ./animate
+ * require ./ionicons.min.css.scss
+ * require ./style
+ * require ./responsive
+ * require ./color/color
+ * require ./style-customizer
+ * require ./intlTelInput
+ * require ./custom
  */

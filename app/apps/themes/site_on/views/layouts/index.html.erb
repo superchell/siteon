@@ -6,11 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <%= stylesheet_link_tag theme_asset_path("css/main") %>
+    <%#= stylesheet_link_tag theme_asset_path("css/main") %>
+    <%= stylesheet_pack_tag 'application' %>
     <%= raw the_head %>
 </head>
 <body data-spy="scroll" data-offset="80" <%= "class=portfolio-page" if @post_type.present? && @post_type.the_slug == "portfolio"%>>
- <%= render partial: "partials/header" %>
+
+
+<%#= c('header') do %>
+  <%#= render partial: "partials/header" %>
+<%# end %>
+
+ <%= c('header')%>
 
  <!-- ./header -->
  <% # Home banner section %>
@@ -20,17 +27,21 @@
  <!-- Main Content -->
  <div class="main-content">
    <%= yield %>
-
  </div>
  <!-- Main Content END -->
- <%= render partial: "partials/footer"%>
- <%= render partial: "partials/callback_form"%>
+ <%= c('footer')%>
+ <%= c('callbackform')%>
+
+ <%#= render partial: "partials/footer"%>
+ <%#= render partial: "partials/callback_form"%>
 
  <script>
    var theme_utils_path = '<%= javascript_path theme_asset_path ("js/utils.js") %>';
  </script>
 
- <%= javascript_include_tag theme_asset_path("js/main.js") %>
- <%= yield :javascript_last %>
+ <%#= javascript_include_tag theme_asset_path("js/main.js") %>
+ <%= javascript_pack_tag "application" %>
+
+ <%#= yield :javascript_last %>
 </body>
 </html>
