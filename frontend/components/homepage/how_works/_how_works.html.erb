@@ -1,0 +1,33 @@
+<!-- How it Works -->
+<section id="how-it-works" class="overview-block-ptb it-works re4-mt-50">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="heading-title">
+          <h3 class="title iq-tw-7"><%= raw current_theme.the_field('how_works_title') %></h3>
+          <p><%= raw current_theme.the_field('how_works_title2') %> </p>
+        </div>
+      </div>
+    </div>
+
+    <% works_items = current_theme.the_field_grouped('how_works_items', true, true).first
+       delay = 0
+    %>
+    <div class="row">
+      <% works_items.each_with_index  do |item, i|%>
+        <div class="col-sm-12 col-md-4 <%= "re-mt-50" if i > 0 %>">
+          <div class="iq-works-box text-left wow flipInX" data-wow-delay="<%= delay %>s">
+            <div class="step"><%= i + 1 %></div>
+            <div class="icon-bg text-center">
+              <i aria-hidden="true" class="<%= item[:icon] %>"></i>
+            </div>
+            <h5 class="iq-tw-7 text-uppercase iq-mt-25 iq-mb-15"><%= item[:title] %></h5>
+            <p><%= item[:descr] %></p>
+          </div>
+        </div>
+        <% delay += 0.5 %>
+      <% end %>
+    </div>
+  </div>
+</section>
+<!-- How it Works END -->

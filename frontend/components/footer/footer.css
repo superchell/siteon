@@ -1,1 +1,125 @@
+@import "../../init/css/color.css";
+@import "../../init/css/style-customizer.css";
 
+/*---------------------------------------------------------------------
+                            Footer Info
+-----------------------------------------------------------------------*/
+
+.footer-info {
+    position: relative;
+}
+
+.footer-info iframe {
+    border: 0px;
+    width: 100%;
+    height: 550px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    -ms-filter: grayscale(100%);
+    -o-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+.iq-get-in {
+    position: relative;
+    z-index: 9;
+    background: #fff;
+    padding: 30px 30px;
+    margin-top: 30px;
+    -webkit-box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.08);
+}
+
+.contact-form .section-field {
+    position: relative;
+    width: 100%;
+    float: left;
+}
+
+.contact-form .section-field input {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    padding-left: 20px;
+    height: 48px;
+    line-height: 48px;
+    clear: both;
+    color: #b6b6b6;
+    border: 1px solid #e1e1e1;
+}
+
+.contact-form .section-field input:focus,
+.contact-form .section-field.textarea textarea:focus {
+    border: 1px solid #4ac4f3;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    outline: none;
+}
+
+.contact-form .section-field.textarea textarea {
+    width: 100%;
+    float: left;
+    color: #b6b6b6;
+    border: 1px solid #e1e1e1;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    padding: 15px 0 0 20px;
+    resize: none;
+}
+
+#formmessage {
+    display: none;
+}
+
+.contact-info {
+    position: relative;
+}
+
+.contact-info:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    left: 15px;
+    top: 0;
+    background: #e5e5e5;
+}
+
+.info-share {
+    margin: 40px 0 0;
+    padding: 0;
+    text-align: left;
+}
+
+.info-share li {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+    margin: 0px 5px;
+}
+
+.info-share li a {
+    display: block;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 16px;
+    color: #666;
+    background: transparent;
+    border: 1px solid #666;
+    text-align: center;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.info-share li a:hover {
+    background: #4ac4f3;
+    border-color: #4ac4f3;
+    color: #fff;
+}

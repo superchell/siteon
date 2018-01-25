@@ -1,0 +1,11 @@
+/*---------------------------------------------------------------------
+                           Our clients
+-----------------------------------------------------------------------*/
+
+.iq-our-clients {
+    border-top: 1px solid #ededed;
+}
+
+.iq-our-clients .owl-carousel .owl-nav {
+    margin-top: -20px;
+}

@@ -1,6 +1,11 @@
 <% home_page = (current_site.the_post(current_theme.get_field("home_page").to_i) || current_site.the_posts("page").first).decorate  %>
 
-<%= c('brands')%>
+<%= c('homepage/how_works')%>
+<%= c('homepage/who_we')%>
+<%= c('homepage/portfolio')%>
+<%= c('homepage/reviews')%>
+<%= c('homepage/services')%>
+<%= c('homepage/brands')%>
 
 <%#= render partial: "partials/homepage/how_works" %>
 
