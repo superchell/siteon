@@ -11,11 +11,13 @@
       <h1><%= @post.the_title %></h1>
       <h3> <%= raw t("camaleon_cms.project_type.#{@post.get_field("project_type")}") %></h3>
       <%= raw @post.the_field('portfolio_top_descr') %>
-      <div class="button-container">
-        <a href="<%= @post.the_field('potfolio_url') %>" target="_blank" style="<%= get_background_color @post.the_field('potfolio_button')%>" class="button w-button">
-          <strong><%= t("camaleon_cms.portfolio.result_button") %>:</strong> <%= @post.the_field('potfolio_url') %>
-        </a>
-      </div>
+      <% unless @post.the_field('potfolio_url').blank? %>
+        <div class="button-container">
+          <a href="<%= @post.the_field('potfolio_url') %>" target="_blank" style="<%= get_background_color @post.the_field('potfolio_button')%>" class="button w-button">
+            <strong><%= t("camaleon_cms.portfolio.result_button") %>:</strong> <%= @post.the_field('potfolio_url') %>
+          </a>
+        </div>
+      <% end %>
     </div>
     <div class="porfolio-main__wrap-right col-flex-md-6 view-check" data-vp-add-class="animated fadeInRight">
       <div class="screenshot">
