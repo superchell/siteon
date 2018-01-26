@@ -1,0 +1,49 @@
+<!-- Banner -->
+<% top_banner = current_theme.the_attribute_fields("top_banner_img").first %>
+
+<% if top_banner.present? %>
+  <section id="iq-home" class="iq-banner overview-block-pt iq-bg iq-bg-fixed iq-over-blue-90" style="<%= get_background_image(top_banner[:image]) %>">
+    <!-- BACKGROUND PARTICLES -->
+    <div id="particles-js"></div>
+    <div class="container-fluid">
+      <div class="banner-text text-center">
+        <div class="row">
+          <div class="col-md-12">
+            <h1 class="text-uppercase iq-font-white iq-tw-3"><%= top_banner[:title].html_safe %></h1>
+            <h2 class="iq-font-white color-text-1 iq-pt-15  text-animate">
+              <span class="cd-words-wrapper">
+                <% current_theme.get_fields("top_banner_descr_list").each do |i| %>
+                  <b class="is-hidden"><%= raw i %></b>
+                <% end %>
+              </span>
+            </h2>
+
+            <p class="iq-font-white text-2 iq-pt-15 iq-mb-40"><%= raw top_banner[:descr]%></p>
+
+            <div class="iq-mt-10">
+              <a href="#call-popup" class="button bt-black animate-button open-popup-link"><%= t("camaleon_cms.buttons.order_site") %></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="banner-objects">
+              <span class="banner-objects-01" data-bottom="transform:translatey(50px)" data-top="transform:translatey(-50px);">
+                      <img src="<%= theme_img_url "drive/03.png" %>" alt="drive02">
+                  </span>
+      <span class="banner-objects-02 iq-fadebounce">
+                      <span class="iq-round"></span>
+              </span>
+      <span class="banner-objects-03 iq-fadebounce">
+                      <span class="iq-round"></span>
+              </span>
+    </div>
+
+    <div class="b-main-arrow">
+      <a href="#how-it-works" class="page-scroll"><i aria-hidden="true" class="ion-ios-arrow-down"></i></a>
+    </div>
+  </section>
+<% end %>
+
+<!-- Banner End -->

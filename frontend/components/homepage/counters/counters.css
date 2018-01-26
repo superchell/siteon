@@ -1,1 +1,126 @@
 
+/*---------------------------------------------------------------------
+                          Counter
+-----------------------------------------------------------------------*/
+
+.counter {
+    position: relative;
+    min-height: 60px;
+}
+
+.counter i {
+    font-size: 60px;
+    line-height: 65px;
+    display: inline-block;
+    float: left;
+    margin-right: 20px;
+}
+
+.counter span {
+    display: inline-block;
+    width: 70%;
+    font-size: 40px;
+    margin: 0;
+    margin-bottom: 5px;
+    line-height: 40px;
+    float: left;
+}
+
+.counter label {
+    font-size: 18px;
+    display: block;
+    position: relative;
+    margin: 0 0 15px 0;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    float: left;
+}
+
+.counter-info {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+
+.counter-info-img {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+}
+
+.counter-info-img img {
+    margin-top: -30px;
+    margin-bottom: -135px;
+}
+
+.counter-info .iq-video {
+    position: absolute;
+    left: 68%;
+    top: 60%;
+    background: #fff;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    font-size: 38px;
+    color: #4ac4f3;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    line-height: 2.1;
+    z-index: 9;
+}
+
+.counter-info .iq-video i {
+    margin-left: 7px;
+}
+
+.counter-info .iq-waves {
+    position: absolute;
+    width: 384px;
+    width: 24rem;
+    height: 384px;
+    height: 24rem;
+    left: 68%;
+    top: 60%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.counter-info .iq-waves .waves {
+    position: absolute;
+    width: 384px;
+    width: 24rem;
+    height: 384px;
+    height: 24rem;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -webkit-border-radius: 320px;
+    border-radius: 320px;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-animation: waves 3s ease-in-out infinite;
+    animation: waves 3s ease-in-out infinite;
+}
+
+.counter-info .iq-waves .wave-1 {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+}
+
+.counter-info .iq-waves .wave-2 {
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+.counter-info .iq-waves .wave-3 {
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}

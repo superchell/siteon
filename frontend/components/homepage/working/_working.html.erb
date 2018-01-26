@@ -1,0 +1,61 @@
+<!-- Frequently Asked Questions -->
+<section class="overview-block-ptb white-bg iq-asked">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="heading-title">
+          <h3 class="title iq-tw-7"><%= raw current_theme.the_field('our_working_title') %></h3>
+          <%= raw current_theme.the_field('our_working_descr') %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 col-md-6">
+        <%= image_tag current_theme.the_field('our_working_banner'), class: "img-responsive center-block", alt: "", style: "z-index: 9; position: relative;" %>
+      </div>
+      <% working_items = current_theme.the_field_grouped('our_working_item', true, true).first %>
+      <% unless working_items.blank? %>
+        <div class="col-sm-12 col-md-6">
+          <div class="iq-accordion iq-mt-50">
+
+            <% working_items.each_with_index do |item, i| %>
+              <% odd = (i % 2).zero? %>
+              <div class="ad-block ad-active"> <a href="#" class="ad-title iq-tw-6 iq-font-grey"><%= item[:title] %></a>
+                <div class="ad-details">
+                  <div class="row">
+                    <% if odd && !item[:image].blank? %>
+                      <div class="col-sm-3">
+                        <%= image_tag item[:image], class: "img-responsive ", alt: item[:title] %>
+                      </div>
+                    <% end %>
+                    <div class="col-sm-9">
+                      <%= item[:descr] %>
+                    </div>
+                    <% if !odd && !item[:image].blank? %>
+                      <div class="col-sm-3">
+                        <%= image_tag item[:image], class: "img-responsive ", alt: item[:title] %>
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="iq-objects-asked">
+                <span class="iq-objects-01">
+                    <img src="<%= theme_img_url "drive/02.png" %>" alt="drive02">
+                </span>
+    <span class="iq-objects-02">
+                    <img src="<%= theme_img_url "drive/04.png" %>" alt="drive04">
+                </span>
+    <span class="iq-objects-03 iq-fadebounce">
+                    <span class="iq-round"></span>
+                </span>
+  </div>
+</section>
+
+<!-- Frequently Asked Questions END -->

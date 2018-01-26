@@ -1,0 +1,46 @@
+<!-- Software Features -->
+
+<section id="software-features" class="overview-block-ptb software iq-mt-40 iq-pb-40">
+  <% unless current_theme.the_field('tech_big_banner').blank? %>
+    <div class="iq-software-demo">
+      <img class="img-responsive" src="<%= current_theme.the_field('tech_big_banner') %>" alt="drive05">
+    </div>
+  <% end %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-md-offset-6">
+        <h2 class="iq-tw-6 iq-mb-25"><%= raw current_theme.the_field('tech_title') %></h2>
+        <p class="iq-font-15"><%= raw current_theme.the_field('tech_descr') %></p>
+        <% if current_theme.the_fields('tech_logo').size > 0 %>
+          <% current_theme.the_fields('tech_logo').each_slice(2) do |l1, l2|%>
+            <div class="row">
+              <div class="col-xs-6">
+                <% unless l1.blank? %>
+                  <%= image_tag  l1.cama_parse_image_version('263x123', true) %>
+                <% end %>
+              </div>
+              <div class="col-xs-6">
+                <% unless l2.blank? %>
+                  <%= image_tag l2.cama_parse_image_version('263x123', true) %>
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="iq-objects-software">
+                <span class="iq-objects-01">
+                        <img src="<%= theme_img_url "drive/03.png" %>" alt="drive02">
+                    </span>
+    <span class="iq-objects-02">
+                        <img src="<%= theme_img_url "drive/04.png" %>" alt="drive02">
+                    </span>
+    <span class="iq-objects-03 iq-fadebounce">
+                        <span class="iq-round"></span>
+                </span>
+  </div>
+</section>
+
+<!-- Software Features END -->
