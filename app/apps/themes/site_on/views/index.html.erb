@@ -1,17 +1,6 @@
 <% home_page = (current_site.the_post(current_theme.get_field("home_page").to_i) || current_site.the_posts("page").first).decorate  %>
 
-<%= c('homepage/home_baner')%>
-<%= c('homepage/how_works')%>
-<%= c('homepage/who_we')%>
-<%= c('homepage/portfolio')%>
-<%= c('homepage/reviews')%>
-<%= c('homepage/services')%>
-<%= c('homepage/counters')%>
-<%= c('homepage/tech')%>
-<%= c('homepage/prices')%>
-<%= c('homepage/working')%>
-<%= c('homepage/brands')%>
-
+<%= c('homepage')%>
 
 <!-- Footer -->
 

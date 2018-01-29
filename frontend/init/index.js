@@ -20,7 +20,6 @@ import 'bootstrap';
 
 require("imports-loader?$=jquery!jquery.nicescroll/dist/jquery.nicescroll.js");
 require("imports-loader?$=jquery!owl.carousel/dist/owl.carousel.js");
-require("imports-loader?$=jquery!owl.carousel/dist/owl.carousel.js");
 require("imports-loader?$=jquery!intl-tel-input/build/js/intlTelInput.js");
 
 
