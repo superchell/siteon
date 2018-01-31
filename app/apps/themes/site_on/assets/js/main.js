@@ -8,3 +8,16 @@
 // compiled file.
 //
 //
+//= require ./jquery.min
+//= require ./owl-carousel/owl.carousel.min
+//= require ./counter/jquery.countTo
+//= require ./jquery.appear
+//= require ./wow.min
+//= require ./skrollr.min
+//= require ./particles/particles.min
+//= require ./particles/app
+//= require ./bootstrap.min
+//= require ./style-customizer
+//= require ./jquery.nicescroll.min
+//= require ./intlTelInput.min
+//= require ./custom
