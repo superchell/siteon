@@ -3,7 +3,7 @@ import "./portfolio.css";
 
 export default class extends Controller {
     connect() {
-        require("imports-loader?$=jquery!jquery-plugin-viewport-checker/dist/jquery.viewportchecker.min");
+        require("imports-loader?$=jquery!jquery-viewport-checker-gena/dist/jquery.viewportchecker.min");
 
         var items = $('#main_menu').find('.menu-item > a');
         items.each(function(){1

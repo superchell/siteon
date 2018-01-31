@@ -98,7 +98,7 @@ a:hover {
 .iq-progress-bar-text,
 .iq-blog-detail a:hover,
 .iq-blog-detail .blog-title a:hover h5,
-.iq-footer-box .iq-icon i,
+
 .counter-info .iq-video,
 .iq-sidebar-widget .iq-widget-search i,
 .iq-widget-menu ul li a span:hover,
@@ -116,6 +116,7 @@ a:hover {
 .iq-amazing-tab .nav.nav-tabs li.active a:focus i,
 .iq-amazing-tab .nav.nav-tabs li a:hover,
 .iq-amazing-tab .nav.nav-tabs li a:hover i,
+.iq-footer-box .iq-icon i,
 .iq-font-blue {
   color: #fdc318;
 }

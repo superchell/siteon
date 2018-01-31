@@ -50,13 +50,13 @@
 }
 
 .iq-amazing-tab .nav.nav-tabs li a:hover {
-    color: #4ac4f3;
+    color: #fdc319;
     background: none;
     border: none;
 }
 
 .iq-amazing-tab .nav.nav-tabs li a:hover i {
-    color: #4ac4f3;
+    color: #fdc319;
 }
 
 .iq-amazing-tab .nav.nav-tabs li.active1 a,
@@ -70,7 +70,7 @@
 .iq-amazing-tab .nav.nav-tabs li.active1 a i,
 .iq-amazing-tab .nav.nav-tabs li.active1 a:hover i,
 .iq-amazing-tab .nav.nav-tabs li.active1 a:focus i {
-    color: #4ac4f3;
+    color: #fdc319;
 }
 
 .iq-amazing-tab .nav.nav-tabs li a:before,
@@ -83,7 +83,7 @@
     width: 100%;
     content: "";
     opacity: 0;
-    background: #4ac4f3;
+    background: #fdc319;
     -webkit-transition: all 0.5s ease-out 0s;
     -o-transition: all 0.5s ease-out 0s;
     transition: all 0.5s ease-out 0s;

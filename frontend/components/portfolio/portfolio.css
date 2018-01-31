@@ -189,7 +189,7 @@
     transform: rotate(-12deg);
 }
 .ipad__mockup{
-    background: asset-theme-url('images/portfolio/ipad_hands.png') no-repeat left top;
+    background: url('./images/ipad_hands.png') no-repeat left top;
     width: 700px;
     height: 690px;
     background-size: cover;

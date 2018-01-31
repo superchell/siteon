@@ -18,7 +18,6 @@ import skrollr from 'skrollr';
 
 import 'bootstrap';
 
-require("imports-loader?$=jquery!jquery.nicescroll/dist/jquery.nicescroll.js");
 require("imports-loader?$=jquery!owl.carousel/dist/owl.carousel.js");
 require("imports-loader?$=jquery!intl-tel-input/build/js/intlTelInput.js");
 
@@ -249,18 +248,6 @@ function header() {
     });
 }
 
-/*************************
- Cursor animation
- *************************/
-if (window.innerWidth >= 1048) {
-    $(document).ready(function() {
-
-        var nice = $("html").niceScroll({
-            scrollspeed :  80
-        });
-
-    });
-}
 
 /*************************
  widget

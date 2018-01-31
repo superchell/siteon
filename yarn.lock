@@ -3897,15 +3897,9 @@ jquery-countto@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/jquery-countto/-/jquery-countto-1.2.0.tgz#49f17fcb24a746a168b84321e50e9b7751819660"
 
-jquery-plugin-viewport-checker@^1.8.3:
-  version "1.8.3"
-  resolved "https://registry.yarnpkg.com/jquery-plugin-viewport-checker/-/jquery-plugin-viewport-checker-1.8.3.tgz#8f4932d62e4a8f1147a8c0b0cbeee075388d543a"
-
-jquery.nicescroll@^3.7.6:
-  version "3.7.6"
-  resolved "https://registry.yarnpkg.com/jquery.nicescroll/-/jquery.nicescroll-3.7.6.tgz#afeff3e80658dabe4f78d2d2e84250060fea0852"
-  dependencies:
-    jquery ">=1.8.3"
+jquery-viewport-checker-gena@^1.8.8:
+  version "1.8.8"
+  resolved "https://registry.yarnpkg.com/jquery-viewport-checker-gena/-/jquery-viewport-checker-gena-1.8.8.tgz#48e3d6d328a348e1531d0728496fd4613660c864"
 
 jquery@3.3.1, jquery@>=1.8.3:
   version "3.3.1"

@@ -45,7 +45,7 @@
     -webkit-transition: all 0.25s ease-in-out 0s;
     -o-transition: all 0.25s ease-in-out 0s;
     transition: all 0.25s ease-in-out 0s;
-    background: #4ac4f3;
+    background: #fdc319;
 }
 
 .iq-accordion .ad-active .ad-title:before {
@@ -99,7 +99,7 @@
     position: absolute;
     top: 28%;
     left: 13%;
-    border: 25px solid #4ac4f3;
+    border: 25px solid rgb(253, 195, 24);
     -webkit-border-radius: 900px;
     border-radius: 900px;
     height: 350px;
