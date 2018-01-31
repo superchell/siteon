@@ -1,5 +1,60 @@
 {
   "name": "siteon",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "1.3.0": "^1.3.0",
+    "@rails/webpacker": "^3.2.1",
+    "animate.css": "^3.5.2",
+    "bootstrap": "^3.3.7",
+    "coffeescript": "1.12.7",
+    "font-awesome": "^4.7.0",
+    "gsap": "^1.20.3",
+    "imports-loader": "^0.7.1",
+    "intl-tel-input": "^12.1.7",
+    "ionicons": "^3.0.0",
+    "ionicons-webpack": "^0.0.1",
+    "jquery": "3.3.1",
+    "jquery-countto": "^1.2.0",
+    "jquery-viewport-checker-gena": "^1.8.8",
+    "normalize.css": "^7.0.0",
+    "owl.carousel": "^2.2.0",
+    "postcss-nested": "^3.0.0",
+    "skrollr": "^0.6.26",
+    "stimulus": "^0.9.0",
+    "webpack-merge": "^4.1.1",
+    "wow.js": "^1.2.2"
+  },
+  "scripts": {
+    "lint-staged": "$(yarn bin)/lint-staged"
+  },
+  "lint-staged": {
+    "config/webpack/**/*.js": [
+      "prettier --write",
+      "git add"
+    ],
+    "frontend/**/*.js": [
+      "prettier --write",
+      "git add"
+    ],
+    "frontend/**/*.css": [
+      "prettier --write",
+      "stylelint --fix",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.1",
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb-base": "^12.0.1",
+    "eslint-config-prettier": "^2.6.0",
+    "eslint-import-resolver-webpack": "^0.8.3",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-prettier": "^2.3.1",
+    "lint-staged": "^4.2.3",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.7.3",
+    "stylelint": "^8.1.1",
+    "stylelint-config-standard": "^17.0.0",
+    "webpack-dev-server": "^2.11.1"
+  }
 }

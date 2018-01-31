@@ -1,0 +1,278 @@
+/*---------------------------------------------------------------------
+                            Banner
+-----------------------------------------------------------------------*/
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+    width: 100%;
+    height: 100%;
+    background-image: url('');
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+
+.iq-banner {
+    position: relative;
+    overflow: hidden;
+}
+
+.iq-banner .container-fluid {
+    padding: 0 90px;
+}
+
+/*
+.iq-banner:after {
+    content: "";
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 78px;
+    background: url('../images/banner/02.png') no-repeat 0 0;
+    background-size: cover;
+    display: inline-block;
+    position: absolute;
+}
+*/
+
+.animate-button {
+    position: relative;
+}
+
+.animate-button:after {
+    position: absolute;
+    content: '';
+    background: rgba(255, 255, 255, 0.46);
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    z-index: -1;
+    -webkit-animation: wave1 1.5s infinite ease-out;
+    animation: wave1 1.5s infinite ease-out;
+}
+
+.animate-button:before {
+    position: absolute;
+    content: '';
+    background: rgba(255, 255, 255, 0.46);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    z-index: -1;
+    -webkit-animation: wave2 1.5s 0.8s infinite ease-out;
+    animation: wave2 1.5s 0.8s infinite ease-out;
+}
+
+@-webkit-keyframes wave1 {}
+
+@keyframes wave1 {
+    from {
+        left: 0px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        opacity: 1;
+    }
+
+    to {
+        left: -20px;
+        top: -20px;
+        right: -20px;
+        bottom: -20px;
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes wave2 {
+    from {
+        left: 0px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        opacity: 0.3;
+    }
+
+    to {
+        left: -20px;
+        top: -20px;
+        right: -20px;
+        bottom: -20px;
+        opacity: 0;
+    }
+}
+
+@keyframes wave2 {
+    from {
+        left: 0px;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        opacity: 0.3;
+    }
+
+    to {
+        left: -20px;
+        top: -20px;
+        right: -20px;
+        bottom: -20px;
+        opacity: 0;
+    }
+}
+
+
+.iq-banner .banner-text {
+    z-index: 9;
+    position: relative;
+    margin-top: 13%;
+}
+
+.iq-banner .banner-text h1 {
+    font-size: 55px;
+    line-height: normal;
+}
+
+.iq-banner .banner-img {
+    width: 110%;
+}
+
+.iq-banner .iq-video {
+    background: #fff;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-size: 29px;
+    color: #fdc319;
+    float: left;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    line-height: 2.1;
+    z-index: 9;
+    position: relative;
+}
+
+.iq-banner .iq-video i {
+    margin-left: 5px;
+}
+
+.iq-banner .iq-waves {
+    position: absolute;
+    width: 384px;
+    width: 14rem;
+    height: 384px;
+    height: 14rem;
+    left: -4.3%;
+    bottom: -36px;
+    z-index: 2;
+    float: right;
+}
+
+.iq-banner .iq-waves .waves {
+    position: absolute;
+    width: 384px;
+    width: 15rem;
+    height: 384px;
+    height: 15rem;
+    background: rgba(255, 255, 255, 0.2);
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -webkit-border-radius: 320px;
+    border-radius: 320px;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-animation: waves 3s ease-in-out infinite;
+    animation: waves 3s ease-in-out infinite;
+}
+
+.iq-banner .iq-waves .wave-1 {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s;
+}
+
+.iq-banner .iq-waves .wave-2 {
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+.iq-banner .iq-waves .wave-3 {
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+
+@-webkit-keyframes waves {
+    0% {
+        -webkit-transform: scale(0.2, 0.2);
+        transform: scale(0.2, 0.2);
+        opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    }
+    50% {
+        opacity: 0.9;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    }
+    100% {
+        -webkit-transform: scale(0.9, 0.9);
+        transform: scale(0.9, 0.9);
+        opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    }
+}
+
+@keyframes waves {
+    0% {
+        -webkit-transform: scale(0.2, 0.2);
+        transform: scale(0.2, 0.2);
+        opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    }
+    50% {
+        opacity: 0.9;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";
+    }
+    100% {
+        -webkit-transform: scale(0.9, 0.9);
+        transform: scale(0.9, 0.9);
+        opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    }
+}
+
+.banner-objects {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.banner-objects .banner-objects-01 {
+    position: absolute;
+    left: -8%;
+    bottom: -20%;
+    opacity: 0.1;
+}
+
+.banner-objects .banner-objects-02 {
+    position: absolute;
+    bottom: 50%;
+    margin-bottom: -125px;
+    left: -13%;
+    border: 15px solid rgba(255, 255, 255, 0.1);
+    -webkit-border-radius: 900px;
+    border-radius: 900px;
+    height: 250px;
+    width: 250px;
+}
+
+.banner-objects .banner-objects-03 {
+    position: absolute;
+    top: 0%;
+    right: -15%;
+    border: 30px solid rgba(255, 255, 255, 0.1);
+    -webkit-border-radius: 900px;
+    border-radius: 900px;
+    height: 400px;
+    width: 400px;
+}

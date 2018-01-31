@@ -1,0 +1,69 @@
+
+/*---------------------------------------------------------------------
+                        Affordable Price
+-----------------------------------------------------------------------*/
+.iq-price-table{
+    padding-top: 160px;
+}
+
+.iq-pricing {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    border: 1px solid #ededed;
+    background: #fff;
+}
+
+.iq-pricing .price-title {
+    padding: 35px 20px;
+    position: relative;
+}
+
+.iq-pricing .price-title:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    background: asset-theme-url('images/drive/09.png') no-repeat center bottom;
+    -webkit-background-size: 100% 100%;
+    background-size: 100%;
+    height: 100%;
+    width: 100%;
+}
+
+.iq-pricing .price-title h2 {
+    font-family: 'Raleway', sans-serif;
+    line-height: 60px;
+    font-size: 50px;
+    position: relative;
+}
+
+.iq-pricing .price-title h2 small {
+    font-size: 16px;
+    color: #fff;
+    vertical-align: super;
+    padding: 0 5px;
+}
+
+.iq-pricing .price-title h2 small:first-child {
+    font-size: 24px;
+}
+
+.iq-pricing .price-title span {
+    letter-spacing: 6px;
+    position: relative;
+}
+
+.iq-pricing ul {
+    margin: 20px 0;
+}
+
+.iq-pricing ul li {
+    line-height: 50px;
+}
+
+.iq-pricing .price-footer {
+    padding: 30px 0;
+    z-index: 9;
+    position: relative;
+}

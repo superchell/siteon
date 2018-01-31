@@ -1,24 +1,6 @@
 <% home_page = (current_site.the_post(current_theme.get_field("home_page").to_i) || current_site.the_posts("page").first).decorate  %>
 
-<%= render partial: "partials/homepage/how_works" %>
-
-<%= render partial: "partials/homepage/who_we" %>
-
-<%= render partial: "partials/homepage/portfolio" %>
-
-<%= render partial: "partials/homepage/reviews" %>
-
-<%= render partial: "partials/homepage/services" %>
-
-<%= render partial: "partials/homepage/counters" %>
-
-<%= render partial: "partials/homepage/tech" %>
-
-<%= render partial: "partials/homepage/prices" %>
-
-<%= render partial: "partials/homepage/working"%>
-
-<%= render partial: "partials/homepage/brands" %>
+<%= c('homepage')%>
 
 <!-- Footer -->
 

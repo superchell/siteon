@@ -1,0 +1,77 @@
+
+/*---------------------------------------------------------------------
+                          Loved By Our Customers
+-----------------------------------------------------------------------*/
+
+.iq-loved-customers .owl-carousel .owl-item .item {
+    padding: 10px 10px 20px;
+}
+
+
+
+.iq-client {
+    position: relative;
+    margin-top: 40px;
+    text-align: center;
+    padding: 30px 150px;
+}
+
+.iq-client:before {
+    position: absolute;
+    content: "";
+    bottom: -8px;
+    left: 5%;
+    width: 90%;
+    background: #4ac4f3;
+    height: 8px;
+    display: inline-block;
+    z-index: -1;
+}
+
+.iq-client .client-img {
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    -webkit-border-radius: 90px;
+    border-radius: 90px;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.client-info {
+    margin-top: 30px;
+}
+
+.client-name{
+    text-align: center;
+}
+
+.client-name:before {
+    content: "\f10d";
+    font-family: FontAwesome;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 44px;
+    color: #f0f0f0;
+    line-height: normal;
+}
+
+.client-name:after {
+    content: "\f10e";
+    font-family: FontAwesome;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    font-size: 44px;
+    color: #f0f0f0;
+    line-height: normal;
+}
+
+.client-info p {
+    line-height: 28px;
+}

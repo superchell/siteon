@@ -1,0 +1,62 @@
+<!-- Footer -->
+
+<footer>
+
+  <%= render partial: "partials/bottom_form" %>
+  <!-- Footer Info -->
+  <section class="footer-info iq-pt-60">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-md-4">
+          <div class="iq-footer-box text-left">
+            <div class="iq-icon">
+              <i aria-hidden="true" class="ion-ios-location-outline"></i>
+            </div>
+            <div class="footer-content">
+              <%= raw current_theme.the_field('footer_left') %>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 re4-mt-30">
+          <div class="iq-footer-box text-left">
+            <div class="iq-icon">
+              <i aria-hidden="true" class="ion-ios-telephone-outline"></i>
+            </div>
+            <div class="footer-content">
+              <%= raw current_theme.the_field('footer_center') %>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 re-mt-30">
+          <div class="iq-footer-box text-left">
+            <div class="iq-icon">
+              <i aria-hidden="true" class="ion-ios-email-outline"></i>
+            </div>
+            <div class="footer-content">
+              <%= raw current_theme.the_field('footer_right') %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row iq-mt-40">
+        <div class="col-sm-12 text-center">
+          <div class="footer-copyright iq-ptb-20"><%= t("camaleon_cms.copyright") %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Info END -->
+
+</footer>
+
+<!-- Footer END -->
+
+<!-- back-to-top -->
+
+<div id="back-to-top">
+  <a class="top" id="top" href="#top"> <i class="ion-ios-upload-outline"></i> </a>
+</div>
+
+<!-- back-to-top End -->

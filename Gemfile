@@ -59,9 +59,10 @@ group :production do
   gem 'heroku-deflater', github: 'superchell/heroku-deflater'
 end
 
+
 gem "camaleon_cms", github: 'owen2345/camaleon-cms'
 gem 'draper', '~> 3'
-
+gem 'webpacker'
 
 #################### Camaleon CMS include all gems for plugins and themes #################### 
 require './lib/plugin_routes' 
