@@ -1,3 +1,1 @@
-# ~/go/bin/overmind start
-server: rails server
-assets: webpack-dev-server
+web: bundle exec puma -C config/puma.rb
