@@ -26,12 +26,10 @@
     border-radius: 4px;
 }
 
-.iq-accordion .ad-title:before {
+.iq-accordion .ad-title .arrow-i {
     -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.06);
     box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.06);
     cursor: pointer;
-    content: "\f3d0";
-    font-family: "Ionicons";
     position: absolute;
     top: 0;
     right: 0;
@@ -48,10 +46,7 @@
     background: #fdc319;
 }
 
-.iq-accordion .ad-active .ad-title:before {
-    content: "\f3d8";
-    font-family: "Ionicons";
-}
+
 
 .iq-accordion .ad-details {
     display: none;

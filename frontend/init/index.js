@@ -1,15 +1,15 @@
+("use strict");
+
 import "./css/index.css";
 import "./css/googlefonts.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "font-awesome/scss/font-awesome.scss";
+import "./fontasome/css/fontawesome-all.min.css";
 import "animate.css/animate.min.css";
-import "ionicons/dist/scss/ionicons.scss";
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import "./css/style.css.scss";
-import "./css/responsive.css";
 import "intl-tel-input/build/css/intlTelInput.css";
 
-("use strict");
+
 
 /* importing plugins */
 
@@ -17,6 +17,8 @@ import WOW from 'wow.js';
 import skrollr from 'skrollr';
 
 import 'bootstrap';
+
+
 
 require("imports-loader?$=jquery!owl.carousel/dist/owl.carousel.js");
 require("imports-loader?$=jquery!intl-tel-input/build/js/intlTelInput.js");
@@ -59,7 +61,7 @@ $(".owl-carousel").each(function () {
         dots: $navdots,
         margin: $space,
         nav: $navarrow,
-        navText: ["<i class='fa fa-angle-left fa-2x'></i>", "<i class='fa fa-angle-right fa-2x'></i>"],
+        navText: ['<div class="i-wrap"><i class="fa fa-angle-left fa-2x"></i></div>', '<div class="i-wrap"><i class="fa fa-angle-right fa-2x"></i></div>'],
         autoplay: $autoplay,
         autoplayHoverPause: true
     });
@@ -246,6 +248,10 @@ function header() {
             $('.menu-top').removeClass('menu-sticky');
         }
     });
+
+    if ( $(window).scrollTop() != 0){
+        $('.menu-top').addClass('menu-sticky');
+    }
 }
 
 

@@ -24,7 +24,7 @@ NOTE: This file contains the styling for responsive Template.
 	.iq-banner .iq-waves { left: -5%; }
 	.counter-info-img img { margin-top: 0px; margin-bottom: -100px; width: 115%; }
 	.counter-info .iq-video, .counter-info .iq-waves { left: 60%; }
-	.iq-objects .iq-objects-04, .iq-objects-software .iq-objects-03 { border: 36px solid #4ac4f3; height: 500px; width: 500px; }
+	.iq-objects .iq-objects-04, .iq-objects-software .iq-objects-03 { border: 36px solid #fdc319; height: 500px; width: 500px; }
 }
 @media(max-width:1365px) {
 	.owl-carousel .owl-nav .owl-next { right: -5%; }
@@ -39,7 +39,7 @@ NOTE: This file contains the styling for responsive Template.
 	.iq-banner .banner-img { width: 117%; }
 	.banner-text p.iq-mb-40 { margin-bottom: 20px !important; }
 	.iq-banner .iq-waves { left: -6.8%; }
-	.iq-objects .iq-objects-04, .iq-objects-software .iq-objects-03 { border: 26px solid #4ac4f3; height: 350px; width: 350px; }
+	.iq-objects .iq-objects-04, .iq-objects-software .iq-objects-03 { border: 26px solid #fdc319; height: 350px; width: 350px; }
 	.iq-objects .iq-objects-01 { display: none; }
 	.iq-works-img { width: 100%; }
 	.iq-objects-software .iq-objects-02 { bottom: 30%; }
@@ -195,13 +195,13 @@ NOTE: This file contains the styling for responsive Template.
 	.iq-coming .button.iq-ml-25 { margin-left: 0 !important; }
 	header .navbar-default { padding: 20px 0 0; }
 	header .navbar-default .navbar-toggle { background: #fff; border: #fff; margin-top: 10px; margin-right: 0; transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out; }
-	header .navbar-default .navbar-toggle .icon-bar { background: #4ac4f3; }
+	header .navbar-default .navbar-toggle .icon-bar { background: #fdc319; }
 	header .navbar-default .navbar-toggle:hover, header .navbar-default .navbar-toggle:focus { background: rgba(255, 255, 255, 0.8); }
 	header .navbar-default .navbar-collapse, header .navbar-default .navbar-form { background: #fff; border: none; margin-top: 15px; }
 	header .navbar-nav { margin-top: 0; }
 	header .navbar-default .navbar-nav > li > a { color: #333; padding: 10px 15px; }
 	header .nav > li a::before { display: none; }
-	header .navbar-default .navbar-nav > li > a:hover, header .navbar-default .navbar-nav > li > a:focus, header .navbar-default .navbar-nav > li.active > a, header .navbar-default .navbar-nav > li.active > a:focus, header .navbar-default .navbar-nav > li.active > a:hover { background: #4ac4f3; }
+	header .navbar-default .navbar-nav > li > a:hover, header .navbar-default .navbar-nav > li > a:focus, header .navbar-default .navbar-nav > li.active > a, header .navbar-default .navbar-nav > li.active > a:focus, header .navbar-default .navbar-nav > li.active > a:hover { background: #fdc319; }
 	header .navbar-nav > li { margin: 0; }
 	
 	header .menu-sticky.navbar-default .navbar-toggle { margin-top: 5px; }
