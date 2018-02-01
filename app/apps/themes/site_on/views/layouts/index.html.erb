@@ -13,11 +13,6 @@
 </head>
 <body data-spy="scroll" data-offset="80" <%= "class=portfolio-page" if @post_type.present? && @post_type.the_slug == "portfolio"%>>
 
-
-<%#= c('header') do %>
-  <%#= render partial: "partials/header" %>
-<%# end %>
-
  <%= c('header')%>
 
  <!-- ./header -->
@@ -31,16 +26,11 @@
  <%= c('footer')%>
  <%= c('callback_form')%>
 
- <%#= render partial: "partials/footer"%>
- <%#= render partial: "partials/callback_form"%>
-
  <script>
    var theme_utils_path = '<%= javascript_path theme_asset_path ("js/utils.js") %>';
  </script>
 
- <%#= javascript_include_tag theme_asset_path("js/main.js") %>
  <%= javascript_pack_tag "application" %>
 
- <%#= yield :javascript_last %>
 </body>
 </html>
