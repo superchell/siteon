@@ -20,7 +20,7 @@
 
             <% working_items.each_with_index do |item, i| %>
               <% odd = (i % 2).zero? %>
-              <div class="ad-block ad-active"> <a href="#" class="ad-title iq-tw-6 iq-font-grey"><%= item[:title] %></a>
+              <div class="ad-block ad-active"> <a href="#" class="ad-title iq-tw-6 iq-font-grey"><span class="arrow-i"><i class="fas fa-caret-down"></i></span><%= item[:title] %></a>
                 <div class="ad-details">
                   <div class="row">
                     <% if odd && !item[:image].blank? %>

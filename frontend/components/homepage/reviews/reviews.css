@@ -50,9 +50,9 @@
     text-align: center;
 }
 
-.client-name:before {
-    content: "\f10d";
-    font-family: FontAwesome;
+.client-name .qq1 {
+    content: "\f10e";
+    font-family: 'Font Awesome 5 Solid';
     position: absolute;
     top: 15px;
     left: 15px;
@@ -61,9 +61,9 @@
     line-height: normal;
 }
 
-.client-name:after {
-    content: "\f10e";
-    font-family: FontAwesome;
+.client-name .qq2 {
+    content: "\f10d";
+    font-family: 'Font Awesome 5 Solid';
     position: absolute;
     bottom: 15px;
     right: 15px;

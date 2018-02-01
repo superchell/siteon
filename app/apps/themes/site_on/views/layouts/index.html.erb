@@ -10,6 +10,9 @@
 
     <%= stylesheet_pack_tag 'application' %>
     <%= raw the_head %>
+    <script>
+        FontAwesomeConfig = { searchPseudoElements: true };
+    </script>
 </head>
 <body data-spy="scroll" data-offset="80" <%= "class=portfolio-page" if @post_type.present? && @post_type.the_slug == "portfolio"%>>
 
