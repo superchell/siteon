@@ -21,6 +21,13 @@ GIT
       will_paginate-bootstrap
 
 GIT
+  remote: https://github.com/owen2345/camaleon-post-order-plugin.git
+  revision: 3c665b27166084be6b99142cde837d0195080e60
+  specs:
+    camaleon_post_order (0.0.2)
+      rails
+
+GIT
   remote: https://github.com/superchell/heroku-deflater.git
   revision: c1a0369e3a54d0a5b6b2792622d5648ca3c9f237
   specs:
@@ -257,6 +264,7 @@ PLATFORMS
 DEPENDENCIES
   byebug
   camaleon_cms!
+  camaleon_post_order!
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   draper (~> 3)

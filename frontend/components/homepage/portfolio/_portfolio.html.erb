@@ -1,7 +1,6 @@
-<% portfolio_items = current_site.the_posts(current_theme.get_field("portfolio_post_type")).latest.limit(12).decorate %>
+<% portfolio_items = current_site.the_posts(current_theme.get_field("portfolio_post_type")).order('post_order').limit(12).decorate %>
 
 <!-- Great Screenshots -->
-
 <% if portfolio_items.size > 0 %>
 
   <section id="portfolio" class="overview-block-ptb iq-bg iq-bg-fixed iq-over-blue-80 iq-screenshots" style="<%= get_background_image(current_theme.the_field('portfolio_background')) %>">

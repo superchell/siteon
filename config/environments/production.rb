@@ -16,6 +16,7 @@ Rails.application.configure do
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
+  config.cache_store = :memory_store
 
   @_cache_control = 'public, s-maxage=31536000, max-age=15552000' # heroku deflater var
   cache_control = {

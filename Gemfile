@@ -64,6 +64,8 @@ gem "camaleon_cms", github: 'owen2345/camaleon-cms'
 gem 'draper', '~> 3'
 gem 'webpacker'
 
+gem "camaleon_post_order", github: 'owen2345/camaleon-post-order-plugin'
+
 #################### Camaleon CMS include all gems for plugins and themes #################### 
 require './lib/plugin_routes' 
 instance_eval(PluginRoutes.draw_gems)
