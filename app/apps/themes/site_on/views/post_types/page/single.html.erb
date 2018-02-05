@@ -1,13 +1,3 @@
-<section id="blog" class="iq-page-blog overview-block-ptb">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="iq-blog-box">
-          <div class="iq-blog-detail">
-            <%= raw @post.the_content %>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<%= cache do %>
+  <%= c('page')%>
+<% end %>
