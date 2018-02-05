@@ -57,13 +57,15 @@ module CamaleonCms::Frontend::CustomHelper
     will_paginate_options = will_paginate_options.extract_options!
     will_paginate_options[:previous_label] = '<i class="ion-ios-arrow-left"></i>'
     will_paginate_options[:next_label] = '<i class="ion-ios-arrow-right"></i>'
-    "<div class='row iq-mt-80'>
-      <div class='col-lg-12 col-md-12 text-center'>
-        <ul class='pagination pagination-lg'>
-          #{will_paginate(items, will_paginate_options) rescue '' }
-        </ul>
+    "<div class=\"container\">
+      <div class=\"row iq-mt-80\">
+        <div class=\"col-lg-12 col-md-12 text-center\">
+          <ul class=\"pagination pagination-lg\">
+            #{will_paginate(items, will_paginate_options) rescue '' }
+          </ul>
+        </div>
       </div>
-    </div>"
+  </div>"
   end
 
 end

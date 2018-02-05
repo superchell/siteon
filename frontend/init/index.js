@@ -23,6 +23,17 @@ import 'bootstrap';
 require("imports-loader?$=jquery!owl.carousel/dist/owl.carousel.js");
 require("imports-loader?$=jquery!intl-tel-input/build/js/intlTelInput.js");
 
+/*************************
+ menu home links
+ *************************/
+var items = $('#main_menu').find('.menu-item > a');
+
+if ($('.home-page').length == 0){
+    items.each(function(){1
+        if ($(this).attr('href').match('#') !== null)
+            $(this).attr('href', "/" + $(this).attr('href'))
+    });
+}
 
 /*************************
  owl-carousel

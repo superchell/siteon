@@ -17,7 +17,7 @@ import ScrollToPlugin from "gsap/ScrollToPlugin";
 
 var items_links = $('#main_menu').find('.menu-item > a');
 
-if ($('.portfolio-page').length == 0) {
+if ($('.home-page').length != 0) {
     $(items_links).on('click', function (event) {
         event.preventDefault();
         var href = $(this).attr('href');

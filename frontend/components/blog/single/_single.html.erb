@@ -1,0 +1,53 @@
+<section class="iq-breadcrumb overview-block-pt text-center iq-bg iq-bg-fixed iq-over-blue-90" style="background-image: url(<%= @post.decorate.the_thumb_url %>)">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="heading-title white iq-breadcrumb-title iq-mtb-100">
+          <h1 class="title iq-tw-7"><%= @post.title %></h1>
+        </div>
+        <ul class="breadcrumb">
+          <li><a href="/"><i class="fas fa-home"></i> <%= t('camaleon_cms.homepage_title') %></a></li>
+          <%= filtered_breadcrumbs %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="blog" class="iq-page-blog ">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="iq-blog-box">
+          <div class="iq-blog-detail">
+            <%= raw @post.the_content %>
+
+            <div class="iq-blog-meta">
+              <ul class="list-inline">
+                <li><a href="#"><i class="fa fa-user-circle" aria-hidden="true"></i> Tom Tilak</a></li>
+                <li><a href="#"><i class="fa fa-calendar" aria-hidden="true"></i> 12 Aug 2017</a></li>
+                <li><i class="fas fa-tags"></i> <a href="#">css</a>, <a href="#">html</a>, <a href="#">javascript</a></li>
+              </ul>
+            </div>
+            <div class="comments">
+              <div id="hypercomments_widget"></div>
+              <script type="text/javascript">
+                  _hcwp = window._hcwp || [];
+                  _hcwp.push({widget:"Stream", widget_id: 73133});
+                  (function() {
+                      if("HC_LOAD_INIT" in window)return;
+                      HC_LOAD_INIT = true;
+                      var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+                      var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+                      hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/73133/"+lang+"/widget.js";
+                      var s = document.getElementsByTagName("script")[0];
+                      s.parentNode.insertBefore(hcc, s.nextSibling);
+                  })();
+              </script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
