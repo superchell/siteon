@@ -9,10 +9,10 @@
       <div class="banner-text text-center">
         <div class="row">
           <div class="col-md-12">
-            <h1 class="text-uppercase iq-font-white iq-tw-3"><%= top_banner[:title].html_safe %></h1>
+            <h1 class="text-uppercase iq-font-white iq-tw-3"><%= raw top_banner[:title] %></h1>
             <h2 class="iq-font-white color-text-1 iq-pt-15  text-animate">
               <span class="cd-words-wrapper">
-                <% current_theme.get_fields("top_banner_descr_list").each do |i| %>
+                <% current_theme.the_fields('top_banner_descr_list').each do |i| %>
                   <b class="is-hidden"><%= raw i %></b>
                 <% end %>
               </span>
