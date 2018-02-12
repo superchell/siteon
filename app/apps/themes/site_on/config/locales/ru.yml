@@ -95,11 +95,11 @@ ru:
         portfolio: "Страницы портфолио"
 
     project_type:
-          ecommerce: "Интернет-магазин"
-          card: "Сайт-визитка"
-          landing: "Лендинг"
-          catalog: "Сайт-каталог"
-          corp: "Корпоративный сайт"
+      ecommerce: "Интернет-магазин"
+      card: "Сайт-визитка"
+      landing: "Лендинг"
+      catalog: "Сайт-каталог"
+      corp: "Корпоративный сайт"
 
     buttons:
           purchase: "Заказать %{name}"
