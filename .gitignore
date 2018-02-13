@@ -12,6 +12,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+Procfile.dev
 
 /node_modules
 /yarn-error.log
