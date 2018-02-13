@@ -1,6 +1,7 @@
 ("use strict");
 
 import "./css/index.css";
+import "./css/progressive-image.min.css";
 import "./css/googlefonts.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./fontasome/css/fontawesome-all.min.css";
@@ -15,6 +16,7 @@ import "intl-tel-input/build/css/intlTelInput.css";
 
 import WOW from 'wow.js';
 import skrollr from 'skrollr';
+import "./js/progressive-image.min";
 
 import 'bootstrap';
 
