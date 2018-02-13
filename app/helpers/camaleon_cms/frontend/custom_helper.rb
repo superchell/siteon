@@ -47,7 +47,9 @@ module CamaleonCms::Frontend::CustomHelper
     if @post_type.slug == 'page' && !@post.nil?
       raw "<li class='active'>#{@post.the_title}</li>"
     elsif !@post.nil?
-      raw @post.the_breadcrumb(false)
+      raw @post.the_breadcrumb
+    elsif !@category.nil?
+      raw @category.the_breadcrumb
     else
       raw @post_type.the_breadcrumb
     end
@@ -57,13 +59,40 @@ module CamaleonCms::Frontend::CustomHelper
     will_paginate_options = will_paginate_options.extract_options!
     will_paginate_options[:previous_label] = '<i class="ion-ios-arrow-left"></i>'
     will_paginate_options[:next_label] = '<i class="ion-ios-arrow-right"></i>'
-    "<div class='row iq-mt-80'>
-      <div class='col-lg-12 col-md-12 text-center'>
-        <ul class='pagination pagination-lg'>
-          #{will_paginate(items, will_paginate_options) rescue '' }
-        </ul>
+    "<div class=\"container\">
+      <div class=\"row iq-mt-80\">
+        <div class=\"col-lg-12 col-md-12 text-center\">
+          <ul class=\"pagination pagination-lg\">
+            #{will_paginate(items, will_paginate_options) rescue '' }
+          </ul>
+        </div>
       </div>
-    </div>"
+  </div>"
+  end
+
+  def blog_categories
+    active = 'class="menu-category_list-items_active"'
+    html = "<li #{active if @category.nil?}><a href=\"/blog\">#{t("camaleon_cms.blog_all")}</a></li>"
+    @post_type.the_categories.each do |cat|
+      next if cat.slug == 'uncategorized'
+      html << "<li #{active if !@category.nil? && @category.id == cat.id}><a href=\"#{cat.decorate.the_url}\">#{cat.name}</a></li>"
+    end
+
+    raw html
+  end
+
+  def blog_tags(post)
+    tags = post.decorate.the_tags
+    return "" if tags.size == 0
+
+    html = '<li><i class="fas fa-tags"></i> '
+    tags.each do |tag|
+      html << "<a href=\"#{tag.decorate.the_url}\">#{tag.name}</a>"
+      html << ", " if tag != tags.last
+    end
+    html << '</li>'
+
+    raw html
   end
 
 end

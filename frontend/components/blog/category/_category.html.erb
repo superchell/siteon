@@ -1,0 +1,64 @@
+<section class="iq-breadcrumb overview-block-pt text-center iq-bg iq-bg-fixed iq-over-blue-90" style="background-image: url(<%= theme_img_url 'paralax.jpg'  %>)">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="heading-title white iq-breadcrumb-title iq-mtb-100">
+          <h1 class="title iq-tw-7"><%= @category.name %></h1>
+        </div>
+        <ul class="breadcrumb">
+          <li><a href="/"><i class="fas fa-home"></i> <%= t('camaleon_cms.homepage_title') %></a></li>
+          <%= filtered_breadcrumbs %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu-category">
+  <div class="container">
+    <div class="menu-category_list">
+      <ul class="menu-category_list-items">
+        <%= blog_categories %>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="blog" class="iq-page-blog">
+
+
+  <div class="iq-blog-box <%= cycle("", "iq-mt-60", "iq-mt-60") %>">
+    <div class="flex-grid">
+      <% @posts.each do |post| %>
+        <div class="post-item">
+          <div class="post-item_wraper">
+
+            <div class="iq-blog-image clearfix">
+              <a href="<%= post.decorate.the_url %>"><%= image_tag post.decorate.the_thumb_url, alt: post.decorate.the_title if post.decorate.has_thumb? %></a>
+            </div>
+            <div class="iq-blog-detail">
+              <div class="blog-title"><a href="<%= post.decorate.the_url %>">
+                <h5 class="iq-tw-6 iq-mb-10"><%= post.decorate.the_title %></h5></a></div>
+              <div class="blog-content">
+                <%= raw post.get_field('preview_descr') %>
+              </div>
+              <div class="iq-blog-meta">
+                <ul class="list-inline">
+                  <li><i class="fa fa-calendar" aria-hidden="true"></i> <%= post.decorate.the_created_at %></li>
+                  <%= blog_tags post %>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="container">
+    <%= content_tag("div", raw(ct('no_contents_found', default: 'No contents found')), class: "alert alert-warning") if @posts.empty? %>
+  </div>
+
+  <%= raw siteon_pagination(@posts) %>
+
+</section>

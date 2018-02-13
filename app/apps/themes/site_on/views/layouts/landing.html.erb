@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%= render partial: 'partials/head_analytics' %>
+
+  <title><%= current_site.the_title %></title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <%= stylesheet_pack_tag 'application' %>
+  <%= raw the_head %>
+</head>
+<body data-spy="scroll" data-offset="80" <%= 'class="home-page"'.html_safe if is_home? %>>
+<%= render partial: 'partials/analytics' %>
+
+<section class="iq-breadcrumb overview-block-pt text-center iq-bg iq-bg-fixed iq-over-blue-90" <% if @post.has_thumb? %> style="background-image: url(<%= @post.decorate.the_thumb_url %>)" <% end %>>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="heading-title white iq-breadcrumb-title iq-mtb-100">
+          <h1 class="title iq-tw-7"><%= @post.title %></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ./header -->
+<% # Home banner section %>
+
+<!-- Main Content -->
+<div class="main-content">
+  <%= yield %>
+</div>
+<!-- Main Content END -->
+<%= c('footer')%>
+<%= c('callback_form')%>
+
+<script>
+  var theme_utils_path = '<%= javascript_path theme_asset_path ("js/utils.js") %>';
+</script>
+
+<%= javascript_pack_tag "application" %>
+
+</body>
+</html>
