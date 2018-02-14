@@ -65,6 +65,7 @@ gem 'draper', '~> 3'
 gem 'webpacker'
 
 gem "camaleon_post_order", github: 'owen2345/camaleon-post-order-plugin'
+gem 'camaleon_image_optimizer', github: 'brian-kephart/camaleon_image_optimizer'
 
 #################### Camaleon CMS include all gems for plugins and themes #################### 
 require './lib/plugin_routes' 
