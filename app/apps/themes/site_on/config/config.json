@@ -13,6 +13,7 @@
     "contact_form_before_submit": ["form_bot_check"],
     "contact_form_after_submit": ["send_data_to_crm"],
     "on_render_sitemap": ["sitemap_modifier"],
+    "before_upload": ["add_lazy_thumb"],
     "on_uploader": ["aws_uploader_hook"]
     //here all your hooks
   }

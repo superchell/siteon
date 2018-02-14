@@ -1,11 +1,8 @@
 <!-- Software Features -->
-
 <section id="software-features" class="overview-block-ptb software iq-mt-40 iq-pb-40">
   <% unless current_theme.the_field('tech_big_banner').blank? %>
     <div class="iq-software-demo">
-      <a href="<%= current_theme.the_field('tech_big_banner') %>"class="primary progressive replace">
-        <img src="<%= theme_img_url "mac_iphone_small.png" %>" class="preview" alt="drive05"/>
-      </a>
+      <%= build_lazy_image current_theme.the_field('tech_big_banner'), alt: 'software-features' %>
     </div>
   <% end %>
   <div class="container">

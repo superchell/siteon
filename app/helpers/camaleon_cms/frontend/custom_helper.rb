@@ -39,10 +39,6 @@ module CamaleonCms::Frontend::CustomHelper
     true
   end
 
-  def inner_post_type?(slug)
-    ['blog', 'page'].include? slug
-  end
-
   def filtered_breadcrumbs
     if @post_type.slug == 'page' && !@post.nil?
       raw "<li class='active'>#{@post.the_title}</li>"
@@ -93,6 +89,26 @@ module CamaleonCms::Frontend::CustomHelper
     html << '</li>'
 
     raw html
+  end
+
+
+  #Lazy images
+  def build_lazy_image(image, attr = {})
+  html = ''
+  image_min = image.cama_parse_image_version('x20', true)
+  alt = attr[:alt] || ''
+  html_class = attr[:class] || ''
+  img_class = attr[:img_class] || ''
+
+  if image != image_min
+    html << "<a href=\"#{image}\"class=\"primary progressive replace #{html_class}\">
+      <img src=\"#{image_min}\" class=\"preview #{img_class}\" alt=\"#{alt}\"/>
+      </a>"
+  else
+    html << "<img src=\"#{image_min}\" class=\"#{img_class}\" alt=\"#{alt}\"/>"
+  end
+
+  raw html
   end
 
 end

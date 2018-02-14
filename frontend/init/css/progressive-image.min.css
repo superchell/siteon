@@ -4,6 +4,10 @@
     outline: none
 }
 
+.progressive.overflow {
+    overflow: hidden;
+}
+
 .progressive img {
     display: block;
     width: 100%;

@@ -347,6 +347,11 @@ module Themes::SiteOn::MainHelper
       args[:skip_post_ids] = post_ids
   end
 
+  def add_lazy_thumb(args)
+    args[:versions] << "," unless args[:versions].blank?
+    args[:versions] << " x20"
+  end
+
   def aws_uploader_hook(args)
     args[:aws_settings][:aws_file_upload_settings] = lambda{|settings|
       settings[:cache_control] = 'max-age=15552000, public'
