@@ -34,6 +34,9 @@ header {
 
 header .container-fluid {
     padding: 0 100px;
+    @media (max-width: 1200px) {
+        padding: 0 50px;
+    }
 }
 
 header .navbar-header .navbar-brand img {
@@ -143,4 +146,59 @@ header .menu-sticky .navbar-nav {
 
 header .menu-sticky .button {
     margin-top: 0px;
+}
+.header-contacts-container{
+    float: right;
+    margin-left: 40px;
+    @media (max-width: 992px) {
+        display: none;
+    }
+}
+.header-contacts{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    .button{
+        margin-left: 20px;
+    }
+    .link-underline{
+        color: #fff;
+    }
+}
+
+.lang-select{
+    position: relative;
+    margin: 0 24px;
+    margin-left: 0;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    padding: 0 10px;
+    a{
+        color: #fff;
+        text-decoration: underline;
+        &:hover, &:focus{
+            text-decoration: none;
+        }
+    }
+    .dropdown-menu{
+        background: none;
+        box-shadow: none;
+        min-width: initial;
+        border: none;
+        //border-left: 1px solid #fff;
+        //border-right: 1px solid #fff;
+        text-transform: uppercase;
+        border-radius: 0;
+        margin-left: -1px;
+        & > li > a{
+            color: #fff;
+            text-decoration: underline;
+            padding: 0px 12px 0 11px;
+            &:hover, &:focus{
+                text-decoration: none;
+                background-color: rgb(245, 245, 245);
+                color: #fdc318;
+            }
+        }
+    }
 }
