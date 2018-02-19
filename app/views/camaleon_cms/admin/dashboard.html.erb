@@ -1,0 +1,44 @@
+<div class="page-content-wrap">
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="panel-body" style="min-height: 350px">
+        <% theme_field_groups = current_theme.get_field_groups %>
+        <div class="page-content-wrap">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h4><span class="fa fa-cog"></span> <%= t('camaleon_cms.admin.settings.theme_setting') %> </h4>
+            </div>
+            <%= form_tag cama_admin_settings_save_theme_url, id: "theme_settings_form", class: "panel-body cama_ajax_request validate" do %>
+                <% if File.exist?(current_theme.settings_file) %>
+                    <%= render template: "themes/#{current_theme.settings_file.split('/app/apps/themes/').last}" %>
+                    <%= render(partial: "camaleon_cms/admin/settings/custom_fields/render", locals: {record: current_theme, field_groups: theme_field_groups}) unless File.read(current_theme.settings_file).include?('.get_field_groups') %>
+                <% else %>
+                    <%= render partial: "camaleon_cms/admin/settings/custom_fields/render", locals: {record: current_theme, field_groups: theme_field_groups} %>
+                <% end %>
+
+                <div class="panel-footer">
+                  <button class="btn btn-primary pull-right" type="submit"><%= t('camaleon_cms.admin.button.submit') %></button>
+                </div>
+            <% end %>
+          </div>
+        </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title"><%= t('camaleon_cms.admin.sidebar.dashboard') %></h3>
+        </div>
+            <% r = {content: ""}; hooks_run("on_notification", r); %>
+            <div id="dashboard_notifications">
+                <%= raw r[:content] %>
+            </div>
+
+            <% r = {content: ""}; hooks_run("on_dashboard", r); %>
+            <div id="dashboard_items">
+                <%= raw r[:content] %>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
