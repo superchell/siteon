@@ -122,3 +122,49 @@
       height: 100%;
   }
 }
+.page_sep{
+  height: 58px;
+  background-color: #333333;
+  margin-bottom: 40px;
+}
+.page_bulit{
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
+  padding: 15px;
+  padding-bottom: 1px;
+  padding-top: 60px;
+  text-align: center;
+  margin-top: 60px;
+  min-height: 289px;
+  margin-bottom: 25px;
+  .page_bulit-img{
+    margin-top: -125px;
+    margin-bottom: 15px;
+    background: #fff;
+    display: inline-block;
+    vertical-align: top;
+    padding: 8px;
+    border-radius: 100%;
+    box-shadow: inset rgba(0, 0, 0, 0.13) 0px 0px 6px;
+    position: relative;
+    img{
+      position: relative;
+      z-index: 1;
+    }
+    &:before{
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      background: #fff;
+      height: 47.3%;
+    }
+  }
+
+  h3{
+    color: #3b3431;
+    font-size: 22px;
+    font-weight: 600;
+    font-family: Montserrat, sans-serif;
+  }
+}
