@@ -27,7 +27,24 @@
         </a>
       </div>
       <div class="navbar-collapse collapse">
-        <a href="#call-popup" class="button bt-black pull-right visible-lg open-popup-link"><%= t("camaleon_cms.buttons.free_consultation") %></a>
+        <div class="header-contacts-container">
+          <div class="header-contacts">
+            <div class="col">
+              <div class="lang-select">
+                <a href="#">RU</a>
+              </div>
+            </div>
+            <div class="col">
+              <a href="tel:+380664191125" class="link-underline">+38(066) 419 11 25</a><br>
+              <a href="tel:+380986371893"  class="link-underline">+38(098) 637 18 93</a>
+            </div>
+            <div class="col visible-lg ">
+              <a href="#call-popup" class="button bt-black  open-popup-link"><%= t("camaleon_cms.buttons.free_consultation") %></a>
+            </div>
+
+          </div>
+        </div>
+
         <nav>
           <%= raw draw_menu({container_class: "nav navbar-nav navbar-right", item_current: "active", link_class: "page-scroll", container_id: "main_menu"}) %>
         </nav>
