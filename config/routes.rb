@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
       get "portfolio", to: redirect("/")
       get "page", to: redirect("/")
+      get "landings", to: redirect("/")
 
       controller "camaleon_cms/frontend" do
         valid_types = ['blog']
