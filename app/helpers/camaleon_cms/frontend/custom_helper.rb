@@ -111,4 +111,17 @@ module CamaleonCms::Frontend::CustomHelper
   raw html
   end
 
+  def language_link
+    path = request.path
+    if path.include?("/ru/")
+      path = path.sub("/ru/", "/")
+      lang_name = "ua"
+    else
+      path = "/ru#{path}"
+      lang_name = "ru"
+    end
+
+    raw "<a href=\"#{path}\">#{lang_name.upcase}</a>"
+  end
+
 end
