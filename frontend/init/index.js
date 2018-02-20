@@ -219,13 +219,29 @@ var widthArray = [];
 $(function () {
     numText = $('.text-animate b').length - 1;
 
+    animateText();
+
     $('.text-animate b').each(function (index, value) {
         widthArray.push($(this).width());
     });
 
-    animateText();
+    $(window).resize(function () {
+        widthArray = [];
+        $('.text-animate .cd-words-wrapper').width('100%');
+
+        setTimeout(function () {
+            $('.text-animate b').each(function (index, value) {
+                widthArray.push($(this).width());
+            });
+        }, 500);
+
+        console.log(widthArray);
+    });
 
     setInterval(function () {
+        $('.text-animate b').each(function (index, value) {
+            widthArray.push($(this).width());
+        });
         animateText();
     }, 3000);
 
