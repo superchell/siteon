@@ -2,14 +2,12 @@
 <html lang="en">
 <head>
     <%= render partial: 'partials/head_analytics' %>
-
-    <title><%= current_site.the_title %></title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <%= stylesheet_pack_tag 'application' %>
     <%= raw the_head %>
+
+  <%= stylesheet_pack_tag 'application' %>
 </head>
 <body data-spy="scroll" data-offset="80" <%= 'class="home-page"'.html_safe if is_home? %>>
 <%= render partial: 'partials/analytics' %>
