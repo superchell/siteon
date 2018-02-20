@@ -183,6 +183,8 @@ function displaySuccess(form, msg) {
         form.reset;
         $('.popup__close').click();
     }, 2000);
+
+  if(typeof fbq === 'undefined') fbq('track', 'Lead');
 }
 
 /*************************
