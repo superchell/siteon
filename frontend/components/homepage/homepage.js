@@ -20,7 +20,7 @@ var items_links = $('#main_menu').find('.menu-item > a');
 if ($('.home-page').length != 0) {
     $(items_links).on('click', function (event) {
         event.preventDefault();
-        var href = $(this).attr('href');
+        var href = '#' + $(this).attr('href').split("#").pop();
         scroller(href);
         if( $('.collapse.in').lenght !=0){
             $('.collapse.in').removeClass('in');
