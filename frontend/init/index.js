@@ -184,7 +184,7 @@ function displaySuccess(form, msg) {
         $('.popup__close').click();
     }, 2000);
 
-  if(typeof fbq === 'undefined') fbq('track', 'Lead');
+  if(typeof fbq !== 'undefined') fbq('track', 'Lead');
 }
 
 /*************************
