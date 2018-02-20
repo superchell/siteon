@@ -31,7 +31,7 @@ require("imports-loader?$=jquery!intl-tel-input/build/js/intlTelInput.js");
 var items = $('#main_menu').find('.menu-item > a');
 
 if ($('.home-page').length == 0){
-    items.each(function(){1
+    items.each(function(){
         if ($(this).attr('href').match('#') !== null)
             $(this).attr('href', "/" + $(this).attr('href'))
     });
@@ -235,7 +235,6 @@ $(function () {
             });
         }, 500);
 
-        console.log(widthArray);
     });
 
     setInterval(function () {
