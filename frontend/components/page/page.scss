@@ -127,6 +127,9 @@
   background-color: #333333;
   margin-bottom: 40px;
 }
+.gray_block{
+  background: #f6f5f5;
+}
 .page_bulit{
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
   padding: 15px;
@@ -146,6 +149,10 @@
     border-radius: 100%;
     box-shadow: inset rgba(0, 0, 0, 0.13) 0px 0px 6px;
     position: relative;
+    .gray_block &{
+      background: #f6f5f5;
+    }
+
     img{
       position: relative;
       z-index: 1;
@@ -158,6 +165,10 @@
       top: 0;
       background: #fff;
       height: 47.3%;
+
+      .gray_block &{
+        background: #f6f5f5;
+      }
     }
   }
 
