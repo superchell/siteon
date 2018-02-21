@@ -146,6 +146,10 @@
     border-radius: 100%;
     box-shadow: inset rgba(0, 0, 0, 0.13) 0px 0px 6px;
     position: relative;
+    .gray_block &{
+      background: #f6f5f5;
+    }
+
     img{
       position: relative;
       z-index: 1;
@@ -158,6 +162,10 @@
       top: 0;
       background: #fff;
       height: 47.3%;
+
+      .gray_block &{
+        background: #f6f5f5;
+      }
     }
   }
 
