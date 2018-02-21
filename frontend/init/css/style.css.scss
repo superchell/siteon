@@ -401,6 +401,10 @@ blockquote {
     overflow: hidden;
     white-space: nowrap;
     min-height: 60px;
+
+    b{
+        font-weight: 500;
+    }
 }
 
 .text-animate:after {
