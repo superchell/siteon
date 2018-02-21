@@ -78,8 +78,8 @@ Rails.application.configure do
     address:              'smtp.zoho.com',
     port:                 587,
     domain:               'siteon.com.ua',
-    user_name:            'info@siteon.com.ua',
-    password:             '2TW9eswigL',
+    user_name:            ENV['ZOHO_USERNAME'],
+    password:             ENV['ZOHO_PASS'],
     authentication:       'plain',
     enable_starttls_auto: true  }
   config.action_mailer.perform_caching = false
