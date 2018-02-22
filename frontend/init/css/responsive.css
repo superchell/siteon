@@ -27,8 +27,8 @@ NOTE: This file contains the styling for responsive Template.
 	.iq-objects .iq-objects-04, .iq-objects-software .iq-objects-03 { border: 36px solid #fdc319; height: 500px; width: 500px; }
 }
 @media(max-width:1365px) {
-	.owl-carousel .owl-nav .owl-next { right: -5%; }
-	.owl-carousel .owl-nav .owl-prev { left: -5%; }
+	.owl-carousel .owl-nav .owl-next { right: -3%; }
+	.owl-carousel .owl-nav .owl-prev { left: -3%; }
 	.counter-info-img img { width: 110%; }
 	.iq-banner .banner-text { padding-bottom: 40px; }
 	.iq-banner .banner-text h1 { font-size: 50px; }

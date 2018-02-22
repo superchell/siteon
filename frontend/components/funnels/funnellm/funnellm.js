@@ -8,6 +8,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "../../../init/fontasome/css/fontawesome-all.min.css";
 import "../../../components/callback_form/callback_form";
 import './css/style.scss';
+import '../../../init/css/responsive.css';
 import './js/default';
 import "intl-tel-input/build/css/intlTelInput.css";
 
@@ -82,6 +83,18 @@ $(function(){
 
         return false;
     });
+});
+
+/**************************
+ Download button
+ *************************/
+$('.btn-download').click(function () {
+   $('.form_lead').removeClass('animated bounceIn');
+   setTimeout(function () {
+       $('.form_lead').addClass('animated bounceIn');
+   },300)
+
+   $('html, body').animate({scrollTop: $('.form_lead').offset().top -25});
 });
 
 /**************************
