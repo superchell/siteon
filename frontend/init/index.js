@@ -221,11 +221,11 @@ var widthArray = [];
 $(function () {
     numText = $('.text-animate b').length - 1;
 
-    animateText();
 
-    $('.text-animate b').each(function (index, value) {
-        widthArray.push($(this).width());
-    });
+
+    setTimeout(function () {
+        animateText();
+    }, 1000);
 
     $(window).resize(function () {
         widthArray = [];
