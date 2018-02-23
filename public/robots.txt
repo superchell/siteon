@@ -1,5 +1,7 @@
 User-agent: *
 Disallow: /admin
+Disallow: /3-etapa-sucess
+Disallow: /ru/spasibo-za-to-chto-skachali-nash-chek-list
 
 Host: https://siteon.com.ua
 Sitemap: https://siteon.com.ua/sitemap.xml
