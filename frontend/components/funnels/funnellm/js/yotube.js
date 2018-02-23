@@ -3,43 +3,45 @@ import YouTubePlayer from 'youtube-player';
 
 var player;
 
-if ($('.hide-video').length != 0){
-    $('.hide-video').hide();
-}
+if ($('#playerYoutube').length != 0) {
 
-player = YouTubePlayer('playerYoutube', {
-    videoId: $('#playerYoutube').data('videoid'),
-    playerVars: { 'autoplay': 0, 'controls': 1, 'showinfo': 0, 'rel':0 }
-});
+    if ($('.hide-video').length != 0) {
+        $('.hide-video').hide();
+    }
 
-var youtube = {
-    init: false,
-    scondTriger: 0
-}
+    player = YouTubePlayer('playerYoutube', {
+        videoId: $('#playerYoutube').data('videoid'),
+        playerVars: {'autoplay': 0, 'controls': 1, 'showinfo': 0, 'rel': 0}
+    });
 
-var getrespons = {
-    init: false,
-    scondTriger: 0,
-    done: false
-}
+    var youtube = {
+        init: false,
+        scondTriger: 0
+    }
 
-var facebook = {
-    init: false,
-    scondTriger: 0,
-    done: false
-}
+    var getrespons = {
+        init: false,
+        scondTriger: 0,
+        done: false
+    }
+
+    var facebook = {
+        init: false,
+        scondTriger: 0,
+        done: false
+    }
 
 
-player.on('stateChange', function (event) {
+    player.on('stateChange', function (event) {
 
-       setInterval(function () {
-            var videotime = Math.floor( event.target.getCurrentTime() ) ;
+        setInterval(function () {
+            var videotime = Math.floor(event.target.getCurrentTime());
 
-            if (facebook.init){
-                if (videotime > facebook.scondTriger){
-                    if (!facebook.done){
+            if (facebook.init) {
+                if (videotime > facebook.scondTriger) {
+                    if (!facebook.done) {
 
-                        if(typeof fbq !== 'undefined') {
+                        if (typeof fbq !== 'undefined') {
                             fbq('track', "VideSeen");
                         }
 
@@ -48,26 +50,30 @@ player.on('stateChange', function (event) {
                 }
             }
 
-           if (getrespons.init){
-               if (videotime > getrespons.scondTriger){
-                   if (!getrespons.done){
-                       console.log('GetresonseDone');
-                       getrespons.done = true;
-                   }
-               }
-           }
+            if (getrespons.init) {
+                if (videotime > getrespons.scondTriger) {
+                    if (!getrespons.done) {
+
+                        if ($.cookie('user_email') != undefined) {
+                            console.log('GetresonseDone: ' + $.cookie('user_email'));
+                        }
+                        getrespons.done = true;
+                    }
+                }
+            }
 
 
-            if (youtube.init){
-                if ($('.hide-video').length != 0 && videotime >= youtube.scondTriger){
+            if (youtube.init) {
+                if ($('.hide-video').length != 0 && videotime >= youtube.scondTriger) {
                     $('.hide-video').show();
-                }else{
+                } else {
                     $('.hide-video').hide();
                 }
             }
 
-        },1000);
-});
+        }, 1000);
+    });
+}
 
 global.yotubeStart = function(initB, secondI){
     youtube.init = initB;

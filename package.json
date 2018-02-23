@@ -13,6 +13,7 @@
     "jquery": "3.3.1",
     "jquery-countto": "^1.2.0",
     "jquery-viewport-checker-gena": "^1.8.8",
+    "jquery.cookie": "^1.4.1",
     "normalize.css": "^7.0.0",
     "owl.carousel": "^2.2.0",
     "postcss-nested": "^3.0.0",
