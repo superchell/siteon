@@ -45,6 +45,13 @@ GIT
       rails
 
 GIT
+  remote: https://github.com/superchell/camaleon_robots_editor.git
+  revision: e39a1e99d1630acbb8de550fac74f44b8517028c
+  specs:
+    camaleon_robots_editor (0.1.0)
+      rails (~> 5.1.4)
+
+GIT
   remote: https://github.com/superchell/heroku-deflater.git
   revision: c1a0369e3a54d0a5b6b2792622d5648ca3c9f237
   specs:
@@ -304,6 +311,7 @@ DEPENDENCIES
   camaleon_cms!
   camaleon_image_optimizer!
   camaleon_post_order!
+  camaleon_robots_editor!
   camaleon_sitemap_customizer!
   capybara (~> 2.13)
   coffee-rails (~> 4.2)

@@ -161,3 +161,9 @@ $(".owl-carousel").each(function () {
     });
 
 });
+
+if (window.location.hash == '#consulting'){
+  document.querySelectorAll('.hide-video').forEach(function(item, i, arr) {
+    item.style.display = 'block';
+  });
+}
