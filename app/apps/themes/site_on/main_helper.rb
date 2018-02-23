@@ -339,19 +339,6 @@ module Themes::SiteOn::MainHelper
     b24.add_crm_lead(values)
   end
 
-  def sitemap_modifier(args)
-      post_type_ids = CamaleonCms::TermTaxonomy.where(taxonomy: "post_type", slug: ["post", "home", "reviews"]).map {|post_type| post_type[:id]}
-      args[:skip_posttype_ids] = post_type_ids
-
-      post_ids = CamaleonCms::Post.where(taxonomy_id: post_type_ids).map {|post| post[:id]}
-      args[:skip_post_ids] = post_ids
-  end
-
-  def add_lazy_thumb(args)
-    args[:versions] << "," unless args[:versions].blank?
-    args[:versions] << " x20"
-  end
-
   def aws_uploader_hook(args)
     args[:aws_settings][:aws_file_upload_settings] = lambda{|settings|
       settings[:cache_control] = 'max-age=15552000, public'
