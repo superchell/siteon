@@ -3768,6 +3768,10 @@ jquery-viewport-checker-gena@^1.8.8:
   version "1.8.8"
   resolved "https://registry.yarnpkg.com/jquery-viewport-checker-gena/-/jquery-viewport-checker-gena-1.8.8.tgz#48e3d6d328a348e1531d0728496fd4613660c864"
 
+jquery.cookie@^1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/jquery.cookie/-/jquery.cookie-1.4.1.tgz#d63dce209eab691fe63316db08ca9e47e0f9385b"
+
 jquery@3.3.1, jquery@>=1.8.3:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"

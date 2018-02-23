@@ -14,11 +14,14 @@ import "intl-tel-input/build/css/intlTelInput.css";
 
 import './js/jquery.countdown.min';
 import './js/yotube';
+import './js/cooke.mail.user';
 
 import 'bootstrap';
 
 require("imports-loader?$=jquery!owl.carousel/dist/owl.carousel.js");
 require("imports-loader?$=jquery!intl-tel-input/build/js/intlTelInput.js");
+
+
 
 $(function(){
     /*************************
