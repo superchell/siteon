@@ -91,26 +91,6 @@ module CamaleonCms::Frontend::CustomHelper
     raw html
   end
 
-
-  #Lazy images
-  def build_lazy_image(image, attr = {})
-  html = ''
-  image_min = image.cama_parse_image_version('x20', true)
-  alt = attr[:alt] || ''
-  html_class = attr[:class] || ''
-  img_class = attr[:img_class] || ''
-
-  if image != image_min
-    html << "<a href=\"#{image}\"class=\"primary progressive replace #{html_class}\">
-      <img src=\"#{image_min}\" class=\"preview #{img_class}\" alt=\"#{alt}\"/>
-      </a>"
-  else
-    html << "<img src=\"#{image_min}\" class=\"#{img_class}\" alt=\"#{alt}\"/>"
-  end
-
-  raw html
-  end
-
   def language_link
     path = request.path
     if path.include?("/ru/")

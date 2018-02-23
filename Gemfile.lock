@@ -9,6 +9,13 @@ GIT
       rails (>= 4.2)
 
 GIT
+  remote: https://github.com/brian-kephart/camaleon_sitemap_customizer.git
+  revision: a9a32ea85e43bb4cde4c21aed8df8d14c78970e1
+  specs:
+    camaleon_sitemap_customizer (0.2.1)
+      camaleon_cms
+
+GIT
   remote: https://github.com/owen2345/camaleon-cms.git
   revision: a4d01f378a2ce1d400c65072fb22eb7165e8f4c0
   specs:
@@ -294,6 +301,7 @@ DEPENDENCIES
   camaleon_cms!
   camaleon_image_optimizer!
   camaleon_post_order!
+  camaleon_sitemap_customizer!
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   draper (~> 3)

@@ -2,7 +2,7 @@
 <section id="software-features" class="overview-block-ptb software iq-mt-40 iq-pb-40">
   <% unless current_theme.the_field('tech_big_banner').blank? %>
     <div class="iq-software-demo">
-      <%= build_lazy_image current_theme.the_field('tech_big_banner'), alt: 'software-features' %>
+      <%= image_tag current_theme.the_field('tech_big_banner'), alt: 'software-features' %>
     </div>
   <% end %>
   <div class="container">
