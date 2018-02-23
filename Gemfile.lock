@@ -113,6 +113,8 @@ GEM
     byebug (9.1.0)
     cama_contact_form (0.0.25)
       rails
+    cama_language_editor (1.2)
+      rails (>= 4.2.1)
     cama_meta_tag (1.4)
       rails (>= 4.1.0)
     cancancan (2.1.2)
@@ -298,6 +300,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
+  cama_language_editor
   camaleon_cms!
   camaleon_image_optimizer!
   camaleon_post_order!
