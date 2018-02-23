@@ -13,6 +13,7 @@ import './js/default';
 import "intl-tel-input/build/css/intlTelInput.css";
 
 import './js/jquery.countdown.min';
+import './js/yotube';
 
 import 'bootstrap';
 
