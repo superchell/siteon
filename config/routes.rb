@@ -6,6 +6,8 @@ Rails.application.routes.draw do
     }, via: [:get, :post]
   end
 
+  get "set_contact_tag", action: "set_contact_tag", controller: 'get_response'
+
   scope PluginRoutes.system_info["relative_url_root"], as: "cama" do
     scope "(:locale)", locale: /#{PluginRoutes.all_locales}/, :defaults => {  } do
       get "home/:id", to: redirect("/")
@@ -36,4 +38,5 @@ Rails.application.routes.draw do
       end
     end
   end
+
 end
