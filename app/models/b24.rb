@@ -18,7 +18,8 @@ class B24
       :SOURCE_ID => "WEB",
       :ASSIGNED_BY_ID => 8,
       :CURRENCY_ID => "USD",
-      :PHONE =>{ 0 => {:VALUE => values[:phone], :VALUE_TYPE => "WORK"} }
+      :PHONE =>{ 0 => {:VALUE => values[:phone], :VALUE_TYPE => "WORK"} },
+      :EMAIL =>{ 0 => {:VALUE => values[:email], :VALUE_TYPE => "WORK"} }
     }.to_query('fields')
     params = { :REGISTER_SONET_EVENT => "Y" }.to_query('params')
     self.query_params = "#{fields}&#{params}"
