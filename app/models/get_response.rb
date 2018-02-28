@@ -16,7 +16,7 @@ class GetResponse
   end
 
   def add_contact_tag
-    return false unless valid?
+    raise "Invalid GetResponse data" unless valid?
 
     query = "contacts/#{get_contact_id_by_email}/tags"
     params = {tags: {tagId: get_tag_id_by_name}}
