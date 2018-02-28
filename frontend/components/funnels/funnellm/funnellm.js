@@ -21,7 +21,23 @@ import 'bootstrap';
 require("imports-loader?$=jquery!owl.carousel/dist/owl.carousel.js");
 require("imports-loader?$=jquery!intl-tel-input/build/js/intlTelInput.js");
 
+/*************************
+ Forms custom processing
+ *************************/
 
+global.displayError =  function(form, msg) {
+    form.parent().find('.msg-block__error').text(msg).fadeIn().delay(3000).fadeOut();
+}
+
+global.displaySuccess = function(form, msg) {
+    form.parent().find('.msg-block__sucess').text(msg).fadeIn().delay(3000).fadeOut();
+    setTimeout(function(){
+        form.reset;
+        $('.popup__close').trigger('click');
+    }, 2000);
+
+    if(typeof fbq !== 'undefined') fbq('track', 'Lead');
+}
 
 $(function(){
     /*************************
