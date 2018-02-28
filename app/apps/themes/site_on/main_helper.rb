@@ -333,7 +333,7 @@ module Themes::SiteOn::MainHelper
     values = {
       name: args[:values].permit(:c3).present? ? args[:values].permit(:c2).values.first : "Лид без имени",
       phone: args[:values].permit(:c3).present? ? args[:values].permit(:c3).values.first : args[:values].permit(:c2).values.first,
-      email: args[:values].permit(:c4).present? ? args[:values].permit(:c3).values.first : ""
+      email: args[:values].permit(:c4).present? ? args[:values].permit(:c4).values.first : ""
     }
 
     b24 = B24.new
