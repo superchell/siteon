@@ -6,7 +6,20 @@ global.saveUserGetresnose = function(mail){
     return 'user coocke saved';
 }
 
+function getresponseTegUser(email, teg) {
+
+}
+
 $( ".getresponce_form" ).submit(function( event ) {
     saveUserGetresnose( $( ".getresponce_form" ).find('input[name="email"]').val() );
-    console.log($( ".getresponce_form" ).find('input[name="email"]').val() );
+});
+
+
+$( ".validate-form" ).submit(function( event ) {
+    var parentBlock = $( ".validate-form" ).closest('.getresponce_tag');
+
+    if (parentBlock.length != 0){
+        var email = $( ".validate-form" ).find('input[name="fields[c4]"]').val();
+        $.get( "https://siteon.com.ua/set_contact_tag", { email: email, tag: parentBlock.data('teg') } );
+    }
 });
