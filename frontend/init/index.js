@@ -171,15 +171,15 @@ $(function(){
  Forms custom processing
  *************************/
 
-function displayError(form, msg) {
+global.displayError =  function(form, msg) {
     form.parent().find('.msg-block__error').text(msg).fadeIn().delay(3000).fadeOut();
 }
 
-function displaySuccess(form, msg) {
+global.displaySuccess = function(form, msg) {
     form.parent().find('.msg-block__sucess').text(msg).fadeIn().delay(3000).fadeOut();
     setTimeout(function(){
         form.reset;
-        $('.popup__close').click();
+        $('.popup__close').trigger('click');
     }, 2000);
 
   if(typeof fbq !== 'undefined') fbq('track', 'Lead');

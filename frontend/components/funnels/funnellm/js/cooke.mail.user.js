@@ -14,6 +14,11 @@ $( ".getresponce_form" ).submit(function( event ) {
     saveUserGetresnose( $( ".getresponce_form" ).find('input[name="email"]').val() );
 });
 
-$( ".getresponce_form_teg" ).submit(function( event ) {
+$( ".validate-form" ).submit(function( event ) {
+    var parentBlock = $( ".validate-form" ).parent('.getresponce_tag');
 
+    if (parentBlock.length != 0){
+        var email = $( ".validate-form" ).find('input[name="email"]').val();
+        $.get( "https://siteon.com.ua/set_contact_tag", { email: email, tag: "lp_consulting" } );
+    }
 });
