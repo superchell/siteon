@@ -14,11 +14,12 @@ $( ".getresponce_form" ).submit(function( event ) {
     saveUserGetresnose( $( ".getresponce_form" ).find('input[name="email"]').val() );
 });
 
+
 $( ".validate-form" ).submit(function( event ) {
-    var parentBlock = $( ".validate-form" ).parent('.getresponce_tag');
+    var parentBlock = $( ".validate-form" ).closest('.getresponce_tag');
 
     if (parentBlock.length != 0){
-        var email = $( ".validate-form" ).find('input[name="email"]').val();
-        $.get( "https://siteon.com.ua/set_contact_tag", { email: email, tag: "lp_consulting" } );
+        var email = $( ".validate-form" ).find('input[name="fields[c4]"]').val();
+        $.get( "https://siteon.com.ua/set_contact_tag", { email: email, tag: parentBlock.data('teg') } );
     }
 });
