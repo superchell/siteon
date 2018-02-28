@@ -53,9 +53,9 @@ if ($('#playerYoutube').length != 0) {
             if (getrespons.init) {
                 if (videotime > getrespons.scondTriger) {
                     if (!getrespons.done) {
-
                         if ($.cookie('user_email') != undefined) {
                             console.log('GetresonseDone: ' + $.cookie('user_email'));
+                            $.get( "https://siteon.com.ua/set_contact_tag", { email: $.cookie('user_email'), tag: "lp_video_seen" } );
                         }
                         getrespons.done = true;
                     }

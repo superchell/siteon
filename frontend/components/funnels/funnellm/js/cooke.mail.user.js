@@ -6,7 +6,14 @@ global.saveUserGetresnose = function(mail){
     return 'user coocke saved';
 }
 
+function getresponseTegUser(email, teg) {
+
+}
+
 $( ".getresponce_form" ).submit(function( event ) {
     saveUserGetresnose( $( ".getresponce_form" ).find('input[name="email"]').val() );
-    console.log($( ".getresponce_form" ).find('input[name="email"]').val() );
+});
+
+$( ".getresponce_form_teg" ).submit(function( event ) {
+
 });
