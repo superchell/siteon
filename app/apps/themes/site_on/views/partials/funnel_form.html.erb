@@ -1,0 +1,28 @@
+<% form = current_site.contact_forms.where({slug: "marketing-form"}).first %>
+
+<%= form_for form, url: plugins_cama_contact_form_save_form_path, html: {method: "post", class: "validate-form", multipart: true} do |f| %>
+  <%= hidden_field_tag "id", form.id %>
+  <%= hidden_field_tag "format", "json" %>
+
+  <div class="form-group">
+    <% name_field = get_form_field(form, "c2") %>
+    <input class="form-control" name="<%= name_field[:name] %>" type="text" <%= 'required' if name_field[:required].to_bool %> placeholder="<%= name_field[:field_options][:description].translate %>">
+  </div>
+  <div class="form-group">
+    <% email_field = get_form_field(form, "c4") %>
+    <input class="form-control" name="<%= email_field[:name] %>" type="text" <%= 'required' if email_field[:required].to_bool %> placeholder="<%= email_field[:field_options][:description].translate %>">
+  </div>
+  <div class="form-group">
+    <% phone_field = get_form_field(form, "c3") %>
+    <input class="form-control" name="<%= phone_field[:name] %>" type="tel" <%= 'required' if phone_field[:required].to_bool %>  placeholder="<%= phone_field[:field_options][:description].translate %>">
+    <span class="valid-msg hide">✓ <%= t("camaleon_cms.callback_form.success") %></span>
+    <span class="error-msg hide"><%= t("camaleon_cms.callback_form.failed") %></span>
+  </div>
+  <input class="who-are-you" name="who_are_you" type="text" value="" />
+  <div class="msg-block">
+    <div class="msg-block__sucess"></div>
+    <div class="msg-block__error"></div>
+  </div>
+  <div class="form-group button-group"><input class="button full" type="submit" value="<%= t("camaleon_cms.buttons.send") %>" /></div>
+
+<% end %>

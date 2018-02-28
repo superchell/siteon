@@ -332,7 +332,8 @@ module Themes::SiteOn::MainHelper
   def send_data_to_crm(args)
     values = {
       name: args[:values].permit(:c3).present? ? args[:values].permit(:c2).values.first : "Лид без имени",
-      phone: args[:values].permit(:c3).present? ? args[:values].permit(:c3).values.first : args[:values].permit(:c2).values.first
+      phone: args[:values].permit(:c3).present? ? args[:values].permit(:c3).values.first : args[:values].permit(:c2).values.first,
+      email: args[:values].permit(:c4).present? ? args[:values].permit(:c3).values.first : ""
     }
 
     b24 = B24.new
@@ -345,5 +346,9 @@ module Themes::SiteOn::MainHelper
       settings[:expires] = "#{1.year.from_now.to_formatted_s(:rfc822)}"
       settings
     }
+  end
+
+  def before_app_load
+    shortcode_add("funnel_form", theme_view('partials/funnel_form'))
   end
 end

@@ -1,8 +1,6 @@
 class GetResponse
   include ActiveModel::Model
   require 'net/http'
-  require "uri"
-  require 'json'
 
   validates :email, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
   validates :tag, presence: true

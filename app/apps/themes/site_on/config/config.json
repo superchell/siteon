@@ -12,7 +12,8 @@
     "on_theme_settings": ["site_on_settings"],
     "contact_form_before_submit": ["form_bot_check"],
     "contact_form_after_submit": ["send_data_to_crm"],
-    "on_uploader": ["aws_uploader_hook"]
+    "on_uploader": ["aws_uploader_hook"],
+    "app_before_load": ["before_app_load"]
     //here all your hooks
   }
 }
