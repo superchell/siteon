@@ -3029,11 +3029,11 @@ Margin Right
     margin: auto;
 }
 .msg-block__sucess{
-    background: asset-theme-url('images/msg-success.svg') no-repeat;
+    background: url('../../images/msg-success.svg') no-repeat;
     color: #34d2a6;
 }
 .msg-block__error{
-    background: asset-theme-url('images/msg-error.svg') no-repeat;
+    background: url('../../images/msg-error.svg') no-repeat;
     color: #ffa093;
 }
 .msg-block__sucess, .msg-block__error{
