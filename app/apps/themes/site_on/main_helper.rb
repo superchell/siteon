@@ -342,6 +342,7 @@ module Themes::SiteOn::MainHelper
 
   def aws_uploader_hook(args)
     args[:aws_settings][:aws_file_upload_settings] = lambda{|settings|
+      settings[:content_type] = 'image/svg+xml' if params[:file_upload].present? && File.extname(params[:file_upload].original_filename) == ".svg"
       settings[:cache_control] = 'max-age=15552000, public'
       settings[:expires] = "#{1.year.from_now.to_formatted_s(:rfc822)}"
       settings
