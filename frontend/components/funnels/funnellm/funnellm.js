@@ -1,5 +1,7 @@
+import './css/style.scss';
 import "../../../init/css/style.css.scss";
-import "../../../init/css/style.css.scss";
+import "../../../components/homepage/portfolio/portfolio";
+import "../../../components/homepage/reviews/reviews";
 import "../../../init/css/color.css";
 import '../../../init/css/googlefonts.css';
 import "animate.css/animate.min.css";
@@ -7,7 +9,7 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../../../init/fontasome/css/fontawesome-all.min.css";
 import "../../../components/callback_form/callback_form";
-import './css/style.scss';
+
 import '../../../init/css/responsive.css';
 import './js/default';
 import "intl-tel-input/build/css/intlTelInput.css";
