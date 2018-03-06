@@ -1,133 +1,131 @@
+---
 ru:
   camaleon_cms:
     admin:
       custom_field:
         fields:
-          counters:  'Счетчик'
-          how_works: 'Как это работает'
-          prices: 'Цены'
-          services: 'Услуги'
-          top_banner: 'Баннер'
-          icon: "Ярлык"
-          icon_placeholder: "Название ярлыка"
-          title: "Заголовок"
-          title_placeholder: "Заголовок"
-          limit: "Считать до"
-          description: "Описание"
-          description_placeholder: "Добавьте текст"
-          price: "Цена"
-          price_description: "Цена"
-          image: "Изображение"
-          shortly_view: "Краткое описание"
-          list: "Список"
-
+          counters: Счетчик
+          how_works: Как это работает
+          prices: Цены
+          services: Услуги
+          top_banner: Баннер
+          icon: Ярлык
+          icon_placeholder: Название ярлыка
+          title: Заголовок
+          title_placeholder: Заголовок
+          limit: Считать до
+          description: Описание
+          description_placeholder: Добавьте текст
+          price: Цена
+          price_description: Цена
+          image: Изображение
+          shortly_view: Краткое описание
+          list: Список
       field_group:
         groups:
-          home_page: 'Главная страница'
-          top_banner: 'Баннер на главной'
-          how_works: 'Как это работает'
-          who_we: 'О нас'
-          portfolio: 'Портфолио'
-          reviews: 'Отзывы'
-          tech: 'Технологии'
-          services: 'Услуги'
-          counters: 'Счетчики'
-          prices: 'Цены'
-          our_working: 'Как мы работаем?'
-          brands: 'Бренды'
-          portfolio_settings: "Настройки страницы"
-          portfolio_top: "Заглавный блок"
-          portfolio_purpose: "Цели проекта"
-          portfolio_mobile_view: "Мобильная версия"
-          portfolio_features: "Особенности проекта"
-          portfolio_results: "Результаты"
-          portfolio_bottom: "Нижний блок"
-          reviews_fields: "Дополнительные поля"
-
+          home_page: Главная страница
+          top_banner: Баннер на главной
+          how_works: Как это работает
+          who_we: О нас
+          portfolio: Портфолио
+          reviews: Отзывы
+          tech: Технологии
+          services: Услуги
+          counters: Счетчики
+          prices: Цены
+          our_working: Как мы работаем?
+          brands: Бренды
+          portfolio_settings: Настройки страницы
+          portfolio_top: Заглавный блок
+          portfolio_purpose: Цели проекта
+          portfolio_mobile_view: Мобильная версия
+          portfolio_features: Особенности проекта
+          portfolio_results: Результаты
+          portfolio_bottom: Нижний блок
+          reviews_fields: Дополнительные поля
         fields:
-          home_page: 'Выбор главной'
-          home_page_descr: 'Укажите страницу'
-          top_banner_img: 'Изображение'
-          top_banner_img_descr: 'Загрузите баннер для главной страницы'
-          top_banner_descr_list: 'Текст для баннера'
-          top_banner_descr_list_descr: 'Добавьте текст для баннера'
-          title: 'Заголовок'
-          title_descr: "Добавьте заголовок для секции %{name}"
-          subtitle: 'Подзаголовок'
-          subtitle_descr: "Добавьте подзаголовок для секции %{name}"
-          content_blocks: "Контент-блоки"
-          content_blocks_descr: "Добавьте контент-блоки для секции %{name}"
-          caption: "Подпись"
-          description: "Описание"
-          description2: "Дополнительное описание"
-          description_descr: "Добавьте описание для секции %{name}"
-          img: "Изображение"
-          img_caption: "Подпись к изображению"
-          img_descr: "Добавьте изображение для секции %{name}"
-          thumb: "Миниатюра"
-          thumb_descr: "Добавьте миниатюру для секции %{name}"
-          background: "Фоновое изображение"
-          background_descr: "Добавьте фоновое изображение для секции %{name}"
-          post_type_from: "Выберите %{name} из"
-          logo: "Логотип"
-          logo_descr: "Добавьте логотип для секции %{name}"
-          left_column: "Левая колонка"
-          center_column: "Центральная колонка"
-          right_column: "Правая колонка"
-          project_type: "Тип проекта"
-          project_type_descr: "Выберите тип проекта"
-          potfolio_background1: "Цвет фона 1"
-          potfolio_background2: "Цвет фона 2"
-          potfolio_background3: "Цвет фона 3"
-          potfolio_button: "Цвет кнопки"
-          portfolio_logo: "Логотип"
-          potfolio_url: "Адрес сайта"
-          shortly_descr: "Краткое описание"
-          dynamic_list: "Динамический список"
-
+          home_page: Выбор главной
+          home_page_descr: Укажите страницу
+          top_banner_img: Изображение
+          top_banner_img_descr: Загрузите баннер для главной страницы
+          top_banner_descr_list: Текст для баннера
+          top_banner_descr_list_descr: Добавьте текст для баннера
+          title: Заголовок
+          title_descr: Добавьте заголовок для секции %{name}
+          subtitle: Подзаголовок
+          subtitle_descr: Добавьте подзаголовок для секции %{name}
+          content_blocks: Контент-блоки
+          content_blocks_descr: Добавьте контент-блоки для секции %{name}
+          caption: Подпись
+          description: Описание
+          description2: Дополнительное описание
+          description_descr: Добавьте описание для секции %{name}
+          img: Изображение
+          img_caption: Подпись к изображению
+          img_descr: Добавьте изображение для секции %{name}
+          thumb: Миниатюра
+          thumb_descr: Добавьте миниатюру для секции %{name}
+          background: Фоновое изображение
+          background_descr: Добавьте фоновое изображение для секции %{name}
+          post_type_from: Выберите %{name} из
+          logo: Логотип
+          logo_descr: Добавьте логотип для секции %{name}
+          left_column: Левая колонка
+          center_column: Центральная колонка
+          right_column: Правая колонка
+          project_type: Тип проекта
+          project_type_descr: Выберите тип проекта
+          potfolio_background1: Цвет фона 1
+          potfolio_background2: Цвет фона 2
+          potfolio_background3: Цвет фона 3
+          potfolio_button: Цвет кнопки
+          portfolio_logo: Логотип
+          potfolio_url: Адрес сайта
+          shortly_descr: Краткое описание
+          dynamic_list: Динамический список
+      button:
+        add_new_group: Добавить новую группу
     post_type:
       name:
-        homepage: "Главная страница"
-        portfolio: "Портфолио"
-        reviews: "Отзывы клиентов"
+        homepage: Главная страница
+        portfolio: Портфолио
+        reviews: Отзывы клиентов
       descr:
-        homepage: "Управление главной страницей"
-        portfolio: "Страницы портфолио"
-
+        homepage: Управление главной страницей
+        portfolio: Страницы портфолио
     project_type:
-      ecommerce: "Интернет-магазин"
-      card: "Сайт-визитка"
-      landing: "Лендинг"
-      catalog: "Сайт-каталог"
-      corp: "Корпоративный сайт"
-
+      ecommerce: Интернет-магазин
+      card: Сайт-визитка
+      landing: Лендинг
+      catalog: Сайт-каталог
+      corp: Корпоративный сайт
     buttons:
-          purchase: "Заказать %{name}"
-          from: "от"
-          callme_title: "Заказать звонок"
-          callme_placeholder: "Введите Ваш номер телефона"
-          callme: "Позвоните мне"
-          order_site: "Заказать сайт"
-          order_now: "Заказать сайт прямо сейчас"
-          free_consultation: "Бесплатная консультация"
-          send: "Отправить"
-
+      purchase: Заказать %{name}
+      from: от
+      callme_title: Заказать звонок
+      callme_placeholder: Введите Ваш номер телефона
+      callme: Позвоните мне
+      order_site: Заказать сайт
+      order_now: Заказать сайт прямо сейчас
+      free_consultation: Бесплатная консультация
+      send: Отправить
     callback_form:
-          title: "Нужен сайт?"
-          subtitle: "Мы сделаем его для Вас"
-          policy: "Ваши данные надежно защищены и не разглашаются третьим лицам."
-          success: "Все верно"
-          failed: "Неверный номер"
-          name_placeholder: "Ваше имя"
-          phone_placeholder: "Ваш телефон"
-
-    copyright: "SiteOn 2017 г. Все права защищены"
-
+      title: Нужен сайт?
+      subtitle: Мы сделаем его для Вас
+      policy: Ваши данные надежно защищены и не разглашаются третьим лицам.
+      success: Все верно
+      failed: Неверный номер
+      name_placeholder: Ваше имя
+      phone_placeholder: Ваш телефон
+    copyright: SiteOn 2017 г. Все права защищены
     portfolio:
-          result_button: "Результат"
-          mobile_version: "Мобильная версия сайта"
-
-    page_not_found: "Страница не найдена"
-    page_not_found_descr: "Пожалуйста, вернитесь на главную и попробуйте еще раз."
-    homepage_title: "Главная"
-    blog_all: "Все"
+      result_button: Результат
+      mobile_version: Мобильная версия сайта
+    page_not_found: Страница не найдена
+    page_not_found_descr: Пожалуйста, вернитесь на главную и попробуйте еще раз.
+    homepage_title: Главная
+    blog_all: Все
+    common:
+      no_contents_found: Контент не найден
+      clear_cache: Очистить кэш
+    welcome_message: Добро пожаловать в Camaleon CMS

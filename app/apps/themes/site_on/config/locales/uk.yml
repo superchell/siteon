@@ -1,133 +1,131 @@
+---
 uk:
   camaleon_cms:
     admin:
       custom_field:
         fields:
-          counters: 'Відлік'
-          how_works: 'Як працює'
-          prices: 'Ціни'
-          services: 'Послуги'
-          top_banner: 'Банер'
-          icon: "Ярлик"
-          icon_placeholder: "Назва ярлика"
-          title: "Заголовок"
-          title_placeholder: "Заголовок"
-          limit: "Рахувати до"
-          description: "Опис"
-          description_placeholder: "Додайте опис"
-          price: "Ціна"
-          price_description: "Вкажіть ціну"
-          image: "Зображення"
-          shortly_view: "Короткий зміст"
-          list: "Список"
-
+          counters: Відлік
+          how_works: Як працює
+          prices: Ціни
+          services: Послуги
+          top_banner: Банер
+          icon: Ярлик
+          icon_placeholder: Назва ярлика
+          title: Заголовок
+          title_placeholder: Заголовок
+          limit: Рахувати до
+          description: Опис
+          description_placeholder: Додайте опис
+          price: Ціна
+          price_description: Вкажіть ціну
+          image: Зображення
+          shortly_view: Короткий зміст
+          list: Список
       field_group:
         groups:
-          home_page: 'Головна сторінка'
-          top_banner: 'Банер на головной сторінці'
-          how_works: 'Як це працює'
-          who_we: 'Про нас'
-          portfolio: 'Портфоліо'
-          reviews: 'Відгуки'
-          tech: 'Технології'
-          services: 'Послуги'
-          counters: 'Відлік'
-          prices: 'Ціни'
-          our_working: 'Як ми працюємо?'
-          brands: 'Бренди'
-          portfolio_settings: "Налаштування сторінки"
-          portfolio_top: "Головний блок"
-          portfolio_purpose: "Цілі проекту"
-          portfolio_mobile_view: "Мобильна версія"
-          portfolio_features: "Особливості проекту"
-          portfolio_results: "Результати"
-          portfolio_bottom: "Останній блок"
-          reviews_fields: "Додаткові поля"
-
+          home_page: Головна сторінка
+          top_banner: Банер на головной сторінці
+          how_works: Як це працює
+          who_we: Про нас
+          portfolio: Портфоліо
+          reviews: Відгуки
+          tech: Технології
+          services: Послуги
+          counters: Відлік
+          prices: Ціни
+          our_working: Як ми працюємо?
+          brands: Бренди
+          portfolio_settings: Налаштування сторінки
+          portfolio_top: Головний блок
+          portfolio_purpose: Цілі проекту
+          portfolio_mobile_view: Мобильна версія
+          portfolio_features: Особливості проекту
+          portfolio_results: Результати
+          portfolio_bottom: Останній блок
+          reviews_fields: Додаткові поля
         fields:
-          home_page: 'Вибір головної'
-          home_page_descr: 'Оберіть головну'
-          top_banner_img: 'Зображення'
-          top_banner_img_descr: 'Завантажте файл'
-          top_banner_descr_list: 'Текст для банера'
-          top_banner_descr_list_descr: 'Додайте текст для банера'
-          title: 'Заголовок'
-          title_descr: "Додайте заголовок для секції %{name}"
-          subtitle: 'Підзаголовок'
-          subtitle_descr: "Додайте підзаголовок для секції %{name}"
-          content_blocks: "Контент-блоки"
-          content_blocks_descr: "Додайте контент-блоки для секції %{name}"
-          caption: "Підпіс"
-          description: "Опис"
-          description2: "Додатковий опис"
-          description_descr: "Додайте опис для секції %{name}"
-          img: "Зображення"
-          img_caption: "Підпис до зібраження"
-          img_descr: "Додайте зображення для секції %{name}"
-          thumb: "Мініатюра"
-          thumb_descr: "Додайте мініатюру для секції %{name}"
-          background: "Фонове зображення"
-          background_descr: "Додайте фонове зображення для секції %{name}"
-          post_type_from: "Оберіть %{name} з"
-          logo: "Логотип"
-          logo_descr: "Додайте логотип для секції %{name}"
-          left_column: "Ліва колонка"
-          center_column: "Центральна колонка"
-          right_column: "Права колонка"
-          project_type: "Тип проекту"
-          project_type_descr: "Оберіть тип проекту"
-          potfolio_background1: "Колір фону 1"
-          potfolio_background2: "Колір фону 2"
-          potfolio_background3: "Колір фону 3"
-          potfolio_button: "Колір кнопки"
-          portfolio_logo: "Логотип"
-          potfolio_url: "Адреса сайту"
-          shortly_descr: "Короткий опис"
-          dynamic_list: "Динамічний список"
-
+          home_page: Вибір головної
+          home_page_descr: Оберіть головну
+          top_banner_img: Зображення
+          top_banner_img_descr: Завантажте файл
+          top_banner_descr_list: Текст для банера
+          top_banner_descr_list_descr: Додайте текст для банера
+          title: Заголовок
+          title_descr: Додайте заголовок для секції %{name}
+          subtitle: Підзаголовок
+          subtitle_descr: Додайте підзаголовок для секції %{name}
+          content_blocks: Контент-блоки
+          content_blocks_descr: Додайте контент-блоки для секції %{name}
+          caption: Підпіс
+          description: Опис
+          description2: Додатковий опис
+          description_descr: Додайте опис для секції %{name}
+          img: Зображення
+          img_caption: Підпис до зібраження
+          img_descr: Додайте зображення для секції %{name}
+          thumb: Мініатюра
+          thumb_descr: Додайте мініатюру для секції %{name}
+          background: Фонове зображення
+          background_descr: Додайте фонове зображення для секції %{name}
+          post_type_from: Оберіть %{name} з
+          logo: Логотип
+          logo_descr: Додайте логотип для секції %{name}
+          left_column: Ліва колонка
+          center_column: Центральна колонка
+          right_column: Права колонка
+          project_type: Тип проекту
+          project_type_descr: Оберіть тип проекту
+          potfolio_background1: Колір фону 1
+          potfolio_background2: Колір фону 2
+          potfolio_background3: Колір фону 3
+          potfolio_button: Колір кнопки
+          portfolio_logo: Логотип
+          potfolio_url: Адреса сайту
+          shortly_descr: Короткий опис
+          dynamic_list: Динамічний список
+      js:
+        msg:
+          draft: Ескіз збережено
+      button:
+        add_new_group: Додати нову групу
+        add_option: Додати опцію
     post_type:
       name:
-        homepage: "Головна сторінка"
-        portfolio: "Портфоліо"
-        reviews: "Відгуки клієнтів"
+        homepage: Головна сторінка
+        portfolio: Портфоліо
+        reviews: Відгуки клієнтів
       descr:
-        homepage: "Налаштування головної сторінки"
-        portfolio: "Сторінки портфоліо"
-
+        homepage: Налаштування головної сторінки
+        portfolio: Сторінки портфоліо
     project_type:
-      ecommerce: "Інтернет-магазин"
-      card: "Сайт-визитка"
-      landing: "Лендінг"
-      catalog: "Сайт-каталог"
-      corp: "Корпоративний сайт"
-
+      ecommerce: Інтернет-магазин
+      card: Сайт-визитка
+      landing: Лендінг
+      catalog: Сайт-каталог
+      corp: Корпоративний сайт
     buttons:
-      purchase: "Замовити %{name}"
-      from: "від"
-      callme_title: "Замовити дзвінок"
-      callme_placeholder: "Введіть ваш номер телефону"
-      callme: "Зателефонуйте мені"
-      order_site: "Замовити сайт"
-      order_now: "Замовити сайт прямо зараз"
-      free_consultation: "Безкоштовна консультація"
-      send: "Відправити"
-
+      purchase: Замовити %{name}
+      from: від
+      callme_title: Замовити дзвінок
+      callme_placeholder: Введіть ваш номер телефону
+      callme: Зателефонуйте мені
+      order_site: Замовити сайт
+      order_now: Замовити сайт прямо зараз
+      free_consultation: Безкоштовна консультація
+      send: Відправити
     callback_form:
-      title: "Потрібен сайт?"
-      subtitle: "Ми з радістю зробимо його для Вас"
-      policy: "Ваші дані надійно захищені і не розголошуються третім особам."
-      success: "Усе гаразд"
-      failed: "Невірний номер"
-      name_placeholder: "Ваше ім'я"
-      phone_placeholder: "Ваш телефон"
-
-    copyright: "SiteOn 2017 р. Всі права захищені"
-
+      title: Потрібен сайт?
+      subtitle: Ми з радістю зробимо його для Вас
+      policy: Ваші дані надійно захищені і не розголошуються третім особам.
+      success: Усе гаразд
+      failed: Невірний номер
+      name_placeholder: Ваше ім'я
+      phone_placeholder: Ваш телефон
+    copyright: SiteOn 2017 р. Всі права захищені
     portfolio:
-      result_button: "Результат"
-      mobile_version: "Мобільна версія сайту"
-
-    page_not_found: "Сторінка не знайдена"
-    page_not_found_descr: "Будь ласка, поверніться на головну і спробуйте ще раз."
-    homepage_title: "Головна"
-    blog_all: "Всі"
+      result_button: Результат
+      mobile_version: Мобільна версія сайту
+    page_not_found: Сторінка не знайдена
+    page_not_found_descr: Будь ласка, поверніться на головну і спробуйте ще раз.
+    homepage_title: Головна
+    blog_all: Всі
