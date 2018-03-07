@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /admin
+Disallow: /3-etapa-sucess
+Disallow: /ru/spasibo-za-to-chto-skachali-nash-chek-list
+Disallow:  /ru/consulting-sucess
+Disallow:  /3-etapi-landing-page
+Disallow:  /3-etapi-sucess
+Disallow:  /ru/3-etapa-lp-sucess
+Disallow:  /vi-uspishno-zapisalsis-na-konsultatsiu
+Disallow:  /ru/consulting-sucess
+
+Host: https://siteon.com.ua
+Sitemap: https://siteon.com.ua/sitemap.xml
