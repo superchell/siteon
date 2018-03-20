@@ -1,1 +1,1 @@
-import "./landings.css";
+import "./landings.scss";

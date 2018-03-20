@@ -21,6 +21,8 @@ uk:
           image: Зображення
           shortly_view: Короткий зміст
           list: Список
+          link: Посылання на сторінку
+          link_placeholder: Введіть url сторінки
       field_group:
         groups:
           home_page: Головна сторінка
@@ -113,6 +115,7 @@ uk:
       order_now: Замовити сайт прямо зараз
       free_consultation: Безкоштовна консультація
       send: Відправити
+      read_more: Читати докладніше
     callback_form:
       title: Потрібен сайт?
       subtitle: Ми з радістю зробимо його для Вас
