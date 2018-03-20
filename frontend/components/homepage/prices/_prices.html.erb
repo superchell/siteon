@@ -24,7 +24,10 @@
               </div>
               <%= raw item[:descr] %>
               <div class="price-footer">
-                <a class="button open-popup-link" href="#call-popup"><%= t("camaleon_cms.buttons.purchase", name: item[:title]) %></a>
+
+                <a class="button <%=  item[:link].blank? ? "open-popup-link" : ''  %>" href="<%=  item[:link].blank? ? "#call-popup" : item[:link]  %>">
+                  <%= item[:link].blank? ? t("camaleon_cms.buttons.purchase", name: item[:title]) : t("camaleon_cms.buttons.read_more") %>
+                </a>
               </div>
             </div>
           </div>
