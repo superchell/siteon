@@ -212,37 +212,33 @@ function wowanimation() {
 /*************************
  Text Animate
  *************************/
-var numText = 0;
-var activeSlide = 0;
-var widthArray = [];
+import TextPlugin from "gsap/TextPlugin";
+
+
 
 $(function () {
-    numText = $('.text-animate b').length - 1;
+    var textArray = [];
+    var conunter = 0;
+    var speed = 4000;
 
-
-
-    setTimeout(function () {
-        animateText();
-    }, 1000);
-
-    $(window).resize(function () {
-        widthArray = [];
-        $('.text-animate .cd-words-wrapper').width('100%');
-
-        setTimeout(function () {
-            $('.text-animate b').each(function (index, value) {
-                widthArray.push($(this).width());
-            });
-        }, 500);
-
+    $('.cd-words-wrapper b').each(function () {
+        textArray.push($(this).text());
     });
+    console.log(textArray);
+    $('.cd-words-wrapper').html('');
 
-    setInterval(function () {
-        $('.text-animate b').each(function (index, value) {
-            widthArray.push($(this).width());
-        });
-        animateText();
-    }, 3000);
+    TweenLite.to($('.cd-words-wrapper'), 0.5, {text:{ value: textArray[conunter]}});
+
+    setInterval(()=>{
+        TweenLite.to($('.cd-words-wrapper'), 0.5, {text:{ value: ''}, ease:Linear.easeNone, onComplete: ()=>{
+            TweenLite.to($('.cd-words-wrapper'), 0.5, {text:{ value: textArray[conunter]}});
+        }});
+
+        conunter++
+        if (conunter >= textArray.length-1){
+            conunter = 0;
+        }
+    },speed);
 
 });
 
