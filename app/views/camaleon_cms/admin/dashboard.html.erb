@@ -1,8 +1,10 @@
+<%= stylesheet_link_tag  "#{theme_asset_path}css/admin/custom_styles", media: "all" %>
+<%= javascript_include_tag theme_asset_path("js/admin/settings.js") %>
 <div class="page-content-wrap">
   <div class="row">
     <div class="col-md-12">
 
-      <div class="panel-body" style="min-height: 350px">
+      <div class="panel-body main-settings" style="min-height: 350px">
         <% theme_field_groups = current_theme.get_field_groups %>
         <div class="page-content-wrap">
           <div class="panel panel-default">
@@ -24,19 +26,19 @@
           </div>
         </div>
 
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title"><%= t('camaleon_cms.admin.sidebar.dashboard') %></h3>
-        </div>
-            <% r = {content: ""}; hooks_run("on_notification", r); %>
-            <div id="dashboard_notifications">
-                <%= raw r[:content] %>
-            </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><%= t('camaleon_cms.admin.sidebar.dashboard') %></h3>
+          </div>
+          <% r = {content: ""}; hooks_run("on_notification", r); %>
+          <div id="dashboard_notifications">
+            <%= raw r[:content] %>
+          </div>
 
-            <% r = {content: ""}; hooks_run("on_dashboard", r); %>
-            <div id="dashboard_items">
-                <%= raw r[:content] %>
-            </div>
+          <% r = {content: ""}; hooks_run("on_dashboard", r); %>
+          <div id="dashboard_items">
+            <%= raw r[:content] %>
+          </div>
         </div>
       </div>
     </div>

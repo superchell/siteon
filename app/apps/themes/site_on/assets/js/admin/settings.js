@@ -16,6 +16,15 @@ jQuery(document).on("ready page:changed", function(){
 
     scroll_to_elem(scroll_target, 500);
   });
+
+  $('.main-settings .panel-collapse').click(function () {
+    var panel = $(this).closest('.panel'),
+        footer = $('.panel-footer');
+
+    if (panel.hasClass('panel-toggled')) {
+      footer.addClass('fixed-button');
+    }
+  })
 });
 
 function scroll_to_elem(elem, speed) {
