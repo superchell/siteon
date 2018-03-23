@@ -21,6 +21,8 @@ ru:
           image: Изображение
           shortly_view: Краткое описание
           list: Список
+          link: Ссылка на страницу
+          link_placeholder: Введите url страницы
       field_group:
         groups:
           home_page: Главная страница
@@ -109,6 +111,7 @@ ru:
       order_now: Заказать сайт прямо сейчас
       free_consultation: Бесплатная консультация
       send: Отправить
+      read_more: Читать подробнее
     callback_form:
       title: Нужен сайт?
       subtitle: Мы сделаем его для Вас

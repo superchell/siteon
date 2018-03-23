@@ -15,6 +15,13 @@
              class="title_field <%= 'translatable' if field.options[:translate].to_s.to_bool %> form-control <%= "required" if field.options[:required].to_s.to_bool %>"/>
     </div>
     <div class="form-group">
+      <label><%= t('camaleon_cms.admin.custom_field.fields.link') %>: </label>
+      <input placeholder="<%= t('camaleon_cms.admin.custom_field.fields.link_placeholder') %>"
+             type="text"
+             name="<%= field_name %>[<%= field.slug %>][values][][link]"
+             class="link_field <%= 'translatable' if field.options[:translate].to_s.to_bool %> form-control <%= "required" if field.options[:required].to_s.to_bool %>"/>
+    </div>
+    <div class="form-group">
       <label><%= t('camaleon_cms.admin.custom_field.fields.description') %>: </label>
       <textarea id=""
                 name="<%= field_name %>[<%= field.slug %>][values][][descr]"
@@ -28,6 +35,7 @@
   function render_prices(panel, values){
     values = values && typeof values == 'object' ? values : $.parseJSON(values || '{}');
     panel.find('.title_field').val(values['title']);
+    panel.find('.link_field').val(values['link']);
     panel.find('.price_field').val(values['price']);
     panel.find('.translatable').Translatable(ADMIN_TRANSLATIONS);
 
