@@ -67,9 +67,36 @@ NOTE: This file contains the styling for responsive Template.
 
 
 	header .navbar-default { padding: 20px 0 0; }
-	header .navbar-default .navbar-toggle { background: #fff; border: #fff;  margin-right: 0; transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out; }
-	header .navbar-default .navbar-toggle .icon-bar { background: #fdc319; }
-	header .navbar-default .navbar-toggle:hover, header .navbar-default .navbar-toggle:focus { background: rgba(255, 255, 255, 1); }
+
+	header .navbar-default .navbar-toggle {
+		background: none;
+		border: none;
+		margin-right: 44px;
+		transition: all 0.5s ease-in-out;
+		transition: all 0.5s ease-in-out;
+		-moz-transition: all 0.5s ease-in-out;
+		-ms-transition: all 0.5s ease-in-out;
+		-o-transition: all 0.5s ease-in-out;
+		-webkit-transition: all 0.5s ease-in-out;
+	}
+
+	header .navbar-default .navbar-toggle .icon-bar {
+		background: #fdc319;
+	}
+
+	.navbar-toggle .icon-bar{
+		width: 35px;
+	}
+	.navbar-toggle .icon-bar:last-child{
+		width: 24px;
+	}
+
+	header .navbar-default .navbar-toggle:hover .icon-bar, header .navbar-default .navbar-toggle:focus .icon-bar{
+		background: #fff;
+	}
+	header .navbar-default .navbar-toggle:hover, header .navbar-default .navbar-toggle:focus {
+		background: none;
+	}
 	header .navbar-default .navbar-collapse, header .navbar-default .navbar-form { background: #fff; border: none; margin-top: 15px; }
 	header .navbar-nav { margin-top: 0; }
 	header .navbar-default .navbar-nav > li > a { color: #333; padding: 10px 15px; }
@@ -77,7 +104,7 @@ NOTE: This file contains the styling for responsive Template.
 	header .navbar-default .navbar-nav > li > a:hover, header .navbar-default .navbar-nav > li > a:focus, header .navbar-default .navbar-nav > li.active > a, header .navbar-default .navbar-nav > li.active > a:focus, header .navbar-default .navbar-nav > li.active > a:hover { background: #fdc319; }
 	header .navbar-nav > li { margin: 0; }
 
-	header .menu-sticky.navbar-default .navbar-toggle { margin-top: 5px; }
+	header .menu-sticky.navbar-default .navbar-toggle { margin-top: 0px; }
 
 	.navbar-header {
 		float: none;
@@ -87,7 +114,24 @@ NOTE: This file contains the styling for responsive Template.
 	}
 	.navbar-toggle {
 		display: block;
+
 	}
+
+	.navbar-toggle  .sr-only{
+		padding: 0;
+		position: absolute;
+		width: auto;
+		height: auto;
+		color: #fff;
+		overflow: visible;
+		clip: auto;
+		margin: 0;
+		right: -59px;
+		top: 7px;
+		font-family: Montserrat;
+		font-weight: 300;
+	}
+
 	.navbar-collapse {
 
 	}
@@ -265,6 +309,11 @@ NOTE: This file contains the styling for responsive Template.
 	.lang-select{
 		margin: 0;
 		padding: 0;
+		margin-left: 14px;
+	}
+	header .navbar-header .navbar-brand img, header .navbar-header .navbar-brand img {
+		height: 20px !important;
+		width: auto !important;
 	}
 }
 @media(max-width:479px) {
