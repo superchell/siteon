@@ -25,6 +25,9 @@ NOTE: This file contains the styling for responsive Template.
 	.counter-info-img img { margin-top: 0px; margin-bottom: -100px; width: 115%; }
 	.counter-info .iq-video, .counter-info .iq-waves { left: 60%; }
 	.iq-objects .iq-objects-04, .iq-objects-software .iq-objects-03 { border: 36px solid #fdc319; height: 500px; width: 500px; }
+
+
+
 }
 @media(max-width:1365px) {
 	.owl-carousel .owl-nav .owl-next { right: -3%; }
@@ -61,8 +64,110 @@ NOTE: This file contains the styling for responsive Template.
 	.iq-footer-box .iq-icon i { margin-right: 10px; }
     .iq-amazing-tab .nav.nav-tabs li a span { font-size: 0; }
     header .navbar-header .navbar-brand img, header .navbar-header .navbar-brand img { height:30px !important; width: auto !important; }
-}
 
+
+	header .navbar-default { padding: 20px 0 0; }
+
+	header .navbar-default .navbar-toggle {
+		background: none;
+		border: none;
+		margin-right: 44px;
+		transition: all 0.5s ease-in-out;
+		transition: all 0.5s ease-in-out;
+		-moz-transition: all 0.5s ease-in-out;
+		-ms-transition: all 0.5s ease-in-out;
+		-o-transition: all 0.5s ease-in-out;
+		-webkit-transition: all 0.5s ease-in-out;
+	}
+
+	header .navbar-default .navbar-toggle .icon-bar {
+		background: #fdc319;
+	}
+
+	.navbar-toggle .icon-bar{
+		width: 35px;
+	}
+	.navbar-toggle .icon-bar:last-child{
+		width: 24px;
+	}
+
+	header .navbar-default .navbar-toggle:hover .icon-bar, header .navbar-default .navbar-toggle:focus .icon-bar{
+		background: #fff;
+	}
+	header .navbar-default .navbar-toggle:hover, header .navbar-default .navbar-toggle:focus {
+		background: none;
+	}
+	header .navbar-default .navbar-collapse, header .navbar-default .navbar-form { background: #fff; border: none; margin-top: 15px; }
+	header .navbar-nav { margin-top: 0; }
+	header .navbar-default .navbar-nav > li > a { color: #333; padding: 10px 15px; }
+	header .nav > li a::before { display: none; }
+	header .navbar-default .navbar-nav > li > a:hover, header .navbar-default .navbar-nav > li > a:focus, header .navbar-default .navbar-nav > li.active > a, header .navbar-default .navbar-nav > li.active > a:focus, header .navbar-default .navbar-nav > li.active > a:hover { background: #fdc319; }
+	header .navbar-nav > li { margin: 0; }
+
+	header .menu-sticky.navbar-default .navbar-toggle { margin-top: 0px; }
+
+	.navbar-header {
+		float: none;
+	}
+	.navbar-left,.navbar-right {
+		float: none !important;
+	}
+	.navbar-toggle {
+		display: block;
+
+	}
+
+	.navbar-toggle  .sr-only{
+		padding: 0;
+		position: absolute;
+		width: auto;
+		height: auto;
+		color: #fff;
+		overflow: visible;
+		clip: auto;
+		margin: 0;
+		right: -59px;
+		top: 7px;
+		font-family: Montserrat;
+		font-weight: 300;
+	}
+
+	.navbar-collapse {
+
+	}
+	.navbar-fixed-top {
+		top: 0;
+		border-width: 0 0 1px;
+	}
+	.navbar-collapse.collapse {
+		display: none!important;
+	}
+	.navbar-nav {
+		float: none!important;
+		margin-top: 7.5px;
+	}
+	.navbar-nav>li {
+		float: none;
+	}
+	.navbar-nav>li>a {
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	.collapse.in{
+		display:block !important;
+	}
+
+	header .navbar-default .navbar-collapse, header .navbar-default .navbar-form{
+		position: absolute;
+		left: 15px;
+		right: 15px;
+		top: 71px;
+	}
+
+	.header-contacts-container{
+		margin-left: 10px;
+	}
+}
 @media(max-width:992px) {
 
 	.col-flex-md-6{
@@ -193,20 +298,23 @@ NOTE: This file contains the styling for responsive Template.
 	.iq-coming .big-text { font-size: 70px; line-height: normal; margin-top: 30px !important; }
 	.iq-coming .iq-subscribe .form-group { width: 100%; }
 	.iq-coming .button.iq-ml-25 { margin-left: 0 !important; }
-	header .navbar-default { padding: 20px 0 0; }
-	header .navbar-default .navbar-toggle { background: #fff; border: #fff; margin-top: 10px; margin-right: 0; transition: all 0.5s ease-in-out; transition: all 0.5s ease-in-out; -moz-transition: all 0.5s ease-in-out; -ms-transition: all 0.5s ease-in-out; -o-transition: all 0.5s ease-in-out; -webkit-transition: all 0.5s ease-in-out; }
-	header .navbar-default .navbar-toggle .icon-bar { background: #fdc319; }
-	header .navbar-default .navbar-toggle:hover, header .navbar-default .navbar-toggle:focus { background: rgba(255, 255, 255, 0.8); }
-	header .navbar-default .navbar-collapse, header .navbar-default .navbar-form { background: #fff; border: none; margin-top: 15px; }
-	header .navbar-nav { margin-top: 0; }
-	header .navbar-default .navbar-nav > li > a { color: #333; padding: 10px 15px; }
-	header .nav > li a::before { display: none; }
-	header .navbar-default .navbar-nav > li > a:hover, header .navbar-default .navbar-nav > li > a:focus, header .navbar-default .navbar-nav > li.active > a, header .navbar-default .navbar-nav > li.active > a:focus, header .navbar-default .navbar-nav > li.active > a:hover { background: #fdc319; }
-	header .navbar-nav > li { margin: 0; }
-	
-	header .menu-sticky.navbar-default .navbar-toggle { margin-top: 5px; }
+
+
+
 	.slider-container { width: 100%; height: 120%; left: 0; margin: -200px 0 0 0px; }
 	.screenshots-slider { min-height: 270px; }
+	.header-top_phones{
+		display: none;
+	}
+	.lang-select{
+		margin: 0;
+		padding: 0;
+		margin-left: 14px;
+	}
+	header .navbar-header .navbar-brand img, header .navbar-header .navbar-brand img {
+		height: 20px !important;
+		width: auto !important;
+	}
 }
 @media(max-width:479px) {
 	.ipad__mockup{
@@ -231,3 +339,4 @@ NOTE: This file contains the styling for responsive Template.
 	#great-screenshots.overview-block-ptb { padding: 70px 0 20px; }
 	.counter-info .iq-video, .counter-info .iq-waves { top: 42%; }
 }
+

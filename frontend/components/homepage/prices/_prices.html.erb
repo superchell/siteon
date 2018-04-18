@@ -16,7 +16,7 @@
       <div class="row">
         <% prices.each_with_index  do |item, i|%>
           <% odd = (i % 2).zero? %>
-          <div class="col-sm-4 col-md-4 <%= 'wow flipInY' if odd %>" <%= 'data-wow-duration="1s"' if odd %>>
+          <div class="col-sm-4 col-md-4">
             <div class="iq-pricing text-center">
               <div class="price-title iq-bg iq-over-blue-80" style="background: url(<%= theme_img_url "paralax.jpg" %>);">
                 <h2 class="iq-font-white iq-tw-7"><small><%=  t("camaleon_cms.buttons.from") %> $</small><%= raw item[:price] %></h2>

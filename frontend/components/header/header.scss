@@ -2,6 +2,7 @@
                             Header
 -----------------------------------------------------------------------*/
 
+
 header .navbar.navbar-default{
     background: #000;
 
@@ -12,6 +13,7 @@ header .navbar.navbar-default{
     -o-transition: all 0.25s ease-in-out;
     -webkit-transition: all 0.25s ease-in-out;
 }
+
 
 .home-page header .navbar{
     background: none;
@@ -32,10 +34,32 @@ header {
     -webkit-transition: all 0.5s ease-in-out;
 }
 
+
 header .container-fluid {
-    padding: 0 100px;
-    @media (max-width: 1200px) {
-        padding: 0 50px;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    .navbar-toggle{
+        margin: 0 15px;
+    }
+
+    .navbar-header{
+        margin-right: auto;
+    }
+
+
+    @media (max-width: 1400px) {
+        padding: 0 15px;
+    }
+
+    .flex-col{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        margin-left: auto;
     }
 }
 
@@ -63,9 +87,17 @@ header .navbar-default .navbar-brand {
     height: inherit;
     padding: 0;
 }
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand{
+    @media (max-width: 1400px) {
+        margin-left: 0px !important;
+    }
+}
+
+header.menu-sticky .navbar-default .navbar-brand{
+    margin-top: 0px;
+}
 
 header .navbar-nav {
-    margin-top: 7px;
     transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
     -moz-transition: all 0.5s ease-in-out;
@@ -85,8 +117,10 @@ header .navbar-nav > li:last-child {
 header .navbar-default .navbar-nav > li > a {
     color: #ffffff;
     padding: 10px 0;
-    font-family: 'Raleway', sans-serif;
+
+    font-family: Montserrat;
     font-size: 16px;
+    font-weight: 300;
 }
 
 header .navbar-default .navbar-nav > li > a:hover,
@@ -101,10 +135,10 @@ header .navbar-default .navbar-nav > li.active > a:hover {
 }
 
 header .nav > li a::before {
-    background: #fff;
+    background: #fdc318;
     bottom: 0;
     content: "";
-    height: 2px;
+    height: 1px;
     left: 0;
     position: absolute;
     width: 0;
@@ -150,9 +184,6 @@ header .menu-sticky .button {
 .header-contacts-container{
     float: right;
     margin-left: 40px;
-    @media (max-width: 992px) {
-        display: none;
-    }
 }
 .header-contacts{
     display: flex;
@@ -160,22 +191,103 @@ header .menu-sticky .button {
     align-items: center;
     .button{
         margin-left: 20px;
+        padding: 5px 11px;
     }
     .link-underline{
         color: #fff;
     }
 }
 
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand{
+    margin-left: 0 !important;
+}
+.header-top_phones{
+    position: relative;
+    padding-right: 12px;
+    &:after{
+        position: absolute;
+        right: 10px;
+        top: 14px;
+        content: '';
+        background-image: url("../../images/arrow-drop.png");
+        width: 13px;
+        height: 7px;
+        transform: rotate(180deg);
+
+    }
+    &.open{
+        background-color: #252525;
+        &:after{
+            transform: rotate(0deg);
+        }
+    }
+
+    .ico{
+        width: 23px;
+        height: 23px;
+        display: inline-block;
+        background-size: cover;
+        vertical-align: middle;
+        position: relative;
+        margin-top: -3px;
+        margin-right: 14px;
+
+        &.ico-kievstar{
+            background-image: url("../../images/kievstar.png");
+        }
+        &.ico-vodafon{
+            background-image: url("../../images/vodafon.png");
+        }
+    }
+
+    .dropdown-link{
+        padding: 7px 20px;
+        display: inline-block;
+        color: #ffffff;
+        font-family: Montserrat;
+        font-size: 18px;
+        font-weight: 300;
+        text-transform: uppercase;
+        padding-bottom: 5px;
+    }
+    .dropdown-items{
+        a{
+            color: #ffffff;
+            font-family: Montserrat;
+            font-size: 18px;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+    }
+
+    .dropdown-menu{
+        border-radius: 0;
+        background-color: #252525;
+        margin: 0;
+        border: none;
+        right: 0;
+    }
+}
+
 .lang-select{
     position: relative;
-    margin: 0 24px;
-    margin-left: 0;
-    border-left: 1px solid #fff;
-    border-right: 1px solid #fff;
+    margin-left: 24px;
     padding: 0 10px;
     a{
-        color: #fff;
-        text-decoration: underline;
+        display: inline-block;
+        background-color: #252526;
+        color: #bebdbd;
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: 300;
+        width: 38px;
+        height: 38px;
+        text-decoration: none;
+        text-transform: lowercase;
+        text-align: center;
+        line-height: 35px;
+        border-radius: 100%;
+
         &:hover, &:focus{
             text-decoration: none;
         }

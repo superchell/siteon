@@ -16,34 +16,40 @@
   <div class="navbar navbar-default navbar-fixed-top menu-top">
     <div class="container-fluid">
       <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
         <a href="<%= is_home? ? 'javascript:void(0);' : cama_root_path %>" class="navbar-brand">
           <img class="img-responsive" src="<%=theme_img_url "logo.svg"%>" width="150" alt="logo">
         </a>
       </div>
-      <div class="navbar-collapse collapse">
+      <div class="flex-col">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Меню</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="navbar-collapse collapse">
+          <nav>
+            <%= raw draw_menu({container_class: "nav navbar-nav", item_current: "active", link_class: "page-scroll", container_id: "main_menu"}) %>
+          </nav>
+        </div>
         <div class="header-contacts-container">
-          <div class="header-contacts">
-            <div class="col">
-              <div class="lang-select">
-                <%# language_link %>
+        <div class="header-contacts">
+          <div class="col">
+            <div class="header-top_phones">
+              <a href="tel:+380986371893" class="dropdown-link dropdown-toggle" id="phoneDrop" data-toggle="dropdown"><i class="ico ico-kievstar"></i>+38(098) 637 18 93</a>
+              <div class="dropdown-menu" aria-labelledby="phoneDrop">
+                <a class="dropdown-items dropdown-link" href="tel:+380664191125"><i class="ico ico-vodafon"></i>+38(066) 419 11 25 </a>
               </div>
             </div>
-            <div class="col visible-lg ">
-              <a href="#call-popup" class="button bt-black  open-popup-link"><%= t("camaleon_cms.buttons.free_consultation") %></a>
-            </div>
-
           </div>
-        </div>
+          <div class="col">
+            <div class="lang-select">
+              <%= language_link %>
+            </div>
+          </div>
 
-        <nav>
-          <%= raw draw_menu({container_class: "nav navbar-nav navbar-right", item_current: "active", link_class: "page-scroll", container_id: "main_menu"}) %>
-        </nav>
+        </div>
+      </div>
       </div>
     </div>
   </div>
