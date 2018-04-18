@@ -16,7 +16,7 @@
     <div class="row">
       <% works_items.each_with_index  do |item, i|%>
         <div class="col-sm-12 col-md-4 <%= "re-mt-50" if i > 0 %>">
-          <div class="iq-works-box text-left wow flipInX" data-wow-delay="<%= delay %>s">
+          <div class="iq-works-box text-left" data-wow-delay="<%= delay %>s">
             <div class="step"><%= i + 1 %></div>
             <div class="icon-bg text-center">
               <i aria-hidden="true" class="<%= item[:icon] %>"></i>
