@@ -7,6 +7,7 @@
 
   <section class="porfolio-main__wrap">
     <div class="porfolio-main__wrap-left text-center col-flex-md-6 view-check" data-vp-add-class="animated fadeInLeft">
+
       <%= image_tag @post.the_field('portfolio_logo'), alt: @post.the_title %>
       <h1><%= @post.the_title %></h1>
       <h3> <%= raw t("camaleon_cms.project_type.#{@post.the_field("project_type")}") %></h3>

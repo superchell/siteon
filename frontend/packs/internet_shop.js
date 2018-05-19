@@ -1,0 +1,1 @@
+import "components/funnels/internet_shop";

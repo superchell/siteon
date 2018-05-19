@@ -1,0 +1,11 @@
+.example-enter, .example-leave.example-leave-active{
+  opacity: 0;
+  transform: translate3d(0, 10%, 0);
+  transition: all 150ms ease-in;
+}
+
+.example-enter.example-enter-active, .example-leave {
+  opacity: 1;
+  transform: translate3d(0, 0%, 0);
+  transition: all 250ms ease-in;
+}
