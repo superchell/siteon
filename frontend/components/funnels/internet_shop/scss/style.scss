@@ -1,5 +1,113 @@
 @import "custon_animate";
 
-.scrollmagic-pin-spacer{
+.scrollmagic-pin-spacer {
   z-index: 2;
+}
+
+.reviews, .garanty, .slider2 {
+  overflow: hidden;
+}
+
+.gains{
+  .heading-2{
+    margin-bottom: 25px;
+  }
+  .heading-2 + p{
+    margin-bottom: 25px;
+  }
+  .slider-item{
+    &-container{
+      max-width: 1120px;
+      margin: auto;
+    }
+  }
+
+}
+
+@media (max-width: 991px)
+{
+  .main-block{
+    padding-top: 38px;
+  }
+}
+
+
+
+.slider2 {
+  .swiper-pagination {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    margin-top: 45px;
+  }
+
+  @media (max-width: 767px) {
+    margin-top: 0;
+    padding-top: 0;
+
+    .num-block {
+      margin-bottom: 0;
+      padding-top: 59px;
+    }
+    .num-block-title {
+      font-size: 21px;
+      padding-bottom: 12px;
+    }
+    li {
+      margin-bottom: 7px;
+      line-height: 1.2em;
+      font-size: 15px;
+    }
+    .num-block-container {
+      min-height: initial;
+    }
+    .num-text {
+      margin-top: 20px;
+      line-height: 1.5em;
+      font-size: 14px;
+    }
+    .num-title-num {
+      font-size: 110px;
+      top: -32px;
+    }
+    .swiper-pagination {
+      margin-top: 0;
+    }
+  }
+
+}
+
+.header {
+  z-index: 2000;
+}
+
+.main-menu {
+  z-index: 2001;
+}
+
+.slider-item__mac-icon {
+  font-family: Icomoon, sans-serif;
+  font-size: 108px;
+  color: #fcc223;
+}
+
+@media (max-width: 479px) {
+  .gains {
+    li {
+      line-height: 1.25em;
+    }
+    .heading-2 {
+      margin-bottom: 16px;
+      font-size: 21px;
+    }
+    .slider-item__mac {
+      height: 150px;
+      position: relative;
+      z-index: 111;
+    }
+    .slider-item__mac-icon {
+      margin-bottom: 17px;
+    }
+  }
 }
