@@ -29,7 +29,10 @@ $(function () { // wait for document ready
     let countEl = $('.gains .swiper-slide').length;
     let duratrion = countEl * $('.gains .swiper-slide').outerHeight(true);
 
-    var scene = new ScrollMagic.Scene({triggerElement: "#trigger1", duration: duratrion * 1.5, offset: window.innerHeight / 3})
+    let offset1 = 350;
+
+
+    var scene = new ScrollMagic.Scene({triggerElement: "#trigger1", duration: duratrion * 1.5, offset: offset1 }) //- 217
         .setPin("#pin1")
         //.addIndicators({name: "1 (duration: 300)"}) // add indicators (requires plugin)
         .addTo(controller);
@@ -43,6 +46,8 @@ $(function () { // wait for document ready
         pagination: {
             el: '.gains .swiper-pagination',
         },
+        simulateTouch:false,
+        allowTouchMove: false
     });
 
 
@@ -54,19 +59,30 @@ $(function () { // wait for document ready
     let countEl2 = $('.swiper-slide').length;
     let duratrion2 = countEl * $('.swiper-slide').outerHeight(true);
 
-    var scene2 = new ScrollMagic.Scene({triggerElement: "#trigger2", duration: duratrion2 , offset: window.innerHeight / 4})
+    var scene2 = new ScrollMagic.Scene({triggerElement: "#trigger2", duration: duratrion2 * 2, offset: offset1})
         .setPin("#pin2")
         //.addIndicators({name: "1 (duration: 300)"}) // add indicators (requires plugin)
         .addTo(controller);
 
 
     scene2.on("progress", function (event) {
-        swiper2.slideTo(Math.floor( event.progress * 10 / 4));
+        swiper2.slideTo(Math.floor( event.progress * 10 / 2) );
+
     });
 
     var swiper2 = new Swiper('.slider2 .swiper-container', {
         pagination: {
             el: '.slider2 .swiper-pagination',
         },
+        simulateTouch:false,
+        allowTouchMove: false,
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+        breakpoints: {
+            768: {
+                slidesPerView: 1,
+                slidesPerGroup: 1,
+            }
+        }
     });
 });
