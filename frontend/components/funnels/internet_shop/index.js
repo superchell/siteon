@@ -7,6 +7,8 @@ import Swiper from 'swiper';
 import "swiper/dist/css/swiper.css";
 
 import App from './App';
+import "./forms";
+
 import SliderGains from './SliderGains';
 import "./scss/google_fonts.scss";
 import "./css/normalize.css";
