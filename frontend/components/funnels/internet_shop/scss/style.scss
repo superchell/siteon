@@ -24,14 +24,27 @@
 
 }
 
+.quote{
+  padding-top: 70px;
+}
+
 @media (max-width: 991px)
 {
   .main-block{
     padding-top: 38px;
   }
 }
-
-
+@media (max-width: 767px) {
+  .main-menu {
+    li {
+      margin-bottom: 0;
+    }
+    .menu-link-inner {
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+  }
+}
 
 .slider2 {
   .swiper-pagination {
@@ -45,6 +58,8 @@
   @media (max-width: 767px) {
     margin-top: 0;
     padding-top: 0;
+
+
 
     .num-block {
       margin-bottom: 0;

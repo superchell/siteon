@@ -11,47 +11,33 @@
   </div>
 </header>
 
-
-
 <%= raw @post.the_content %>
 
-<section class="brands">
-  <div class="heading-title">
-    <h3 class="title iq-tw-7">Наши клиенты</h3>
-  </div>
-  <% brands = current_theme.the_fields('brands_item') %>
-  <% unless brands.blank? %>
-    <!-- Clients -->
-    <div class="iq-our-clients white-bg iq-ptb-50">
-      <div class="container">
-        <div class="owl-carousel" data-nav-dots="false" data-nav-arrow="true" data-items="5" data-sm-items="3" data-lg-items="5" data-md-items="4" data-autoplay="true">
-          <% brands.each do |brand| %>
-            <%= image_tag brand, class: "img-responsive center-block", alt: "" %>
-          <% end %>
-        </div>
-      </div>
-    </div>
-    <!-- Clients END -->
-  <% end %>
-</section>
+<!---->
+<!-- Start static HTML -->
+<!---->
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer-cols">
-      <div class="logo_gooter">
-        <img src="https://d2ndkuvoc54ef2.cloudfront.net/funnels/funnellm/logosow-copy.png">
-        <div class="slogan-footer">включи свой сайт</div>
-      </div>
-      <div class="foote-links">
-        <a href="https://siteon.com.ua/politika-konfidentsiynosti" target="_blank">Политика конфедициальности</a>
-        <a href="https://siteon.com.ua/ru/soglasie-s-rassylkoy" target="_blank">Согласие с рассылкой</a>
-      </div>
-      <div class="footer_phones">
-        Тел.: +38(066) 419 11 25 <br>
-        +38(098) 637 18 93
-      </div>
-    </div>
 
-    <div class="coperate">SiteOn 2018 р. Все права защищены</div>
+
+<!---->
+<!-- END Start static HTML -->
+<!---->
+
+<footer class="footer footer-funnel">
+  <div class="footer-cols">
+    <div class="logo_gooter">
+      <img src="https://d2ndkuvoc54ef2.cloudfront.net/funnels/funnellm/logosow-copy.png">
+      <div class="slogan-footer">включи свой сайт</div>
+    </div>
+    <div class="foote-links">
+      <a href="https://siteon.com.ua/politika-konfidentsiynosti" target="_blank">Политика конфедициальности</a>
+      <a href="https://siteon.com.ua/ru/soglasie-s-rassylkoy" target="_blank">Согласие с рассылкой</a>
+    </div>
+    <div class="footer_phones">
+      Тел.: +38(066) 419 11 25 <br>
+      +38(098) 637 18 93
+    </div>
   </div>
+
+  <div class="coperate">SiteOn 2018 р. Все права защищены</div>
 </footer>
