@@ -3,14 +3,30 @@ import React, {Component} from 'react';
 class Form extends Component {
     constructor(props) {
         super(props);
-        this.state = {value: ''};
+        this.state = {
+            value: '',
+            token: ''
+        };
 
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.fromData();
     }
 
     handleChange(event) {
         this.setState({value: event.target.value});
+    }
+
+    fromData = () => {
+        fetch(`${window.location.href}?format=json`)
+            .then(function(response) {
+                return response.json();
+            })
+            .then((data) => {
+                this.setState({
+                    token: data.form_token
+                })
+            })
     }
 
     handleSubmit(event) {
@@ -18,8 +34,8 @@ class Form extends Component {
             method: 'POST',
             headers: new Headers(),
             body: JSON.stringify({
-                id: 57,
-                authenticity_token: $('#edit_plugins_cama_contact_form_cama_contact_form_57 input[name="authenticity_token"]').val() ,
+                id: 1,
+                authenticity_token: this.state.token ,
                 'fields[c2]': 'Gena',
                 'fields[c6]': '+380660297109',
                 'fields[c5]': "acidcrash2005@gmail.com"

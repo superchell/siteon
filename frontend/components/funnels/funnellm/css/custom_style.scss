@@ -1,0 +1,78 @@
+.brands-funnel {
+  padding-top: 21px;
+  background: #fbfbfb;
+  margin-top: 9px;
+  padding-bottom: 30px;
+
+  .heading-title {
+    margin-bottom: 30px;
+  }
+
+  .our-clietns {
+    display: flex;
+    max-width: 1200px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: 0 15px;
+
+    &__item {
+      padding: 15px;
+    }
+  }
+
+  img {
+    border: 1px solid #fbca3c;
+    filter: grayscale(1);
+    transition: all 0.5s ease;
+    max-width: 100%;
+
+    &:hover {
+      filter: grayscale(0);
+    }
+  }
+}
+
+.button_submit.link {
+  &:hover {
+    background: #000;
+  }
+}
+
+.footer-funnel {
+  overflow: hidden;
+
+  color: #a7a7a7;
+  padding: 15px 10px;
+
+  .footer-cols {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1170px;
+    margin: auto;
+
+    @media (max-width: 768px) {
+      justify-content: center;
+    }
+  }
+  .coperate {
+    text-align: center;
+    padding: 15px;
+  }
+  .foote-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    a {
+      margin: 15px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .logo{
+    width: 100px;
+  }
+}
