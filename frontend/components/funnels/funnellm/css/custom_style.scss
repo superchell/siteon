@@ -78,6 +78,10 @@
     position: relative;
     z-index: 11;
   }
+  .container{
+    width: auto;
+    max-width: 1170px;
+  }
 }
 
 .video-block {
@@ -238,4 +242,29 @@
   .logo{
     width: 100px;
   }
+}
+.small-text{
+  display: block;
+  max-width: 900px;
+}
+
+@media (max-width: 767px) {
+  .main_block.sucess{
+    .heading-6 {
+      font-size: 16px;
+      margin-top: 0;
+      line-height: 1.2em;
+    }
+  }
+  .main_title {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .small-text{
+    font-size: 15px;
+    line-height: 1.5em;
+    display: block;
+  }
+
 }
