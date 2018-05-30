@@ -2,11 +2,6 @@
 
 </div>
 
-<%= raw @post.the_content %>
-<div id="fromSubmit">
-
-</div>
-
 <div class="form-subscribe">
   <div class="container small">
     <div class="form-header">
@@ -14,97 +9,111 @@
       <div class="lock"><span class="lok-ico"></span>Ваши данные надежно защищены</div>
     </div>
     <div class="w-form">
-      <form id="email-form" name="email-form" data-name="Email Form" class="form">
-        <div class="form-group">
-          <div class="icon-input"></div><input type="text" class="input-text w-input" maxlength="256" name="name" data-name="Name" placeholder="Имя" id="name">
-          <div class="angle-docore">
-            <div class="angle">
-              <div class="separator"></div>
-              <div class="b1"></div>
-            </div>
-            <div class="angle tl">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle tr">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle br">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="icon-input"></div><input type="text" class="input-text w-input" maxlength="256" name="phone" data-name="phone" placeholder="*Номер телефона" id="phone" required="">
-          <div class="angle-docore">
-            <div class="angle">
-              <div class="separator"></div>
-              <div class="b1"></div>
-            </div>
-            <div class="angle tl">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle tr">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle br">
-              <div class="b1"></div>
-              <div class="separator"></div>
+      <% form = current_site.contact_forms.where({slug: "marketing-form"}).first %>
+
+      <% if form.present? %>
+        <%= form_for form, url: plugins_cama_contact_form_save_form_path, html: {method: "post", class: "validate-form form", multipart: true} do |f| %>
+          <%= hidden_field_tag "id", form.id %>
+          <%= hidden_field_tag "format", "json" %>
+          <div class="form-group">
+            <% name_field = get_form_field(form, "c2") %>
+            <div class="icon-input"></div><input class="input-text w-input" name="<%= name_field[:name] %>" type="text" <%= 'required' if name_field[:required].to_bool %> placeholder="<%= name_field[:field_options][:description].translate %>">
+            <div class="angle-docore">
+              <div class="angle">
+                <div class="separator"></div>
+                <div class="b1"></div>
+              </div>
+              <div class="angle tl">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle tr">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle br">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="form-group">
-          <div class="icon-input"></div><input type="text" class="input-text w-input" maxlength="256" name="email" data-name="Email" placeholder="*E-mail" id="email" required="">
-          <div class="angle-docore">
-            <div class="angle">
-              <div class="separator"></div>
-              <div class="b1"></div>
-            </div>
-            <div class="angle tl">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle tr">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle br">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-          </div>
-        </div>
-        <div class="fomr-submit"><input type="submit" value="бесплатная консультация" data-wait="Please wait..." class="btn w-button">
-          <div class="angle-docore">
-            <div class="angle">
-              <div class="separator"></div>
-              <div class="b1"></div>
-            </div>
-            <div class="angle tl">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle tr">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle br">
-              <div class="b1"></div>
-              <div class="separator"></div>
+          <div class="form-group">
+            <% phone_field = get_form_field(form, "c3") %>
+            <div class="icon-input"></div><input class="input-text w-input" name="<%= phone_field[:name] %>" type="tel" <%= 'required' if phone_field[:required].to_bool %>  placeholder="<%= phone_field[:field_options][:description].translate %>">
+            <div class="angle-docore">
+              <div class="angle">
+                <div class="separator"></div>
+                <div class="b1"></div>
+              </div>
+              <div class="angle tl">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle tr">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle br">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
             </div>
           </div>
+          <div class="form-group">
+            <% email_field = get_form_field(form, "c4") %>
+            <div class="icon-input"></div><input class="input-text w-input" name="<%= email_field[:name] %>" type="email" <%= 'required' if email_field[:required].to_bool %>  placeholder="<%= email_field[:field_options][:description].translate %>">
+            <div class="angle-docore">
+              <div class="angle">
+                <div class="separator"></div>
+                <div class="b1"></div>
+              </div>
+              <div class="angle tl">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle tr">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle br">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+            </div>
+          </div>
+
+          <input class="who-are-you" type="text" name="who_are_you" value="">
+          <div class="fomr-submit"><input type="submit" value="бесплатная консультация"  class="btn w-button">
+            <div class="angle-docore">
+              <div class="angle">
+                <div class="separator"></div>
+                <div class="b1"></div>
+              </div>
+              <div class="angle tl">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle tr">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle br">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+            </div>
+          </div>
+
+        <% end %>
+        <div class="w-form-done">
+          <span class="valid-msg msg-block__sucess"></span>
         </div>
-      </form>
-      <div class="w-form-done">
-        <div>Thank you! Your submission has been received!</div>
-      </div>
-      <div class="w-form-fail">
-        <div>Oops! Something went wrong while submitting the form.</div>
-      </div>
+        <div class="w-form-fail">
+          <span class="error-msg msg-block__error"></span>
+        </div>
+      <% end %>
+
+
     </div>
   </div>
 </div>
@@ -271,91 +280,109 @@
       <div class="lock"><span class="lok-ico"></span>Ваши данные надежно защищены</div>
     </div>
     <div class="w-form">
-      <form id="email-form" name="email-form" data-name="Email Form" class="form">
-        <div class="form-group">
-          <div class="icon-input"></div><input type="text" class="input-text w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="Имя" id="name-2">
-          <div class="angle-docore">
-            <div class="angle">
-              <div class="separator"></div>
-              <div class="b1"></div>
-            </div>
-            <div class="angle tl">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle tr">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle br">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="icon-input"></div><input type="text" class="input-text w-input" maxlength="256" name="phone-2" data-name="Phone 2" placeholder="*Номер телефона" id="phone-2" required="">
-          <div class="angle-docore">
-            <div class="angle">
-              <div class="separator"></div>
-              <div class="b1"></div>
-            </div>
-            <div class="angle tl">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle tr">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle br">
-              <div class="b1"></div>
-              <div class="separator"></div>
+      <% form = current_site.contact_forms.where({slug: "marketing-form"}).first %>
+
+      <% if form.present? %>
+        <%= form_for form, url: plugins_cama_contact_form_save_form_path, html: {method: "post", class: "validate-form form", multipart: true} do |f| %>
+          <%= hidden_field_tag "id", form.id %>
+          <%= hidden_field_tag "format", "json" %>
+          <div class="form-group">
+            <% name_field = get_form_field(form, "c2") %>
+            <div class="icon-input"></div><input class="input-text w-input" name="<%= name_field[:name] %>" type="text" <%= 'required' if name_field[:required].to_bool %> placeholder="<%= name_field[:field_options][:description].translate %>">
+            <div class="angle-docore">
+              <div class="angle">
+                <div class="separator"></div>
+                <div class="b1"></div>
+              </div>
+              <div class="angle tl">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle tr">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle br">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="form-group">
-          <div class="icon-input"></div><input type="text" class="input-text w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="*E-mail" id="email-2" required="">
-          <div class="angle-docore">
-            <div class="angle">
-              <div class="separator"></div>
-              <div class="b1"></div>
-            </div>
-            <div class="angle tl">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle tr">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle br">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-          </div>
-        </div>
-        <div class="fomr-submit"><input type="submit" value="бесплатная консультация" data-wait="Please wait..." class="btn w-button">
-          <div class="angle-docore">
-            <div class="angle">
-              <div class="separator"></div>
-              <div class="b1"></div>
-            </div>
-            <div class="angle tl">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle tr">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle br">
-              <div class="b1"></div>
-              <div class="separator"></div>
+          <div class="form-group">
+            <% phone_field = get_form_field(form, "c3") %>
+            <div class="icon-input"></div><input class="input-text w-input" name="<%= phone_field[:name] %>" type="tel" <%= 'required' if phone_field[:required].to_bool %>  placeholder="<%= phone_field[:field_options][:description].translate %>">
+            <div class="angle-docore">
+              <div class="angle">
+                <div class="separator"></div>
+                <div class="b1"></div>
+              </div>
+              <div class="angle tl">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle tr">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle br">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
             </div>
           </div>
+          <div class="form-group">
+            <% email_field = get_form_field(form, "c4") %>
+            <div class="icon-input"></div><input class="input-text w-input" name="<%= email_field[:name] %>" type="email" <%= 'required' if email_field[:required].to_bool %>  placeholder="<%= email_field[:field_options][:description].translate %>">
+            <div class="angle-docore">
+              <div class="angle">
+                <div class="separator"></div>
+                <div class="b1"></div>
+              </div>
+              <div class="angle tl">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle tr">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle br">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+            </div>
+          </div>
+
+          <input class="who-are-you" type="text" name="who_are_you" value="">
+          <div class="fomr-submit"><input type="submit" value="бесплатная консультация"  class="btn w-button">
+            <div class="angle-docore">
+              <div class="angle">
+                <div class="separator"></div>
+                <div class="b1"></div>
+              </div>
+              <div class="angle tl">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle tr">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle br">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+            </div>
+          </div>
+
+        <% end %>
+        <div class="w-form-done">
+          <span class="valid-msg msg-block__sucess"></span>
         </div>
-      </form>
+        <div class="w-form-fail">
+          <span class="error-msg msg-block__error"></span>
+        </div>
+      <% end %>
       <div class="w-form-done">
         <div>Thank you! Your submission has been received!</div>
       </div>
@@ -617,172 +644,15 @@
       <div class="lock"><span class="lok-ico"></span>Ваши данные надежно защищены</div>
     </div>
     <div class="w-form">
-      <form id="email-form" name="email-form" data-name="Email Form" class="form">
-        <div class="form-group">
-          <div class="icon-input"></div><input type="text" class="input-text w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="Имя" id="name-2">
-          <div class="angle-docore">
-            <div class="angle">
-              <div class="separator"></div>
-              <div class="b1"></div>
-            </div>
-            <div class="angle tl">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle tr">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle br">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="icon-input"></div><input type="text" class="input-text w-input" maxlength="256" name="phone-2" data-name="Phone 2" placeholder="*Номер телефона" id="phone-2" required="">
-          <div class="angle-docore">
-            <div class="angle">
-              <div class="separator"></div>
-              <div class="b1"></div>
-            </div>
-            <div class="angle tl">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle tr">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle br">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="icon-input"></div><input type="text" class="input-text w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="*E-mail" id="email-2" required="">
-          <div class="angle-docore">
-            <div class="angle">
-              <div class="separator"></div>
-              <div class="b1"></div>
-            </div>
-            <div class="angle tl">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle tr">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle br">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-          </div>
-        </div>
-        <div class="fomr-submit"><input type="submit" value="бесплатная консультация" data-wait="Please wait..." class="btn w-button">
-          <div class="angle-docore">
-            <div class="angle">
-              <div class="separator"></div>
-              <div class="b1"></div>
-            </div>
-            <div class="angle tl">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle tr">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle br">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-          </div>
-        </div>
-      </form>
-      <div class="w-form-done">
-        <div>Thank you! Your submission has been received!</div>
-      </div>
-      <div class="w-form-fail">
-        <div>Oops! Something went wrong while submitting the form.</div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="form-subscribe color1">
-  <div class="container small">
-    <div class="form-header center">
-      <h2 class="form-header__h2">Заполните форму и узнайте как повысить конверсию интернет-магазина</h2>
-    </div>
-    <div class="w-form">
-      <form id="email-form" name="email-form" data-name="Email Form" class="form wrap">
-        <div class="form-group">
-          <div class="icon-input"></div><input type="text" class="input-text w-input" maxlength="256" name="name-3" data-name="Name 3" placeholder="Имя" id="name-3">
-          <div class="angle-docore">
-            <div class="angle">
-              <div class="separator"></div>
-              <div class="b1"></div>
-            </div>
-            <div class="angle tl">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle tr">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle br">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="icon-input"></div><input type="text" class="input-text w-input" maxlength="256" name="phone-3" data-name="Phone 3" placeholder="*Номер телефона" id="phone-3" required="">
-          <div class="angle-docore">
-            <div class="angle">
-              <div class="separator"></div>
-              <div class="b1"></div>
-            </div>
-            <div class="angle tl">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle tr">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle br">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="icon-input"></div><input type="text" class="input-text w-input" maxlength="256" name="email-3" data-name="Email 3" placeholder="*E-mail" id="email-3" required="">
-          <div class="angle-docore">
-            <div class="angle">
-              <div class="separator"></div>
-              <div class="b1"></div>
-            </div>
-            <div class="angle tl">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle tr">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle br">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-          </div>
-        </div>
-        <div class="fomr-submit block">
-          <div class="btn-wrapper"><input type="submit" value="ПОЛУЧИТЬ ИНДИВИДУАЛЬНЫЙ раСЧЕТ ПРОЕКТА" data-wait="Please wait..." class="btn w-button">
+      <% form = current_site.contact_forms.where({slug: "marketing-form"}).first %>
+
+      <% if form.present? %>
+        <%= form_for form, url: plugins_cama_contact_form_save_form_path, html: {method: "post", class: "validate-form form", multipart: true} do |f| %>
+          <%= hidden_field_tag "id", form.id %>
+          <%= hidden_field_tag "format", "json" %>
+          <div class="form-group">
+            <% name_field = get_form_field(form, "c2") %>
+            <div class="icon-input"></div><input class="input-text w-input" name="<%= name_field[:name] %>" type="text" <%= 'required' if name_field[:required].to_bool %> placeholder="<%= name_field[:field_options][:description].translate %>">
             <div class="angle-docore">
               <div class="angle">
                 <div class="separator"></div>
@@ -802,9 +672,199 @@
               </div>
             </div>
           </div>
-          <div class="lock"><span class="lok-ico"></span>Ваши данные надежно защищены</div>
+          <div class="form-group">
+            <% phone_field = get_form_field(form, "c3") %>
+            <div class="icon-input"></div><input class="input-text w-input" name="<%= phone_field[:name] %>" type="tel" <%= 'required' if phone_field[:required].to_bool %>  placeholder="<%= phone_field[:field_options][:description].translate %>">
+            <div class="angle-docore">
+              <div class="angle">
+                <div class="separator"></div>
+                <div class="b1"></div>
+              </div>
+              <div class="angle tl">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle tr">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle br">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <% email_field = get_form_field(form, "c4") %>
+            <div class="icon-input"></div><input class="input-text w-input" name="<%= email_field[:name] %>" type="email" <%= 'required' if email_field[:required].to_bool %>  placeholder="<%= email_field[:field_options][:description].translate %>">
+            <div class="angle-docore">
+              <div class="angle">
+                <div class="separator"></div>
+                <div class="b1"></div>
+              </div>
+              <div class="angle tl">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle tr">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle br">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+            </div>
+          </div>
+
+          <input class="who-are-you" type="text" name="who_are_you" value="">
+          <div class="fomr-submit"><input type="submit" value="бесплатная консультация"  class="btn w-button">
+            <div class="angle-docore">
+              <div class="angle">
+                <div class="separator"></div>
+                <div class="b1"></div>
+              </div>
+              <div class="angle tl">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle tr">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle br">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+            </div>
+          </div>
+
+        <% end %>
+        <div class="w-form-done">
+          <span class="valid-msg msg-block__sucess"></span>
         </div>
-      </form>
+        <div class="w-form-fail">
+          <span class="error-msg msg-block__error"></span>
+        </div>
+      <% end %>
+      <div class="w-form-done">
+        <div>Thank you! Your submission has been received!</div>
+      </div>
+      <div class="w-form-fail">
+        <div>Oops! Something went wrong while submitting the form.</div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form-subscribe color1">
+  <div class="container small">
+    <div class="form-header center">
+      <h2 class="form-header__h2">Заполните форму и узнайте как повысить конверсию интернет-магазина</h2>
+    </div>
+    <div class="w-form">
+      <% form = current_site.contact_forms.where({slug: "marketing-form"}).first %>
+
+      <% if form.present? %>
+        <%= form_for form, url: plugins_cama_contact_form_save_form_path, html: {method: "post", class: "validate-form form", multipart: true} do |f| %>
+          <%= hidden_field_tag "id", form.id %>
+          <%= hidden_field_tag "format", "json" %>
+          <div class="form-group">
+            <% name_field = get_form_field(form, "c2") %>
+            <div class="icon-input"></div><input class="input-text w-input" name="<%= name_field[:name] %>" type="text" <%= 'required' if name_field[:required].to_bool %> placeholder="<%= name_field[:field_options][:description].translate %>">
+            <div class="angle-docore">
+              <div class="angle">
+                <div class="separator"></div>
+                <div class="b1"></div>
+              </div>
+              <div class="angle tl">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle tr">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle br">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <% phone_field = get_form_field(form, "c3") %>
+            <div class="icon-input"></div><input class="input-text w-input" name="<%= phone_field[:name] %>" type="tel" <%= 'required' if phone_field[:required].to_bool %>  placeholder="<%= phone_field[:field_options][:description].translate %>">
+            <div class="angle-docore">
+              <div class="angle">
+                <div class="separator"></div>
+                <div class="b1"></div>
+              </div>
+              <div class="angle tl">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle tr">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle br">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <% email_field = get_form_field(form, "c4") %>
+            <div class="icon-input"></div><input class="input-text w-input" name="<%= email_field[:name] %>" type="email" <%= 'required' if email_field[:required].to_bool %>  placeholder="<%= email_field[:field_options][:description].translate %>">
+            <div class="angle-docore">
+              <div class="angle">
+                <div class="separator"></div>
+                <div class="b1"></div>
+              </div>
+              <div class="angle tl">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle tr">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle br">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+            </div>
+          </div>
+
+          <input class="who-are-you" type="text" name="who_are_you" value="">
+          <div class="fomr-submit"><input type="submit" value="бесплатная консультация"  class="btn w-button">
+            <div class="angle-docore">
+              <div class="angle">
+                <div class="separator"></div>
+                <div class="b1"></div>
+              </div>
+              <div class="angle tl">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle tr">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle br">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+            </div>
+          </div>
+
+        <% end %>
+        <div class="w-form-done">
+          <span class="valid-msg msg-block__sucess"></span>
+        </div>
+        <div class="w-form-fail">
+          <span class="error-msg msg-block__error"></span>
+        </div>
+      <% end %>
       <div class="w-form-done">
         <div>Thank you! Your submission has been received!</div>
       </div>
@@ -934,91 +994,109 @@
       <div class="lock"><span class="lok-ico"></span>Ваши данные надежно защищены</div>
     </div>
     <div class="form-block-3 w-form">
-      <form id="email-form" name="email-form" data-name="Email Form" class="form">
-        <div class="form-group">
-          <div class="icon-input"></div><input type="text" class="input-text w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="Имя" id="name-2">
-          <div class="angle-docore">
-            <div class="angle">
-              <div class="separator"></div>
-              <div class="b1"></div>
-            </div>
-            <div class="angle tl">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle tr">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle br">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="icon-input"></div><input type="text" class="input-text w-input" maxlength="256" name="phone-2" data-name="Phone 2" placeholder="*Номер телефона" id="phone-2" required="">
-          <div class="angle-docore">
-            <div class="angle">
-              <div class="separator"></div>
-              <div class="b1"></div>
-            </div>
-            <div class="angle tl">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle tr">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle br">
-              <div class="b1"></div>
-              <div class="separator"></div>
+      <% form = current_site.contact_forms.where({slug: "marketing-form"}).first %>
+
+      <% if form.present? %>
+        <%= form_for form, url: plugins_cama_contact_form_save_form_path, html: {method: "post", class: "validate-form form", multipart: true} do |f| %>
+          <%= hidden_field_tag "id", form.id %>
+          <%= hidden_field_tag "format", "json" %>
+          <div class="form-group">
+            <% name_field = get_form_field(form, "c2") %>
+            <div class="icon-input"></div><input class="input-text w-input" name="<%= name_field[:name] %>" type="text" <%= 'required' if name_field[:required].to_bool %> placeholder="<%= name_field[:field_options][:description].translate %>">
+            <div class="angle-docore">
+              <div class="angle">
+                <div class="separator"></div>
+                <div class="b1"></div>
+              </div>
+              <div class="angle tl">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle tr">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle br">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="form-group">
-          <div class="icon-input"></div><input type="text" class="input-text w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="*E-mail" id="email-2" required="">
-          <div class="angle-docore">
-            <div class="angle">
-              <div class="separator"></div>
-              <div class="b1"></div>
-            </div>
-            <div class="angle tl">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle tr">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle br">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-          </div>
-        </div>
-        <div class="fomr-submit"><input type="submit" value="бесплатная консультация" data-wait="Please wait..." class="btn w-button">
-          <div class="angle-docore">
-            <div class="angle">
-              <div class="separator"></div>
-              <div class="b1"></div>
-            </div>
-            <div class="angle tl">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle tr">
-              <div class="b1"></div>
-              <div class="separator"></div>
-            </div>
-            <div class="angle br">
-              <div class="b1"></div>
-              <div class="separator"></div>
+          <div class="form-group">
+            <% phone_field = get_form_field(form, "c3") %>
+            <div class="icon-input"></div><input class="input-text w-input" name="<%= phone_field[:name] %>" type="tel" <%= 'required' if phone_field[:required].to_bool %>  placeholder="<%= phone_field[:field_options][:description].translate %>">
+            <div class="angle-docore">
+              <div class="angle">
+                <div class="separator"></div>
+                <div class="b1"></div>
+              </div>
+              <div class="angle tl">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle tr">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle br">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
             </div>
           </div>
+          <div class="form-group">
+            <% email_field = get_form_field(form, "c4") %>
+            <div class="icon-input"></div><input class="input-text w-input" name="<%= email_field[:name] %>" type="email" <%= 'required' if email_field[:required].to_bool %>  placeholder="<%= email_field[:field_options][:description].translate %>">
+            <div class="angle-docore">
+              <div class="angle">
+                <div class="separator"></div>
+                <div class="b1"></div>
+              </div>
+              <div class="angle tl">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle tr">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle br">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+            </div>
+          </div>
+
+          <input class="who-are-you" type="text" name="who_are_you" value="">
+          <div class="fomr-submit"><input type="submit" value="бесплатная консультация"  class="btn w-button">
+            <div class="angle-docore">
+              <div class="angle">
+                <div class="separator"></div>
+                <div class="b1"></div>
+              </div>
+              <div class="angle tl">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle tr">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle br">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+            </div>
+          </div>
+
+        <% end %>
+        <div class="w-form-done">
+          <span class="valid-msg msg-block__sucess"></span>
         </div>
-      </form>
+        <div class="w-form-fail">
+          <span class="error-msg msg-block__error"></span>
+        </div>
+      <% end %>
       <div class="w-form-done">
         <div>Thank you! Your submission has been received!</div>
       </div>
@@ -1048,7 +1126,7 @@
     </div>
   </div>
 </div>
-<div class="slider2">
+<div class="slider2 slider-t1">
   <div class="container small">
 
     <div id="trigger2"></div>
@@ -1208,127 +1286,6 @@
   <div class="gains-decor2"></div>
   <div class="gains-decor1"></div>
 </div>
-<div id="price" class="quality">
-  <div class="container small">
-    <div class="block-header i-big minus">
-      <h2 class="heading">Выгодная инвестиция</h2>
-      <div class="decor-text">цена</div>
-    </div>
-    <div class="decore-lamp"></div>
-    <div class="text-right-padding">
-      <p>Опытные бизнесмены знают точно - <span class="yellow">чтобы</span> серьезно <span class="yellow">зарабатывать, необходимо</span> соответсвенно <span class="yellow">инвестировать</span> в маркетинг и рекламу. Деньги, которые вы вкладываете в разработку - это депозит, который даст солидные дивиденды уже через месяц.</p>
-    </div>
-    <div class="form-row">
-      <div class="form-row-col">
-        <div class="num-block-title">3 основных тарифа на создание одностраничного интернет магазина*:</div>
-
-        <!--<p class="li-p"><span class="check"></span><span class="yellow">От количества анимации и WOW-эффектов</span> (на реализацию каждого эффекта необходимо время нескольких специалистов, соответственно, чем больше эффектов - тем выше стоимость )</p>-->
-      </div>
-      <div class="form-row-col right">
-        <div class="from-wrapper">
-          <div class="form-block">
-            <div class="problem-item__title">узнать стоимость одностраничного интернет-магазина</div>
-            <div class="form-block-2 w-form">
-              <form id="email-form" name="email-form" data-name="Email Form" class="form vertical">
-                <div class="form-group p-t">
-                  <div class="icon-input"></div><input type="text" class="input-text w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="Имя" id="name-2">
-                  <div class="angle-docore">
-                    <div class="angle">
-                      <div class="separator"></div>
-                      <div class="b1"></div>
-                    </div>
-                    <div class="angle tl">
-                      <div class="b1"></div>
-                      <div class="separator"></div>
-                    </div>
-                    <div class="angle tr">
-                      <div class="b1"></div>
-                      <div class="separator"></div>
-                    </div>
-                    <div class="angle br">
-                      <div class="b1"></div>
-                      <div class="separator"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group p-t">
-                  <div class="icon-input"></div><input type="text" class="input-text w-input" maxlength="256" name="phone-2" data-name="Phone 2" placeholder="*Номер телефона" id="phone-2" required="">
-                  <div class="angle-docore">
-                    <div class="angle">
-                      <div class="separator"></div>
-                      <div class="b1"></div>
-                    </div>
-                    <div class="angle tl">
-                      <div class="b1"></div>
-                      <div class="separator"></div>
-                    </div>
-                    <div class="angle tr">
-                      <div class="b1"></div>
-                      <div class="separator"></div>
-                    </div>
-                    <div class="angle br">
-                      <div class="b1"></div>
-                      <div class="separator"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group p-t">
-                  <div class="icon-input"></div><input type="text" class="input-text w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="*E-mail" id="email-2" required="">
-                  <div class="angle-docore">
-                    <div class="angle">
-                      <div class="separator"></div>
-                      <div class="b1"></div>
-                    </div>
-                    <div class="angle tl">
-                      <div class="b1"></div>
-                      <div class="separator"></div>
-                    </div>
-                    <div class="angle tr">
-                      <div class="b1"></div>
-                      <div class="separator"></div>
-                    </div>
-                    <div class="angle br">
-                      <div class="b1"></div>
-                      <div class="separator"></div>
-                    </div>
-                  </div>
-                </div>
-                <div class="fomr-submit p-t"><input type="submit" value="узнать стоимость" data-wait="Please wait..." class="btn btn-big w-button">
-                  <div class="angle-docore">
-                    <div class="angle">
-                      <div class="separator"></div>
-                      <div class="b1"></div>
-                    </div>
-                    <div class="angle tl">
-                      <div class="b1"></div>
-                      <div class="separator"></div>
-                    </div>
-                    <div class="angle tr">
-                      <div class="b1"></div>
-                      <div class="separator"></div>
-                    </div>
-                    <div class="angle br">
-                      <div class="b1"></div>
-                      <div class="separator"></div>
-                    </div>
-                  </div>
-                </div>
-              </form>
-              <div class="w-form-done">
-                <div>Thank you! Your submission has been received!</div>
-              </div>
-              <div class="w-form-fail">
-                <div>Oops! Something went wrong while submitting the form.</div>
-              </div>
-            </div>
-            <div class="lock"><span class="lok-ico"></span>Ваши данные надежно защищены</div>
-          </div>
-          <div class="dashed"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 <div class="garanty">
   <div class="container small">
     <div class="block-header i-big">
@@ -1363,6 +1320,159 @@
     </div>
   </div>
 </div>
+<div class="slider2 slider-t2">
+  <div class="container small">
+    <div class="block-header i-big">
+      <h2 class="heading">Пример работы</h2>
+      <p><span class="yellow">Как мы делали одностраничник  для интернет-магазина Babyhit <br>Ссылка на сайт - https://babyhit-rainbow.com.ua/</span></p>
+      <div class="decor-text">РЕЗУЛЬТАТ</div>
+    </div>
+
+
+
+
+    <div id="trigger3"></div>
+    <div id="pin3">
+      <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <div class="slider-item-container">
+              <div  class="slider-item">
+                <div class="slider-item__mac i-slide1">
+
+                </div>
+                <div class="slider-item__content">
+                  <div class="slider-item__content-txt">
+                    <h2 class="heading-2">задачи и цели:</h2>
+                    <p><strong>Цель:</strong><br><span class="yellow">Увеличение продаж</span> сезонного товара - колясок-тростей Babyhit Rainbow</p>
+
+                    <p><strong>Задача:</strong></p>
+                    <ol class="list-numbers">
+                      <li><span class="yellow">Ознакомить</span> покупателей с особенностями и преимуществами колясок.</li>
+                      <li><span class="yellow">Упростить</span> процедуру покупки, по сравнению с интернет-магазином.</li>
+                    </ol>
+                  </div>
+                  <div class="slider-item__num">01</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slider-item-container">
+              <div  class="slider-item">
+                <div class="slider-item__mac i-slide2">
+
+                </div>
+                <div class="slider-item__content">
+                  <div class="slider-item__content-txt">
+                    <h2 class="heading-2">аналитика и концепция:</h2>
+                    <ol class="list-numbers">
+                      <li>Проведены <span class="yellow">маркетинговые исследования бизнеса</span> заказчика, конкурентов, целевой аудитории</li>
+                      <li><span class="yellow">Собрана</span> семантика</li>
+                      <li>Разработан <span class="yellow">прототип с UX</span> составляющей</li>
+                      <li>Разработано <span class="yellow">техническое задание</span></li>
+                    </ol>
+                  </div>
+                  <div class="slider-item__num">02</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slider-item-container">
+              <div  class="slider-item">
+                <div class="slider-item__mac i-slide3">
+
+                </div>
+                <div class="slider-item__content">
+                  <div class="slider-item__content-txt">
+                    <h2 class="heading-2">визуализация:</h2>
+                    <ol class="list-numbers">
+                      <li>Создан <span class="yellow">уникальный дизайн</span>, с учетом маркетинговой составляющей</li>
+                      <li>Разработаны <span class="yellow">мобильная и планшетная версии</span> дизайна</li>
+                      <li>Дизайн торгового предложения, для <span class="yellow">уселения маркетинга</span></li>
+                      <li>Отрисовано  более 20-ти иконок</li>
+                    </ol>
+                  </div>
+                  <div class="slider-item__num">03</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slider-item-container">
+              <div  class="slider-item i-center-item">
+
+                <video autoplay loop id="example">
+                  <source src="<%= theme_img_url "funnel_shop/video/example.mp4" %>" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+                </video>
+
+                <div class="slider-item__content">
+                  <div class="slider-item__content-txt">
+                    <h2 class="heading-2">верстка и анимация:</h2>
+                    <ol class="list-numbers">
+                      <li>Создана <span class="yellow">качественная валидная верстка</span> с использованием новейших технологий</li>
+                      <li>Сайт «оживлен» при помощи множества <span class="yellow">анимационных эффектов</span></li>
+                      <li>Проведена базовая <span class="yellow">SEO оптимизация</span></li>
+                      <li>Оптимизированна <span class="yellow">скорость загрузки сайта</span></li>
+                    </ol>
+                  </div>
+                  <div class="slider-item__num">04</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slider-item-container">
+              <div  class="slider-item">
+                <div class="slider-item__mac i-slide5">
+
+                </div>
+                <div class="slider-item__content">
+                  <div class="slider-item__content-txt">
+                    <h2 class="heading-2">адаптивность:</h2>
+                    <ol class="list-numbers">
+                      <li>Созданы <span class="yellow">планшетная и мобильная версии</span> одностраничниого интернет-магазина</li>
+                      <li>Сайт <span class="yellow">протестирован на всех возможных устройствах</span> и во всех браузерах</li>
+                    </ol>
+                  </div>
+                  <div class="slider-item__num">05</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slider-item-container">
+              <div  class="slider-item">
+                <div class="slider-item__mac i-slide6">
+
+                </div>
+                <div class="slider-item__content">
+                  <div class="slider-item__content-txt">
+                    <h2 class="heading-2">программирование:</h2>
+                    <ol class="list-numbers">
+                      <li><span class="yellow">Админ-панель</span>, загружает и редактирует контент на 2-х языках;</li>
+                      <li><span class="yellow">Загрузка цветовых вариантов</span> одного товара;</li>
+                      <li><span class="yellow">Интеграция с CRM</span> системой интернет-магазина</li>
+                      <li>Внедрен <span class="yellow">SEO модуль</span>(titles, descriptions, keywords)</li>
+                    </ol>
+                  </div>
+                  <div class="slider-item__num">06</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+  <div class="gains-decor2"></div>
+  <div class="gains-decor1"></div>
+</div>
 <div id="reviews" class="reviews">
   <div class="container small">
     <div class="block-header i-big p-1">
@@ -1372,12 +1482,12 @@
     <div class="comments-block">
       <div class="comments-item">
         <div class="comments-item-wiper">
-          <div class="comments-text">Позвольте поблагодарить Вас за отлично выполненную работу по созданию сайта terracotta.ua. Все работы были проведены.</div>
+          <div class="comments-text">Завдяки якісній та оперативній роботі команди SiteOn ми отримали сайт з сучасним дизайном. Сайт польського виробника X-lander, створений спеціалістами SiteOn, дозволив нам не тільки якісно представити покупцям продукцію польського виробника, але і автоматизувати такий важливий процес, як гарантійне обслуговування наших візочків. Ми переконалися, що компанія може справлятися із завданнями будь-якої складності, і хочемо зазначити, що наша співпраця була взаємовигідною та приємною.</div>
           <div class="comments-footer">
-            <div class="ava"><img src="<%= theme_img_url "funnel_shop/ava.jpg" %>"></div>
+            <div class="ava"><img src="<%= theme_img_url "funnel_shop/reviews/dashkeev-min1-jpg_80x80.jpg" %>"></div>
             <div class="footer-text">
-              <div class="text-block-3">Максим Бондарук</div>
-              <div class="comments-titolo">Генеральный директор ПАО «Гостиница «Премьер Палас»</div>
+              <div class="text-block-3">Євген Дашкеєв</div>
+              <div class="comments-titolo">x-lander.com.ua</div>
             </div>
           </div>
           <div class="quote-decor"></div>
@@ -1386,12 +1496,12 @@
       </div>
       <div class="comments-item">
         <div class="comments-item-wiper">
-          <div class="comments-text">Позвольте поблагодарить Вас за отлично выполненную работу по созданию сайта terracotta.ua. Все работы были проведены. Позвольте поблагодарить Вас за отлично выполненную работу по созданию сайта terracotta.ua. Все работы были проведены. Позвольте поблагодарить terracotta.ua...</div>
+          <div class="comments-text">Компанію SiteOn мені порекомендували знайомі. Нашій команді постійно доводиться створювати багато проектів у мережі, додавати сервіси та функції до вже існуючих. Кожного разу я стикався із байдужістю розробника до наших термінових завдань, його зайнятість, неможливість зв’язатися по телефону, захмарні ціни. Але виявилось, що існує команда, яка настільки любить свою справу, що процес створення проектів став легким та плідним. Після запуску проекту люди нікуди не зникли, завжди на зв’язку та готові допомогти. Дякую за якісну роботу, постійний зворотній зв’язок та зрозумілі ціни!</div>
           <div class="comments-footer">
-            <div class="ava"><img src="<%= theme_img_url "funnel_shop/ava.jpg" %>"></div>
+            <div class="ava"><img src="<%= theme_img_url "funnel_shop/reviews/kuras-min-jpg_80x80.jpg" %>"></div>
             <div class="footer-text">
-              <div class="text-block-3">Максим Бондарук</div>
-              <div class="comments-titolo">Генеральный директор ПАО «Гостиница «Премьер Палас»</div>
+              <div class="text-block-3">Максим Курас</div>
+              <div class="comments-titolo">kvartal-concert.com</div>
             </div>
           </div>
           <div class="quote-decor"></div>
@@ -1402,12 +1512,12 @@
     <div class="comments-block">
       <div class="comments-item">
         <div class="comments-item-wiper">
-          <div class="comments-text">Позвольте поблагодарить Вас за отлично выполненную работу по созданию сайта terracotta.ua. Все работы были проведены.</div>
+          <div class="comments-text">Ми звернулися в SiteOn для розробки сайту шведського виробника дитячих товарів для годування Twistshake. Сайт з дитячою продукцією обов’язково повинен мати гарний дизайн та зручний функціонал. Ми відразу зрозуміли, що знаходимося в надійних руках. Було швидко розроблено чіткий план дій,  і в обіцяний термін ми отримали зручний сайт із урахуванням ключових трендів дизайну. Було приємно, що усі наші побажання були враховані. Розроблений сайт став невід’ємною частиною просування бренду Twistshake на теренах України. Наші маленькі покупці дуже вам вдячні.</div>
           <div class="comments-footer">
-            <div class="ava"><img src="<%= theme_img_url "funnel_shop/ava.jpg" %>"></div>
+            <div class="ava"><img src="<%= theme_img_url "funnel_shop/reviews/levchenko-min-jpg_80x80.jpg" %>"></div>
             <div class="footer-text">
-              <div class="text-block-3">Максим Бондарук</div>
-              <div class="comments-titolo">Генеральный директор ПАО «Гостиница <br>«Премьер Палас»</div>
+              <div class="text-block-3">Марія Левченко</div>
+              <div class="comments-titolo">twistshake.com.ua</div>
             </div>
           </div>
           <div class="quote-decor"></div>
@@ -1416,12 +1526,43 @@
       </div>
       <div class="comments-item">
         <div class="comments-item-wiper">
-          <div class="comments-text">Позвольте поблагодарить Вас за отлично выполненную работу по созданию сайта terracotta.ua. Все работы были проведены. Позвольте поблагодарить Вас за отлично выполненную работу по созданию сайта terracotta.ua. Все работы были проведены. Позвольте поблагодарить terracotta.ua...</div>
+          <div class="comments-text">Моя професія - фотограф. Багато часу я мріяв про створення власного сайту. Отже, коли з’явилась можливість, я звернувся до розробників. Але тут мене спіткала несподіванка. Мої вимоги щодо дизайну та функціоналу сприймали несерйозно. Одного разу мій приятель порадив звернутися до компанії SiteOn. Я був вражений, наскільки професійно люди ставляться до своєї роботи.  Пройшло зовсім небагато часу після обговорення нюансів, а демо-версія вже готова. Особливо приємним було те,що усі мої побажання було враховано. Дуже вдячний SiteOn за співпрацю!</div>
           <div class="comments-footer">
-            <div class="ava"><img src="<%= theme_img_url "funnel_shop/ava.jpg" %>"></div>
+            <div class="ava"><img src="<%= theme_img_url "funnel_shop/reviews/marchenko-min-jpg_80x80.jpg" %>"></div>
             <div class="footer-text">
-              <div class="text-block-3">Максим Бондарук</div>
-              <div class="comments-titolo">Генеральный директор ПАО «Гостиница <br>«Премьер Палас»</div>
+              <div class="text-block-3">Макс Марченко</div>
+              <div class="comments-titolo">mmarchenko.com</div>
+            </div>
+          </div>
+          <div class="quote-decor"></div>
+        </div>
+        <div class="dashed yellow"></div>
+      </div>
+    </div>
+
+    <div class="comments-block">
+      <div class="comments-item">
+        <div class="comments-item-wiper">
+          <div class="comments-text">Ми замовили SiteOn досить складний проект інтернет-магазину під значний обсяг товарів, та з великою кількістю інтеграцій із зовнішніми системами. Висловлюємо подяку спеціалістам компанії за професійне відношення та креативний підхід. Наше замовлення було виконано в обумовлений термін та без жодних зауважень. Бажаємо вам успіхів і сподіваємося на подальшу плідну співпрацю.</div>
+          <div class="comments-footer">
+            <div class="ava"><img src="<%= theme_img_url "funnel_shop/reviews/pashchuk-min-png_80x80.png" %>"></div>
+            <div class="footer-text">
+              <div class="text-block-3">Ірина Пащук</div>
+              <div class="comments-titolo">babyhit.ua</div>
+            </div>
+          </div>
+          <div class="quote-decor"></div>
+        </div>
+        <div class="dashed yellow"></div>
+      </div>
+      <div class="comments-item">
+        <div class="comments-item-wiper">
+          <div class="comments-text">Дуже вдячні за співпрацю. Нам сподобався ваш креативний та водночас раціональний підхід до завдання. Ви вмієте вислухати замовника та зрозуміли потреби наших клієнтів. Сайт mima.com.ua було створено з метою надання максимум інформації про товари преміум-сегмента. Для нас особливо важливо було гідно представити досить дорогий іспанський бренд. Команда SiteOn блискуче впоралася із завданням. Це дало можливість познайомити мам України із зручними та якісними візочками Mima.</div>
+          <div class="comments-footer">
+            <div class="ava"><img src="<%= theme_img_url "funnel_shop/reviews/totskiy-min-jpg_80x80.jpg" %>"></div>
+            <div class="footer-text">
+              <div class="text-block-3">Вячеслав Тоцький</div>
+              <div class="comments-titolo">mima.com.ua</div>
             </div>
           </div>
           <div class="quote-decor"></div>
@@ -1431,102 +1572,390 @@
     </div>
   </div>
 </div>
+<div id="price" class="quality">
+  <div class="container small">
+    <div class="block-header i-big minus">
+      <h2 class="heading">Выгодная инвестиция</h2>
+      <div class="decor-text">цена</div>
+    </div>
+    <div class="decore-lamp"></div>
+    <div class="text-right-padding">
+      <p>Опытные бизнесмены знают точно - <span class="yellow">чтобы</span> серьезно <span class="yellow">зарабатывать, необходимо</span> соответсвенно <span class="yellow">инвестировать</span> в маркетинг и рекламу. Деньги, которые вы вкладываете в разработку - это депозит, который даст солидные дивиденды уже через месяц.</p>
+    </div>
+    <div class="num-block-title">3 основных тарифа на создание одностраничного интернет магазина*:</div>
+    <div class="form-row">
+      <div class="form-row-col">
+
+
+        <!--<p class="li-p"><span class="check"></span><span class="yellow">От количества анимации и WOW-эффектов</span> (на реализацию каждого эффекта необходимо время нескольких специалистов, соответственно, чем больше эффектов - тем выше стоимость )</p>-->
+        <div class="table-price">
+          <div class="table">
+            <div class="table-header">
+              <div class="tr">
+              <div class="td"></div>
+              <div class="td">VIP</div>
+              <div class="td">NORMAL</div>
+              <div class="td">BASE</div>
+              </div>
+            </div>
+            <div class="table-body">
+              <div class="tr">
+                <div class="td">Кол-во  экранов (блоков)</div>
+                <div class="td">от 15</div>
+                <div class="td">до 10-ти</div>
+                <div class="td">до 5-ти</div>
+              </div>
+              <div class="tr">
+                <div class="td">Маркетинговый анализ</div>
+                <div class="td">+</div>
+                <div class="td">+</div>
+                <div class="td">-</div>
+              </div>
+              <div class="tr">
+                <div class="td">Разработка стратегии продаж</div>
+                <div class="td">+</div>
+                <div class="td">+</div>
+                <div class="td">-</div>
+              </div>
+              <div class="tr">
+                <div class="td">Уникальный дизайн</div>
+                <div class="td">+</div>
+                <div class="td">+</div>
+                <div class="td">+</div>
+              </div>
+              <div class="tr">
+                <div class="td">Кол-во вариантов стилистики</div>
+                <div class="td">3-5</div>
+                <div class="td">2</div>
+                <div class="td">1</div>
+              </div>
+              <div class="tr">
+                <div class="td">Дизайн под мобильные устройства</div>
+                <div class="td">+</div>
+                <div class="td">+</div>
+                <div class="td">-</div>
+              </div>
+              <div class="tr">
+                <div class="td">Верстка с использованием всех стандартов HTML5, CSS3</div>
+                <div class="td">+</div>
+                <div class="td">+</div>
+                <div class="td">+</div>
+              </div>
+              <div class="tr">
+                <div class="td">Внедрение анимационных эффектов</div>
+                <div class="td">+</div>
+                <div class="td">+</div>
+                <div class="td">-</div>
+              </div>
+              <div class="tr">
+                <div class="td">Базовая SEO оптимизация</div>
+                <div class="td">+</div>
+                <div class="td">-</div>
+                <div class="td">-</div>
+              </div>
+              <div class="tr">
+                <div class="td">Подключение аналитических сервисов</div>
+                <div class="td">+</div>
+                <div class="td">+</div>
+                <div class="td">-</div>
+              </div>
+              <div class="tr">
+                <div class="td">Подключение аналитических сервисов</div>
+                <div class="td">+</div>
+                <div class="td">+</div>
+                <div class="td">-</div>
+              </div>
+              <div class="tr">
+                <div class="td">Настройка форм заказов и обратной связи на Email</div>
+                <div class="td">+</div>
+                <div class="td">+</div>
+                <div class="td">+</div>
+              </div>
+              <div class="tr">
+                <div class="td">Подключение форм заказов и обратной связи к CRM</div>
+                <div class="td">+</div>
+                <div class="td">-</div>
+                <div class="td">-</div>
+              </div>
+              <div class="tr">
+                <div class="td">Интеграция с СMS </div>
+                <div class="td">+</div>
+                <div class="td">+</div>
+                <div class="td">+</div>
+              </div>
+              <div class="tr">
+                <div class="td">Разработка панели для администрирования</div>
+                <div class="td">+</div>
+                <div class="td">+</div>
+                <div class="td">+</div>
+              </div>
+              <div class="tr">
+                <div class="td">Консультации и помощь по настройке рекламы</div>
+                <div class="td">+</div>
+                <div class="td">-</div>
+                <div class="td">-</div>
+              </div>
+            </div>
+            <div class="table-footer">
+              <div class="tr">
+              <div class="td"></div>
+              <div class="td">2880$</div>
+              <div class="td">1920$</div>
+              <div class="td">960$</div>
+              </div>
+            </div>
+          </div>
+
+          <a href="#order" class="btn hide-lg btn-link btn-big w-button">Заказать <div class="angle-docore">
+            <div class="angle">
+              <div class="separator"></div>
+              <div class="b1"></div>
+            </div>
+            <div class="angle tl">
+              <div class="b1"></div>
+              <div class="separator"></div>
+            </div>
+            <div class="angle tr">
+              <div class="b1"></div>
+              <div class="separator"></div>
+            </div>
+            <div class="angle br">
+              <div class="b1"></div>
+              <div class="separator"></div>
+            </div>
+          </div></a>
+
+          <div class="note">
+            *Стоимость может меняться как в большую, так и в меньшую сторону. в зависимости от требований
+          </div>
+        </div>
+
+      </div>
+      <div  id="order" class="form-row-col right">
+        <div class="from-wrapper">
+          <div  class="form-block">
+            <div class="problem-item__title">Заказать одностраничного интернет-магазина</div>
+            <div class="form-block-2 w-form">
+              <% form = current_site.contact_forms.where({slug: "marketing-form"}).first %>
+
+              <% if form.present? %>
+                <%= form_for form, url: plugins_cama_contact_form_save_form_path, html: {method: "post", class: "validate-form form vertical", multipart: true} do |f| %>
+                  <%= hidden_field_tag "id", form.id %>
+                  <%= hidden_field_tag "format", "json" %>
+                  <div class="form-group p-t">
+                    <% name_field = get_form_field(form, "c2") %>
+                    <div class="icon-input"></div><input class="input-text w-input" name="<%= name_field[:name] %>" type="text" <%= 'required' if name_field[:required].to_bool %> placeholder="<%= name_field[:field_options][:description].translate %>">
+                    <div class="angle-docore">
+                      <div class="angle">
+                        <div class="separator"></div>
+                        <div class="b1"></div>
+                      </div>
+                      <div class="angle tl">
+                        <div class="b1"></div>
+                        <div class="separator"></div>
+                      </div>
+                      <div class="angle tr">
+                        <div class="b1"></div>
+                        <div class="separator"></div>
+                      </div>
+                      <div class="angle br">
+                        <div class="b1"></div>
+                        <div class="separator"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group p-t">
+                    <% phone_field = get_form_field(form, "c3") %>
+                    <div class="icon-input"></div><input class="input-text w-input" name="<%= phone_field[:name] %>" type="tel" <%= 'required' if phone_field[:required].to_bool %>  placeholder="<%= phone_field[:field_options][:description].translate %>">
+                    <div class="angle-docore">
+                      <div class="angle">
+                        <div class="separator"></div>
+                        <div class="b1"></div>
+                      </div>
+                      <div class="angle tl">
+                        <div class="b1"></div>
+                        <div class="separator"></div>
+                      </div>
+                      <div class="angle tr">
+                        <div class="b1"></div>
+                        <div class="separator"></div>
+                      </div>
+                      <div class="angle br">
+                        <div class="b1"></div>
+                        <div class="separator"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group p-t">
+                    <% email_field = get_form_field(form, "c4") %>
+                    <div class="icon-input"></div><input class="input-text w-input" name="<%= email_field[:name] %>" type="email" <%= 'required' if email_field[:required].to_bool %>  placeholder="<%= email_field[:field_options][:description].translate %>">
+                    <div class="angle-docore">
+                      <div class="angle">
+                        <div class="separator"></div>
+                        <div class="b1"></div>
+                      </div>
+                      <div class="angle tl">
+                        <div class="b1"></div>
+                        <div class="separator"></div>
+                      </div>
+                      <div class="angle tr">
+                        <div class="b1"></div>
+                        <div class="separator"></div>
+                      </div>
+                      <div class="angle br">
+                        <div class="b1"></div>
+                        <div class="separator"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <input class="who-are-you" type="text" name="who_are_you" value="">
+                  <div class="fomr-submit p-t"><input type="submit" value="бесплатная консультация"  class="btn w-button">
+                    <div class="angle-docore">
+                      <div class="angle">
+                        <div class="separator"></div>
+                        <div class="b1"></div>
+                      </div>
+                      <div class="angle tl">
+                        <div class="b1"></div>
+                        <div class="separator"></div>
+                      </div>
+                      <div class="angle tr">
+                        <div class="b1"></div>
+                        <div class="separator"></div>
+                      </div>
+                      <div class="angle br">
+                        <div class="b1"></div>
+                        <div class="separator"></div>
+                      </div>
+                    </div>
+                  </div>
+
+                <% end %>
+                <div class="w-form-done">
+                  <span class="valid-msg msg-block__sucess"></span>
+                </div>
+                <div class="w-form-fail">
+                  <span class="error-msg msg-block__error"></span>
+                </div>
+              <% end %>
+            </div>
+            <div class="lock"><span class="lok-ico"></span>Ваши данные надежно защищены</div>
+          </div>
+          <div class="dashed"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="last-form">
   <h2 class="heading">ЕСЛИ У ВАС ОСТАЛИСЬ ВОПРОСЫ ИЛИ ВОЗНИКЛИ <br>ПОЖЕЛАНИЯ МЫ С УДОВОЛЬСТВИЕМ ВАС ВЫСЛУШАЕМ!</h2>
   <p>Если вам мало информации на этой странице,  давайте общаться напрямую!</p>
   <p>Просто заполните форму ниже, чтобы мы могли вам перезвонить и вы зададите все вопросы: <br>зачем, почему, сколько и т.д. нашему специалисту!</p>
   <div class="form-block-2 w-form">
-    <form id="email-form" name="email-form" data-name="Email Form" class="form vertical">
-      <div class="form-group p-t">
-        <div class="icon-input"></div><input type="text" class="input-text w-input" maxlength="256" name="name-2" data-name="Name 2" placeholder="Имя" id="name-2">
-        <div class="angle-docore">
-          <div class="angle">
-            <div class="separator"></div>
-            <div class="b1"></div>
-          </div>
-          <div class="angle tl">
-            <div class="b1"></div>
-            <div class="separator"></div>
-          </div>
-          <div class="angle tr">
-            <div class="b1"></div>
-            <div class="separator"></div>
-          </div>
-          <div class="angle br">
-            <div class="b1"></div>
-            <div class="separator"></div>
-          </div>
-        </div>
-      </div>
-      <div class="form-group p-t">
-        <div class="icon-input"></div><input type="text" class="input-text w-input" maxlength="256" name="phone-2" data-name="Phone 2" placeholder="*Номер телефона" id="phone-2" required="">
-        <div class="angle-docore">
-          <div class="angle">
-            <div class="separator"></div>
-            <div class="b1"></div>
-          </div>
-          <div class="angle tl">
-            <div class="b1"></div>
-            <div class="separator"></div>
-          </div>
-          <div class="angle tr">
-            <div class="b1"></div>
-            <div class="separator"></div>
-          </div>
-          <div class="angle br">
-            <div class="b1"></div>
-            <div class="separator"></div>
+    <% form = current_site.contact_forms.where({slug: "marketing-form"}).first %>
+
+    <% if form.present? %>
+      <%= form_for form, url: plugins_cama_contact_form_save_form_path, html: {method: "post", class: "validate-form form vertical", multipart: true} do |f| %>
+        <%= hidden_field_tag "id", form.id %>
+        <%= hidden_field_tag "format", "json" %>
+        <div class="form-group p-t">
+          <% name_field = get_form_field(form, "c2") %>
+          <div class="icon-input"></div><input class="input-text w-input" name="<%= name_field[:name] %>" type="text" <%= 'required' if name_field[:required].to_bool %> placeholder="<%= name_field[:field_options][:description].translate %>">
+          <div class="angle-docore">
+            <div class="angle">
+              <div class="separator"></div>
+              <div class="b1"></div>
+            </div>
+            <div class="angle tl">
+              <div class="b1"></div>
+              <div class="separator"></div>
+            </div>
+            <div class="angle tr">
+              <div class="b1"></div>
+              <div class="separator"></div>
+            </div>
+            <div class="angle br">
+              <div class="b1"></div>
+              <div class="separator"></div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="form-group p-t">
-        <div class="icon-input"></div><input type="text" class="input-text w-input" maxlength="256" name="email-2" data-name="Email 2" placeholder="*E-mail" id="email-2" required="">
-        <div class="angle-docore">
-          <div class="angle">
-            <div class="separator"></div>
-            <div class="b1"></div>
-          </div>
-          <div class="angle tl">
-            <div class="b1"></div>
-            <div class="separator"></div>
-          </div>
-          <div class="angle tr">
-            <div class="b1"></div>
-            <div class="separator"></div>
-          </div>
-          <div class="angle br">
-            <div class="b1"></div>
-            <div class="separator"></div>
-          </div>
-        </div>
-      </div>
-      <div class="fomr-submit p-t"><input type="submit" value="узнать стоимость" data-wait="Please wait..." class="btn btn-big w-button">
-        <div class="angle-docore">
-          <div class="angle">
-            <div class="separator"></div>
-            <div class="b1"></div>
-          </div>
-          <div class="angle tl">
-            <div class="b1"></div>
-            <div class="separator"></div>
-          </div>
-          <div class="angle tr">
-            <div class="b1"></div>
-            <div class="separator"></div>
-          </div>
-          <div class="angle br">
-            <div class="b1"></div>
-            <div class="separator"></div>
+        <div class="form-group p-t">
+          <% phone_field = get_form_field(form, "c3") %>
+          <div class="icon-input"></div><input class="input-text w-input" name="<%= phone_field[:name] %>" type="tel" <%= 'required' if phone_field[:required].to_bool %>  placeholder="<%= phone_field[:field_options][:description].translate %>">
+          <div class="angle-docore">
+            <div class="angle">
+              <div class="separator"></div>
+              <div class="b1"></div>
+            </div>
+            <div class="angle tl">
+              <div class="b1"></div>
+              <div class="separator"></div>
+            </div>
+            <div class="angle tr">
+              <div class="b1"></div>
+              <div class="separator"></div>
+            </div>
+            <div class="angle br">
+              <div class="b1"></div>
+              <div class="separator"></div>
+            </div>
           </div>
         </div>
+        <div class="form-group p-t">
+          <% email_field = get_form_field(form, "c4") %>
+          <div class="icon-input"></div><input class="input-text w-input" name="<%= email_field[:name] %>" type="email" <%= 'required' if email_field[:required].to_bool %>  placeholder="<%= email_field[:field_options][:description].translate %>">
+          <div class="angle-docore">
+            <div class="angle">
+              <div class="separator"></div>
+              <div class="b1"></div>
+            </div>
+            <div class="angle tl">
+              <div class="b1"></div>
+              <div class="separator"></div>
+            </div>
+            <div class="angle tr">
+              <div class="b1"></div>
+              <div class="separator"></div>
+            </div>
+            <div class="angle br">
+              <div class="b1"></div>
+              <div class="separator"></div>
+            </div>
+          </div>
+        </div>
+
+        <input class="who-are-you" type="text" name="who_are_you" value="">
+        <div class="fomr-submit p-t"><input type="submit" value="бесплатная консультация"  class="btn w-button">
+          <div class="angle-docore">
+            <div class="angle">
+              <div class="separator"></div>
+              <div class="b1"></div>
+            </div>
+            <div class="angle tl">
+              <div class="b1"></div>
+              <div class="separator"></div>
+            </div>
+            <div class="angle tr">
+              <div class="b1"></div>
+              <div class="separator"></div>
+            </div>
+            <div class="angle br">
+              <div class="b1"></div>
+              <div class="separator"></div>
+            </div>
+          </div>
+        </div>
+
+      <% end %>
+      <div class="w-form-done">
+        <span class="valid-msg msg-block__sucess"></span>
       </div>
-    </form>
-    <div class="w-form-done">
-      <div>Thank you! Your submission has been received!</div>
-    </div>
-    <div class="w-form-fail">
-      <div>Oops! Something went wrong while submitting the form.</div>
-    </div>
+      <div class="w-form-fail">
+        <span class="error-msg msg-block__error"></span>
+      </div>
+    <% end %>
   </div>
   <div class="center">
     <div class="lock"><span class="lok-ico"></span>Ваши данные надежно защищены</div>
@@ -1546,3 +1975,12 @@
   </div>
 </div>
 
+<div class="success-form-block-hide">
+  <div class="success-form-block">
+    <div class="content">
+      <h2>Отлично!</h2>
+      <p>Завка успешно отправленна! Мы вам перезовним, как только ваши данные будут обработаны.</p>
+      <a href="javascript:;" class="close-info">x</a>
+    </div>
+  </div>
+</div>

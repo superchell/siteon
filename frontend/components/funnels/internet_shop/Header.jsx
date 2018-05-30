@@ -153,17 +153,17 @@ class MenuInner extends Component{
 
 
     linkAction = () =>{
-        this.props.closeMenu()
+        this.props.closeMenu();
     }
 
     render(){
         return(
             <div className="main-menu" ref={c => this.container = c}>
                 <div  className="menu-container">
-                    <div className="menu-logo"><img src={logo_menu}/></div>
+                    <div className="menu-logo"><a href="#home" onClick={this.linkAction}><img src={logo_menu}/></a></div>
                     <div className="menu-list">
                         <ul className="menu-list-items">
-                            <li><a href="#choice" onClick={this.linkAction} className="menu-list-items__a active"><span className="menu-link-inner active">Почему работает?</span></a></li>
+                            <li><a href="#choice" onClick={this.linkAction} className="menu-list-items__a"><span className="menu-link-inner">Почему работает?</span></a></li>
                             <li><a href="#hards" onClick={this.linkAction} className="menu-list-items__a"><span className="menu-link-inner">Ваши потери сейчас!</span></a></li>
                             <li><a href="#gains" onClick={this.linkAction} className="menu-list-items__a"><span className="menu-link-inner">Выгоды</span></a></li>
                             <li><a href="#trump" onClick={this.linkAction} className="menu-list-items__a"><span className="menu-link-inner">Особенности</span></a></li>

@@ -11,7 +11,7 @@ import Imac5 from "./../images/Imac5.png";
 class MainBlock extends Component {
     render() {
         return (
-            <div className="main-block">
+            <div id="home" className="main-block">
                 <div className="main-decor">
                     <div className="main-decor-2"></div>
                     <div className="main-dector-1"></div>
