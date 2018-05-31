@@ -16,7 +16,6 @@ $('.validate-form').on('submit', function (e) {
     $form.find('input').each(function (index, item) {
         let itemVal = $(this).val();
 
-
         if ($(this).attr('required')){
             if (isEmpty(itemVal)) {
                 $(this).addClass('error-field');
@@ -80,7 +79,7 @@ $('.validate-form').on('submit', function (e) {
 });
 
 $('.close-info').click(function () {
-    $('.success-form-block-hide').fadeOut();
+    $('.success-form-block-hide, .hide-form').fadeOut();
    return false;
 });
 

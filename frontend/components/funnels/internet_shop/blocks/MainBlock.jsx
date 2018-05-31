@@ -58,6 +58,10 @@ class MainBlock extends Component {
                                     </div>
                                 </div>
                             </div>
+                            <div className="action-block">
+                                <p>Получите бесплатную консультацию и узнайте, подходит ли вам одностраничный интернет-магазин:</p>
+                                <a href="javascript:;" className="btn w-button btn-border consulting-button">Записаться на консультацию</a>
+                            </div>
                         </div>
                     </div>
                 </div>
