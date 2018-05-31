@@ -135,6 +135,7 @@ class MainMenu extends Component {
 
 class MenuInner extends Component{
 
+
     componentWillEnter (callback) {
         const mainMenu = this.container;
         const menuContainer = $(mainMenu).find('.menu-container');
