@@ -1,5 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
+ReactDOM.render(<App />, document.getElementById('landingShop'));
+//ReactDOM.render(<SliderGains />, document.getElementById('slider_gains'));
+
+
+
+
+/* Normal scripts */
 import {TweenMax, TimelineMax} from 'gsap';
 import ScrollMagic from "scrollmagic";
 //import 'scrollmagic/scrollmagic/uncompressed/plugins/debug.addIndicators';
@@ -13,17 +21,32 @@ import "./css/normalize.css";
 import "./css/webflow.css";
 import "./css/lending-shop.webflow.scss";
 import "./scss/style.scss";
+import "./scss/responsive.scss";
 import "jquery-mask-plugin";
 import "./form";
-
-
-
-ReactDOM.render(<App />, document.getElementById('landingShop'));
-//ReactDOM.render(<SliderGains />, document.getElementById('slider_gains'));
 
 var controller = new ScrollMagic.Controller();
 
 $(function () { // wait for document ready
+
+    $('.btn-border').append(`<div class="angle-docore">
+              <div class="angle">
+                <div class="separator"></div>
+                <div class="b1"></div>
+              </div>
+              <div class="angle tl">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle tr">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle br">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+            </div>`);
 
     /*
     * SLIDER 1
@@ -124,4 +147,8 @@ $(function () { // wait for document ready
     });
 
 
+    $('.consulting-button').click(function (e) {
+        e.preventDefault();
+        $('.hide-form').fadeIn(250);
+    });
 });

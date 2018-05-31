@@ -1977,9 +1977,124 @@
 
 <div class="success-form-block-hide">
   <div class="success-form-block">
-    <div class="content">
+    <div class="success-form-block-content">
       <h2>Отлично!</h2>
       <p>Завка успешно отправленна! Мы вам перезовним, как только ваши данные будут обработаны.</p>
+      <a href="javascript:;" class="close-info">x</a>
+    </div>
+  </div>
+</div>
+
+<div class="hide-form">
+  <div class="hide-form-inner">
+    <div class="hide-form-content">
+      <h2>Запись на консультацию</h2>
+      <p>Чтобы зипсаться на консультацию, заполните фирму ниже</p>
+
+      <% form = current_site.contact_forms.where({slug: "marketing-form"}).first %>
+
+      <% if form.present? %>
+        <%= form_for form, url: plugins_cama_contact_form_save_form_path, html: {method: "post", class: "validate-form form vertical", multipart: true} do |f| %>
+          <%= hidden_field_tag "id", form.id %>
+          <%= hidden_field_tag "format", "json" %>
+          <div class="form-group p-t">
+            <% name_field = get_form_field(form, "c2") %>
+            <div class="icon-input"></div><input class="input-text w-input" name="<%= name_field[:name] %>" type="text" <%= 'required' if name_field[:required].to_bool %> placeholder="<%= name_field[:field_options][:description].translate %>">
+            <div class="angle-docore">
+              <div class="angle">
+                <div class="separator"></div>
+                <div class="b1"></div>
+              </div>
+              <div class="angle tl">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle tr">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle br">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-t">
+            <% phone_field = get_form_field(form, "c3") %>
+            <div class="icon-input"></div><input class="input-text w-input" name="<%= phone_field[:name] %>" type="tel" <%= 'required' if phone_field[:required].to_bool %>  placeholder="<%= phone_field[:field_options][:description].translate %>">
+            <div class="angle-docore">
+              <div class="angle">
+                <div class="separator"></div>
+                <div class="b1"></div>
+              </div>
+              <div class="angle tl">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle tr">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle br">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group p-t">
+            <% email_field = get_form_field(form, "c4") %>
+            <div class="icon-input"></div><input class="input-text w-input" name="<%= email_field[:name] %>" type="email" <%= 'required' if email_field[:required].to_bool %>  placeholder="<%= email_field[:field_options][:description].translate %>">
+            <div class="angle-docore">
+              <div class="angle">
+                <div class="separator"></div>
+                <div class="b1"></div>
+              </div>
+              <div class="angle tl">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle tr">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle br">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+            </div>
+          </div>
+
+          <input class="who-are-you" type="text" name="who_are_you" value="">
+          <div class="fomr-submit p-t"><input type="submit" value="бесплатная консультация"  class="btn w-button">
+            <div class="angle-docore">
+              <div class="angle">
+                <div class="separator"></div>
+                <div class="b1"></div>
+              </div>
+              <div class="angle tl">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle tr">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+              <div class="angle br">
+                <div class="b1"></div>
+                <div class="separator"></div>
+              </div>
+            </div>
+          </div>
+
+        <% end %>
+        <div class="w-form-done">
+          <span class="valid-msg msg-block__sucess"></span>
+        </div>
+        <div class="w-form-fail">
+          <span class="error-msg msg-block__error"></span>
+        </div>
+      <% end %>
+
       <a href="javascript:;" class="close-info">x</a>
     </div>
   </div>
