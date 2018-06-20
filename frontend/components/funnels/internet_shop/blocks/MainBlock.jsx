@@ -11,7 +11,7 @@ import Imac5 from "./../images/Imac5.png";
 class MainBlock extends Component {
     render() {
         return (
-            <div className="main-block">
+            <div id="home" className="main-block">
                 <div className="main-decor">
                     <div className="main-decor-2"></div>
                     <div className="main-dector-1"></div>
@@ -57,6 +57,10 @@ class MainBlock extends Component {
                                         <div className="bulit-text">Больше продаж при меньших расходах</div>
                                     </div>
                                 </div>
+                            </div>
+                            <div className="action-block">
+                                <p>Получите бесплатную консультацию и узнайте, подходит ли вам одностраничный интернет-магазин:</p>
+                                <a href="javascript:;" className="btn w-button btn-border consulting-button">Записаться на консультацию</a>
                             </div>
                         </div>
                     </div>

@@ -53,7 +53,7 @@ class SelectPhone extends Component {
         if (this.state.open){
             return(
                     <div className="select-phones-hide">
-                        <a href="#" className="select-phones-open">
+                        <a href="tel:+380664191125" onClick={this.state.open ?  this.callFunc : this.openClose} className="select-phones-open">
                             <span className="select-phones-ico i-vodafon"></span>
                             +38(066) 419 11 25
                         </a>
@@ -64,16 +64,24 @@ class SelectPhone extends Component {
         }
     }
 
-    openClose = () =>{
+    openClose = (e) =>{
         this.setState({
            open: !this.state.open
+        });
+
+        e.preventDefault();
+    }
+
+    callFunc = () =>{
+        this.setState({
+            open: !this.state.open
         });
     }
 
     render(){
         return(
             <div className="select-phones">
-                <a href="javascript:;" onClick={this.openClose} className="select-phones-open select-open-trigger">
+                <a href="tel:+380986371893" onClick={this.state.open ? this.callFunc : this.openClose}  className="select-phones-open select-open-trigger">
                     <span className="select-phones-ico"></span>
                     +38(098) 637 18 93
                     <span  className={this.state.open ? "text-span open" : "text-span"}></span>
@@ -127,6 +135,7 @@ class MainMenu extends Component {
 
 class MenuInner extends Component{
 
+
     componentWillEnter (callback) {
         const mainMenu = this.container;
         const menuContainer = $(mainMenu).find('.menu-container');
@@ -145,24 +154,24 @@ class MenuInner extends Component{
 
 
     linkAction = () =>{
-        this.props.closeMenu()
+        this.props.closeMenu();
     }
 
     render(){
         return(
             <div className="main-menu" ref={c => this.container = c}>
                 <div  className="menu-container">
-                    <div className="menu-logo"><img src={logo_menu}/></div>
+                    <div className="menu-logo"><a href="#home" onClick={this.linkAction}><img src={logo_menu}/></a></div>
                     <div className="menu-list">
                         <ul className="menu-list-items">
-                            <li><a href="#" onClick={this.linkAction} className="menu-list-items__a active"><span className="menu-link-inner active">Почему</span></a></li>
-                            <li><a href="#" onClick={this.linkAction} className="menu-list-items__a"><span className="menu-link-inner">Трудности</span></a></li>
-                            <li><a href="#" onClick={this.linkAction} className="menu-list-items__a"><span className="menu-link-inner">Выгоды</span></a></li>
-                            <li><a href="#" onClick={this.linkAction} className="menu-list-items__a"><span className="menu-link-inner">Козырь</span></a></li>
-                            <li><a href="#" onClick={this.linkAction} className="menu-list-items__a"><span className="menu-link-inner">Важно</span></a></li>
-                            <li><a href="#" onClick={this.linkAction} className="menu-list-items__a"><span className="menu-link-inner">Качество</span></a></li>
-                            <li><a href="#" onClick={this.linkAction} className="menu-list-items__a"><span className="menu-link-inner">Цена</span></a></li>
-                            <li><a href="#" onClick={this.linkAction} className="menu-list-items__a"><span className="menu-link-inner">Отзывы</span></a></li>
+                            <li><a href="#choice" onClick={this.linkAction} className="menu-list-items__a"><span className="menu-link-inner">Почему работает?</span></a></li>
+                            <li><a href="#hards" onClick={this.linkAction} className="menu-list-items__a"><span className="menu-link-inner">Ваши потери сейчас!</span></a></li>
+                            <li><a href="#gains" onClick={this.linkAction} className="menu-list-items__a"><span className="menu-link-inner">Выгоды</span></a></li>
+                            <li><a href="#trump" onClick={this.linkAction} className="menu-list-items__a"><span className="menu-link-inner">Особенности</span></a></li>
+                            <li><a href="#bonus" onClick={this.linkAction} className="menu-list-items__a"><span className="menu-link-inner">Бонус</span></a></li>
+                            <li><a href="#quality" onClick={this.linkAction} className="menu-list-items__a"><span className="menu-link-inner">Ваш результат</span></a></li>
+                            <li><a href="#price" onClick={this.linkAction} className="menu-list-items__a"><span className="menu-link-inner">Цена</span></a></li>
+                            <li><a href="#reviews" onClick={this.linkAction} className="menu-list-items__a"><span className="menu-link-inner">Отзывы</span></a></li>
                         </ul>
                     </div>
                     <div className="social-list">

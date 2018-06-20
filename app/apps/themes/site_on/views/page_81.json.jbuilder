@@ -1,0 +1,1 @@
+json.form_token form_authenticity_token
