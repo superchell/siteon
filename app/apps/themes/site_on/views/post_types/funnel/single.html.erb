@@ -1,1 +1,1 @@
-<%= react_component('App', {path: request.path, client: !browser.bot.search_engine? , data:{title: @post.the_title, description:@post.the_content}.as_json}, {prerender: browser.bot.search_engine? }) %>
+<%= react_component('App', {path: request.path, client: !browser.bot? , data:{title: @post.the_title, description:@post.the_content}.as_json}, {prerender: browser.bot? }) %>
