@@ -70,6 +70,7 @@ gem 'camaleon_sitemap_customizer', git: 'https://github.com/brian-kephart/camale
 gem 'cama_language_editor'
 gem 'camaleon_robots_editor', github: 'superchell/camaleon_robots_editor'
 gem 'react-rails'
+gem 'browser'
 
 #################### Camaleon CMS include all gems for plugins and themes #################### 
 require './lib/plugin_routes'
