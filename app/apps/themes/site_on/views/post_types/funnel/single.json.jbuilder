@@ -1,2 +1,2 @@
-json.title post.the_title
-json.description post.the_content
+json.title @post.the_title
+json.description @post.the_content

@@ -14,9 +14,8 @@ export default class Portfolio extends Component{
                     return response.json();
                 })
                 .then((data) => {
-                    console.log(data);
                     this.setState({
-                        data: data.data
+                        data: data
                     })
                 })
         )
@@ -30,11 +29,12 @@ export default class Portfolio extends Component{
 
 
     render(){
-        const {description} = this.state.data
+        const {description,title} = this.state.data
         return(
             <Fragment>
                 <h2>Portfolio</h2>
-                <p>{description}</p>
+                <h3>{title}</h3>
+                <p dangerouslySetInnerHTML={{__html: description}} />
                 <Nav />
             </Fragment>
         )

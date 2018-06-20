@@ -10,7 +10,7 @@
   <%= javascript_pack_tag 'application' %>
 <body>
 
-  <%= react_component('App', {path: request.path, client: true, data:current_site.as_json}, {prerender: false}) %>
+  <%= yield %>
 
 </body>
 </html>
