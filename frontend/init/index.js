@@ -224,7 +224,6 @@ $(function () {
     $('.cd-words-wrapper b').each(function () {
         textArray.push($(this).text());
     });
-    console.log(textArray);
     $('.cd-words-wrapper').html('');
 
     TweenLite.to($('.cd-words-wrapper'), 0.5, {text:{ value: textArray[conunter]}});
