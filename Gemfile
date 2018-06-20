@@ -69,7 +69,8 @@ gem 'camaleon_image_optimizer', github: 'brian-kephart/camaleon_image_optimizer'
 gem 'camaleon_sitemap_customizer', git: 'https://github.com/brian-kephart/camaleon_sitemap_customizer.git'
 gem 'cama_language_editor'
 gem 'camaleon_robots_editor', github: 'superchell/camaleon_robots_editor'
+gem 'react-rails'
 
 #################### Camaleon CMS include all gems for plugins and themes #################### 
-require './lib/plugin_routes' 
+require './lib/plugin_routes'
 instance_eval(PluginRoutes.draw_gems)
