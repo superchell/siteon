@@ -86,6 +86,10 @@ Rails.application.config.to_prepare do
       render r[:render], (!r[:layout].nil? ? {layout: r[:layout]} : {})
     end
 
+    def render_page_not_found
+      page_not_found
+    end
+
 
     private
 

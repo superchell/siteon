@@ -352,4 +352,9 @@ module Themes::SiteOn::MainHelper
   def before_app_load
     shortcode_add("funnel_form", theme_view('partials/funnel_form'))
   end
+
+  def custom_render_not_found
+    # Костыль для дубля главной
+    self.render_page_not_found if request.path == "/index.html"
+  end
 end
