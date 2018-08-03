@@ -107,16 +107,4 @@ module CamaleonCms::Frontend::CustomHelper
     raw "<a href=\"#{path}\">#{lang_name.upcase}</a>"
   end
 
-  def meta_hreflang
-    lan = current_site.get_languages
-    return  if  lan.size < 2
-    res = ''
-    lan.each do |lang|
-      url = @object.present? ? @object.the_url(locale: lang) : cama_url_to_fixed("url_for", {locale: lang})
-      res << "<link rel=\"alternate\" hreflang=\"#{lang}\" href=\"#{url}\">"
-    end
-
-    raw res
-  end
-
 end
