@@ -1,5 +1,4 @@
 class B24
-  include ActiveModel::Model
   require 'net/http'
 
   attr_accessor :api_url, :api_method, :query_params, :query_result
